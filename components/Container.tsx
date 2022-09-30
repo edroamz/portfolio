@@ -22,8 +22,8 @@ function NavItem({ href, text }: INavItemProps) {
         className={cn(
           'text-sm px-2 py-2 transition-colors duration-100',
           isActive
-            ? 'text-black dark:text-white'
-            : 'text-slate-500 hover:text-black dark:text-gray-300 dark:hover:text-white'
+            ? 'font-medium text-black dark:text-white'
+            : 'text-gray-700 hover:text-black dark:text-gray-300 dark:hover:text-white'
         )}
       >
         <span>{text}</span>
@@ -52,7 +52,6 @@ export default function Container(props: any) {
       <Head>
         <title>{meta.title}</title>
         <meta name="description" content={meta.description} />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="flex flex-col justify-center">
         <div className="flex items-center justify-between w-full relative max-w-4xl mx-auto pt-8 pb-8 px-8 lg:px-6">
