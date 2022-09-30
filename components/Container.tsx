@@ -7,7 +7,12 @@ import cn from 'classnames';
 
 import Footer from 'components/Footer';
 
-function NavItem({ href, text }: { href: string; text: string }) {
+interface INavItemProps {
+  href: string;
+  text: string;
+}
+
+function NavItem({ href, text }: INavItemProps) {
   const router = useRouter();
   const isActive = router.asPath === href;
 
@@ -27,7 +32,7 @@ function NavItem({ href, text }: { href: string; text: string }) {
   );
 }
 
-export default function Container(props: { [x: string]: any; children: any }) {
+export default function Container(props: any) {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 

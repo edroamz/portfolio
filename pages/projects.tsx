@@ -33,15 +33,13 @@ const projects = [
   }
 ];
 
-function ProjectCard({
-  slug,
-  title,
-  excerpt
-}: {
+interface IProjectCardProps {
   slug: string;
   title: string;
   excerpt: string;
-}) {
+}
+
+function ProjectCard({ slug, title, excerpt }: IProjectCardProps) {
   return (
     <Link href={`/projects/${slug}`}>
       <a className="h-full">
