@@ -5,7 +5,7 @@ import * as Tabs from '@radix-ui/react-tabs';
 const About: NextPage = () => {
   return (
     <Container>
-      <div className="max-w-4xl mx-auto pt-12 md:pt-16 pb-4 px-8 lg:px-6">
+      <div className="max-w-4xl mx-auto pt-12 md:pt-20 pb-4 px-8 lg:px-6">
         <h1 className="text-black dark:text-white text-3xl md:text-5xl font-bold w-full md:max-w-2xl mb-4">
           About Me
         </h1>
@@ -17,13 +17,13 @@ const About: NextPage = () => {
             >
               <Tabs.Trigger
                 value="short"
-                className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white font-medium border-b-[3px] border-b-transparent px-1 py-2 mr-6 md:mr-8"
+                className="text-[0.825rem] md:text-[0.9rem] text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white font-medium border-b-[3px] border-b-transparent px-1 py-2 mr-6 md:mr-6"
               >
                 Short
               </Tabs.Trigger>
               <Tabs.Trigger
                 value="long"
-                className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white font-medium border-b-[3px] border-b-transparent px-1 py-2"
+                className="text-[0.825rem] md:text-[0.9rem] text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white font-medium border-b-[3px] border-b-transparent px-1 py-2"
               >
                 Long
               </Tabs.Trigger>

@@ -64,7 +64,7 @@ function ProjectCard({ slug, title, excerpt }: IProjectCardProps) {
 const Projects: NextPage = () => {
   return (
     <Container>
-      <div className="max-w-4xl mx-auto pt-12 md:pt-16 pb-4 px-8 lg:px-6">
+      <div className="max-w-4xl mx-auto pt-12 md:pt-20 pb-4 px-8 lg:px-6">
         <h1 className="text-black dark:text-white text-3xl md:text-5xl font-bold w-full md:max-w-2xl mb-8">
           Things I’ve made trying to put my dent in the universe.
         </h1>
