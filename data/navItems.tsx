@@ -10,13 +10,13 @@ export const navItems = [
     text: 'Projects'
   },
   {
-    uuid: '88060903-a509-4cef-b553-5650b340b48a',
-    href: '/about',
-    text: 'About'
-  },
-  {
     uuid: '8e486852-6ed7-4579-99d8-31a9994b0267',
     href: '/blog',
     text: 'Blog'
+  },
+  {
+    uuid: '88060903-a509-4cef-b553-5650b340b48a',
+    href: '/about',
+    text: 'About'
   }
 ];

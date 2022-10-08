@@ -5,8 +5,8 @@ import Container from 'components/Container';
 const Home: NextPage = () => {
   return (
     <Container>
-      <div className="max-w-4xl mx-auto pt-12 pb-8 md:pb-16 px-8 lg:px-6">
-        <div className="mb-6">
+      <div className="max-w-4xl mx-auto pt-12 pb-8 md:pb-16 px-5 sm:px-12 lg:px-6">
+        <div className="mb-6 md:mb-8">
           <svg
             className="h-16 w-16 md:w-[4.5rem] md:h-[4.5rem]"
             viewBox="0 0 150 150"
@@ -84,23 +84,23 @@ const Home: NextPage = () => {
             </defs>
           </svg>
         </div>
-        <h1 className="text-black dark:text-white text-3xl md:text-5xl font-bold w-full md:max-w-xl mb-6 md:mb-8">
+        <h1 className="text-black dark:text-white text-3xl sm:text-4xl md:text-5xl font-bold w-full md:max-w-2xl mb-4 md:mb-6">
           FrontEnd Engineer, JavaScript Developer
         </h1>
-        <p className="max-w-xl text-gray-700 dark:text-gray-400">
+        <p className="max-w-xl text-gray-700 dark:text-gray-400 text-base lg:text-lg">
           I’m Eduardo. I write scode, design & build web products. Lorem ipsum
           dolor sit amet consectetur.
         </p>
       </div>
       <div className="w-full mb-24">
-        <div className="max-w-4xl mx-auto pt-10 pb-8 px-8 lg:px-6">
+        <div className="max-w-4xl mx-auto pt-10 pb-8 px-5 sm:px-12 lg:px-6">
           <h2 className="text-2xl md:text-3xl font-bold w-full md:max-w-xl">
             Featured Projects
           </h2>
         </div>
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center justify-start px-6 lg:px-6 w-full gap-6">
-          <div className="border rounded-md border-zinc-200 dark:border-zinc-700 h-[24rem] bg-zinc-100 dark:bg-zinc-800"></div>
-          <div className="border rounded-md border-zinc-200 dark:border-zinc-700 h-[24rem] bg-zinc-100 dark:bg-zinc-800"></div>
+          <div className="border rounded-lg border-zinc-200 dark:border-zinc-700 h-[24rem] bg-zinc-100 dark:bg-zinc-800"></div>
+          <div className="border rounded-lg border-zinc-200 dark:border-zinc-700 h-[24rem] bg-zinc-100 dark:bg-zinc-800"></div>
         </div>
       </div>
     </Container>

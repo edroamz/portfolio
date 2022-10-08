@@ -57,7 +57,7 @@ export default function Container(props: any) {
         <meta name="description" content={meta.description} />
       </Head>
       <div className="flex flex-col justify-center">
-        <div className="flex items-center justify-between w-full relative max-w-4xl mx-auto pt-8 pb-8 px-8 lg:px-6">
+        <div className="flex items-center justify-between w-full relative max-w-4xl mx-auto pt-8 pb-8 px-5 sm:px-12 lg:px-6">
           <LogoIcon></LogoIcon>
           <nav className="hidden md:flex">
             <ul className="flex items-center gap-x-4">
@@ -80,7 +80,7 @@ export default function Container(props: any) {
             >
               {mounted && (
                 <svg
-                  className="h-6 w-6 text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-400"
+                  className="h-5 w-5 text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-400"
                   xmlns="http://www.w3.org/2000/svg"
                   stroke="currentColor"
                   viewBox="0 0 256 256"

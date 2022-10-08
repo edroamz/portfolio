@@ -6,24 +6,24 @@ const About: NextPage = () => {
   return (
     <Container>
       <div className="max-w-4xl mx-auto pt-12 md:pt-20 pb-4 px-8 lg:px-6">
-        <h1 className="text-black dark:text-white text-3xl md:text-5xl font-bold w-full md:max-w-2xl mb-4">
-          About Me
+        <h1 className="text-black dark:text-white text-3xl sm:text-4xl md:text-5xl font-bold w-full md:max-w-2xl mb-4 md:mb-6">
+          Who am I?
         </h1>
-        <div className="flex gap-x-20 gap-y-14 mb-16 lg:mb-[4.5rem] pt-2 md:pt-4 lg:pt-5">
+        <div className="flex gap-x-20 gap-y-14 mb-16 lg:mb-[4.5rem]">
           <Tabs.Root defaultValue="short">
             <Tabs.List
               aria-label="Bio versions"
-              className="border-b-2 border-gray-200 dark:border-zinc-800"
+              className="border-b border-gray-200 dark:border-zinc-800"
             >
               <Tabs.Trigger
                 value="short"
-                className="text-[0.825rem] md:text-[0.9rem] text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white font-medium border-b-[3px] border-b-transparent px-1 py-2 mr-6 md:mr-6"
+                className="text-sm text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white font-medium border-b-[3px] border-b-transparent px-1 py-2 mr-7 md:mr-8"
               >
                 Short
               </Tabs.Trigger>
               <Tabs.Trigger
                 value="long"
-                className="text-[0.825rem] md:text-[0.9rem] text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white font-medium border-b-[3px] border-b-transparent px-1 py-2"
+                className="text-sm text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white font-medium border-b-[3px] border-b-transparent px-1 py-2"
               >
                 Long
               </Tabs.Trigger>
