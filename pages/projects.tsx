@@ -75,8 +75,8 @@ const Projects: NextPage = () => {
           contribute if you have ideas for how it can be improved.
         </p>
       </div>
-      <div className="w-full mb-16">
-        <div className="grid grid-cols-2 lg:grid-cols-3 items-start justify-between max-w-4xl gap-3 md:gap-4 mx-auto pb-20 px-2 sm:px-6 lg:px-0">
+      <div className="w-full pb-6 mb-28">
+        <div className="grid grid-cols-2 lg:grid-cols-3 items-start justify-between max-w-4xl mx-auto gap-3 md:gap-4 px-2 sm:px-6 lg:px-0">
           {projects.map((project) => (
             <ProjectCard key={project.id} {...project}></ProjectCard>
           ))}

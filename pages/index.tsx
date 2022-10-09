@@ -1,11 +1,13 @@
 import type { NextPage } from 'next';
+import Link from 'next/link';
 
 import Container from 'components/Container';
+import BlogPost from 'components/BlogPost';
 
 const Home: NextPage = () => {
   return (
     <Container>
-      <div className="max-w-4xl mx-auto pt-12 pb-8 md:pb-16 px-5 sm:px-12 lg:px-6">
+      <div className="max-w-4xl mx-auto py-12 md:py-14 px-5 sm:px-12 lg:px-6">
         <div className="mb-6 md:mb-8">
           <svg
             className="h-16 w-16 md:w-[4.5rem] md:h-[4.5rem]"
@@ -92,15 +94,68 @@ const Home: NextPage = () => {
           dolor sit amet consectetur.
         </p>
       </div>
-      <div className="w-full mb-24">
-        <div className="max-w-4xl mx-auto pt-10 pb-8 px-5 sm:px-12 lg:px-6">
+      <div className="w-full py-12 md:py-14 mb-12">
+        <div className="max-w-4xl mx-auto px-5 sm:px-12 lg:px-6 mb-8">
           <h2 className="text-2xl md:text-3xl font-bold w-full md:max-w-xl">
-            Featured Projects
+            Take a sneak peek of my work
           </h2>
         </div>
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center justify-start px-6 lg:px-6 w-full gap-6">
           <div className="border rounded-lg border-zinc-200 dark:border-zinc-700 h-[24rem] bg-zinc-100 dark:bg-zinc-800"></div>
           <div className="border rounded-lg border-zinc-200 dark:border-zinc-700 h-[24rem] bg-zinc-100 dark:bg-zinc-800"></div>
+        </div>
+        <div className="max-w-4xl mx-auto px-5 sm:px-12 lg:px-6 w-full py-6">
+          <Link href="/projects">
+            <a className="inline-block text-indigo-600 dark:text-indigo-300 font-medium">
+              View more →
+            </a>
+          </Link>
+        </div>
+      </div>
+      <div className="w-full mb-28">
+        <div className="max-w-4xl mx-auto px-5 sm:px-12 lg:px-6 mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold w-full md:max-w-xl">
+            Featured Posts
+          </h2>
+        </div>
+        <div className="w-full md:px-12 lg:px-6 max-w-4xl mx-auto">
+          <div className="relative grid gap-y-2 max-w-4xl mx-auto">
+            <hr className="absolute left-0 top-[2%] w-0 h-[96%] border-l border-gray-200 dark:border-zinc-800 hidden md:block " />
+            <BlogPost
+              slug="testing"
+              title="Crafting a design system for a multiplanetary future"
+              excerpt="Most companies try to stay ahead of the curve when it comes to
+                visual design, but for Planetaria we needed to create a brand
+                that would still inspire us 100 years from now when humanity has
+                spread across our entire solar system."
+              datePublished="September 5, 2022"
+            ></BlogPost>
+            <BlogPost
+              slug="testing"
+              title="Crafting a design system for a multiplanetary future"
+              excerpt="Most companies try to stay ahead of the curve when it comes to
+                visual design, but for Planetaria we needed to create a brand
+                that would still inspire us 100 years from now when humanity has
+                spread across our entire solar system."
+              datePublished="September 5, 2022"
+            ></BlogPost>
+            <BlogPost
+              slug="testing"
+              title="Crafting a design system for a multiplanetary future"
+              excerpt="Most companies try to stay ahead of the curve when it comes to
+                visual design, but for Planetaria we needed to create a brand
+                that would still inspire us 100 years from now when humanity has
+                spread across our entire solar system."
+              datePublished="September 5, 2022"
+            ></BlogPost>
+          </div>
+        </div>
+        <div className="max-w-4xl mx-auto px-5 sm:px-12 lg:px-6 w-full py-6">
+          <Link href="/blog">
+            <a className="inline-block text-indigo-600 dark:text-indigo-300 font-medium">
+              Read all posts →
+            </a>
+          </Link>
         </div>
       </div>
     </Container>

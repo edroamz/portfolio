@@ -64,7 +64,7 @@ export default function MobileMenu() {
                   </div>
                   <div>
                     <nav className="mt-6">
-                      <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
+                      <ul className="-my-2 divide-y divide-zinc-100 dark:divide-zinc-100/5 text-base text-zinc-800 dark:text-zinc-300">
                         {navItems.map(({ uuid, text, href }) => (
                           <li key={uuid}>
                             <NextLink href={href}>
