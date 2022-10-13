@@ -27,15 +27,49 @@ body {
   @apply w-screen overflow-x-hidden;
 }
 
-#__next {
-  @apply bg-gray-50 dark:bg-neutral-900 flex flex-col min-h-screen;
-}
-
 button[data-state='active'] {
   @apply border-indigo-600 text-indigo-600 hover:text-indigo-600 dark:text-indigo-300 dark:hover:text-indigo-300 dark:border-indigo-300;
 }
 
+p {
+  @apply text-base;
+}
+
+#__next {
+  @apply bg-gray-50 dark:bg-neutral-900 flex flex-col min-h-screen;
+}
+
 .text-sm {
-  @apply tracking-[0.015em];
-  line-height: 1.35rem;
+  @apply tracking-[0.015em] leading-6;
+}
+
+.text-base {
+  @apply leading-relaxed;
+}
+
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4,
+.markdown-content h5,
+.markdown-content h6 {
+  @apply leading-snug font-bold mb-4;
+}
+
+.markdown-content h2 {
+  @apply text-2xl md:text-3xl mt-12;
+}
+
+.markdown-content h3 {
+  @apply text-xl md:text-2xl mt-8;
+}
+
+.markdown-content p {
+  @apply max-w-prose text-gray-700 dark:text-gray-400 text-base leading-7;
+}
+
+.markdown-content p,
+.markdown-content ul,
+.markdown-content ol,
+.markdown-content blockquote {
+  @apply my-6;
 }

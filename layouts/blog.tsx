@@ -1,12 +1,14 @@
-import { PropsWithChildren } from 'react';
 import { useRouter } from 'next/router';
 
 import Container from 'components/Container';
+import TimeFormatter from 'components/TimeFormatter';
+import { PostType } from 'lib/types';
 
-export default function BlogLayout({
-  children,
-  post
-}: PropsWithChildren<{ post: any }>) {
+type Props = {
+  post: PostType;
+};
+
+export default function BlogLayout({ post }: Props) {
   const router = useRouter();
 
   return (
@@ -24,13 +26,13 @@ export default function BlogLayout({
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 stroke="currentColor"
                 className="w-5 h-5 inline-block mr-2"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18"
                 />
               </svg>
@@ -41,13 +43,16 @@ export default function BlogLayout({
             <div className="w-full flex items-center mb-6 md:mb-8">
               <span className="h-4 w-0.5 rounded-full bg-zinc-300 dark:bg-zinc-500 mr-3"></span>
               <span className="w-full text-gray-700 dark:text-gray-500">
-                November 2, 2022
+                <TimeFormatter dateString={post.datePublished}></TimeFormatter>
               </span>
             </div>
-            <h1 className="text-black dark:text-white text-3xl sm:text-4xl md:text-5xl font-bold w-full md:max-w-2xl mb-4 md:mb-6">
-              This is the post title
+            <h1 className="text-black dark:text-white text-3xl sm:text-4xl md:text-5xl font-bold w-full md:max-w-2xl mb-10">
+              {post.title}
             </h1>
-            <div className="w-full">{children}</div>
+            <div
+              className="w-full markdown-content"
+              dangerouslySetInnerHTML={{ __html: post.content }}
+            ></div>
           </div>
         </div>
       </article>

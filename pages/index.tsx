@@ -3,8 +3,10 @@ import Link from 'next/link';
 
 import Container from 'components/Container';
 import BlogPost from 'components/BlogPost';
+import { getAllPosts } from 'lib/mdx';
+import { PostType } from 'lib/types';
 
-const Home: NextPage = () => {
+const Home: NextPage = ({ allPosts }: any) => {
   return (
     <Container>
       <div className="max-w-4xl mx-auto py-12 md:py-14 px-5 sm:px-12 lg:px-6">
@@ -121,33 +123,10 @@ const Home: NextPage = () => {
         <div className="w-full md:px-12 lg:px-6 max-w-4xl mx-auto">
           <div className="relative grid gap-y-2 max-w-4xl mx-auto">
             <hr className="absolute left-0 top-[2%] w-0 h-[96%] border-l border-gray-200 dark:border-zinc-800 hidden md:block " />
-            <BlogPost
-              slug="testing"
-              title="Crafting a design system for a multiplanetary future"
-              excerpt="Most companies try to stay ahead of the curve when it comes to
-                visual design, but for Planetaria we needed to create a brand
-                that would still inspire us 100 years from now when humanity has
-                spread across our entire solar system."
-              datePublished="September 5, 2022"
-            ></BlogPost>
-            <BlogPost
-              slug="testing"
-              title="Crafting a design system for a multiplanetary future"
-              excerpt="Most companies try to stay ahead of the curve when it comes to
-                visual design, but for Planetaria we needed to create a brand
-                that would still inspire us 100 years from now when humanity has
-                spread across our entire solar system."
-              datePublished="September 5, 2022"
-            ></BlogPost>
-            <BlogPost
-              slug="testing"
-              title="Crafting a design system for a multiplanetary future"
-              excerpt="Most companies try to stay ahead of the curve when it comes to
-                visual design, but for Planetaria we needed to create a brand
-                that would still inspire us 100 years from now when humanity has
-                spread across our entire solar system."
-              datePublished="September 5, 2022"
-            ></BlogPost>
+            {allPosts &&
+              allPosts.map((post: PostType) => (
+                <BlogPost key={post.slug} post={post}></BlogPost>
+              ))}
           </div>
         </div>
         <div className="max-w-4xl mx-auto px-5 sm:px-12 lg:px-6 w-full py-6">
@@ -160,6 +139,21 @@ const Home: NextPage = () => {
       </div>
     </Container>
   );
+};
+
+export const getStaticProps = async () => {
+  const allPosts = getAllPosts([
+    'title',
+    'datePublished',
+    'slug',
+    'author',
+    'coverImage',
+    'excerpt'
+  ]);
+
+  return {
+    props: { allPosts }
+  };
 };
 
 export default Home;
