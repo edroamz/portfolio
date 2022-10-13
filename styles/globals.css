@@ -23,6 +23,10 @@ html {
   @apply scroll-smooth;
 }
 
+body {
+  @apply w-screen overflow-x-hidden;
+}
+
 #__next {
   @apply bg-gray-50 dark:bg-neutral-900 flex flex-col min-h-screen;
 }

@@ -16,8 +16,14 @@ export default function BlogPost({
   return (
     <Link href={`/blog/${slug}`}>
       <a className="grid grid-cols-1 md:flex items-baseline justify-center md:gap-x-12 lg:gap-x-14 py-7 hover:bg-gray-100 dark:hover:bg-neutral-800 md:rounded-xl px-5 sm:px-12 md:px-7">
-        <div className="w-full md:w-1/5 text-sm text-gray-700 dark:text-gray-500 border-l-[3px] md:border-0 border-gray-300 dark:border-neutral-500 pl-3 md:pl-0 mb-4">
+        <span className="hidden md:inline-block w-full md:w-1/5 text-sm text-gray-700 dark:text-gray-500 border-l-[3px] md:border-0 border-gray-300 dark:border-neutral-500 pl-3 md:pl-0 mb-4">
           {datePublished}
+        </span>
+        <div className="w-full flex md:hidden items-center mb-6 md:mb-8">
+          <span className="h-4 w-0.5 rounded-full bg-zinc-300 dark:bg-zinc-500 mr-2"></span>
+          <span className="w-full text-sm text-gray-700 dark:text-gray-500">
+            {datePublished}
+          </span>
         </div>
         <div className="h-full w-full md:w-4/5 md:mr-9">
           <h2 className="text-black dark:text-white md:text-lg font-semibold w-full mb-4">
