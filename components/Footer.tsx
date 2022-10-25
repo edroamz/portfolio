@@ -1,6 +1,6 @@
 import NextLink from 'next/link';
 import { ReactNode } from 'react';
-import { navItems } from 'data/navItems';
+import { navLinks } from 'data/navLinks';
 
 export default function Footer() {
   return (
@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="w-full grid md:flex grid-cols-1 md:grid-cols-2 items-center justify-between pt-12 pb-24 gap-y-8 ">
           <nav>
             <ul className="flex gap-x-4">
-              {navItems.map(
+              {navLinks.map(
                 ({ uuid, href, text }): ReactNode => (
                   <li key={uuid}>
                     <NextLink href={href}>

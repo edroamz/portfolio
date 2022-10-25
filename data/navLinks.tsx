@@ -1,4 +1,4 @@
-export const navItems = [
+export const navLinks = [
   {
     uuid: '9a05a518-acb2-4667-9515-92677102785b',
     href: '/projects',

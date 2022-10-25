@@ -3,7 +3,7 @@ import * as Dialog from '@radix-ui/react-dialog';
 import NextLink from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 
-import { navItems } from 'data/navItems';
+import { navLinks } from 'data/navLinks';
 
 export default function MobileMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -65,7 +65,7 @@ export default function MobileMenu() {
                   <div>
                     <nav className="mt-6">
                       <ul className="-my-2 divide-y divide-zinc-100 dark:divide-zinc-100/5 text-base text-zinc-800 dark:text-zinc-300">
-                        {navItems.map(({ uuid, text, href }) => (
+                        {navLinks.map(({ uuid, text, href }) => (
                           <li key={uuid}>
                             <NextLink href={href}>
                               <a className="block py-3">{text}</a>
