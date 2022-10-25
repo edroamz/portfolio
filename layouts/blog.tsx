@@ -13,11 +13,11 @@ export default function BlogLayout({ post }: Props) {
 
   return (
     <Container type="article">
-      <article className="max-w-4xl mx-auto pt-12 md:pt-20 px-5 sm:px-12 lg:px-6 pb-6 mb-28">
+      <article className="max-w-4xl mx-auto pt-12 md:pt-20 px-7 pb-6 mb-28">
         <div className="w-full flex flex-col lg:flex-row gap-x-12 gap-y-10">
           <div className="lg:basis-1/6">
             <button
-              className="text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-400 transition-colors"
+              className="text-gray-800 hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-400 hover-transition-colors"
               type="button"
               onClick={() => router.back()}
               aria-label="Go back"

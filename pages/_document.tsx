@@ -33,7 +33,7 @@ export default function Document() {
         <link
           rel="mask-icon"
           href="/static/favicons/safari-pinned-tab.svg"
-          color="#27272a"
+          color="#6369ff"
         />
         <meta name="msapplication-TileColor" content="#2d89ef" />
         <meta name="theme-color" content="#ffffff" />

@@ -1,7 +1,7 @@
-import Link from 'next/link';
 import type { NextPage } from 'next';
 
 import Container from 'components/Container';
+import ProjectCard from 'components/ProjectCard';
 
 const projects = [
   {
@@ -33,50 +33,18 @@ const projects = [
   }
 ];
 
-interface IProjectCardProps {
-  slug: string;
-  title: string;
-  excerpt: string;
-}
-
-function ProjectCard({ slug, title, excerpt }: IProjectCardProps) {
-  return (
-    <Link href={`/projects/${slug}`}>
-      <a className="h-full">
-        <div className="bg-white shadow-none hover:shadow-lg dark:shadow-none h-full border border-gray-200 dark:bg-zinc-900 dark:border-zinc-800 dark:hover:border-white transition-shadow hover:transition ease-in-out rounded-lg">
-          <div className="p-6">
-            <h2 className="text-black dark:text-white md:text-lg font-semibold w-full md:max-w-xl mb-4">
-              {title}
-            </h2>
-            <p className="max-w-xl text-sm text-gray-700 dark:text-gray-400 mb-4">
-              {excerpt}
-            </p>
-            <span className="text-sm text-indigo-600 dark:text-indigo-300 font-medium">
-              Learn more →
-            </span>
-          </div>
-        </div>
-      </a>
-    </Link>
-  );
-}
-
 const Projects: NextPage = () => {
   return (
     <Container>
-      <div className="max-w-4xl mx-auto pt-12 md:pt-20 pb-4 px-5 sm:px-12 lg:px-6">
-        <h1 className="text-black dark:text-white text-3xl sm:text-4xl md:text-5xl font-bold w-full md:max-w-2xl mb-4 md:mb-6">
-          Things I’ve made trying to put my dent in the universe.
-        </h1>
-        <p className="max-w-xl mb-8 text-gray-700 dark:text-gray-400 text-base">
+      <div className="max-w-4xl mx-auto pt-12 md:pt-20 pb-4 px-7">
+        <h1>Things I’ve made trying to put my dent in the universe.</h1>
+        <p className="text-lg mb-8">
           I’ve worked on tons of little projects over the years but these are
           the ones that I’m most proud of. Many of them are open-source, so if
           you see something that piques your interest, check out the code and
           contribute if you have ideas for how it can be improved.
         </p>
-      </div>
-      <div className="w-full pb-6 mb-28">
-        <div className="grid grid-cols-2 lg:grid-cols-3 items-start justify-between max-w-4xl mx-auto gap-3 md:gap-4 px-2 sm:px-6 lg:px-0">
+        <div className="grid grid-cols-1 sm:grid-cols-2 items-start justify-between mx-auto gap-7">
           {projects.map((project) => (
             <ProjectCard key={project.id} {...project}></ProjectCard>
           ))}

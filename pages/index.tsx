@@ -1,5 +1,5 @@
-import type { NextPage } from 'next';
 import Link from 'next/link';
+import type { NextPage } from 'next';
 
 import Container from 'components/Container';
 import BlogPost from 'components/BlogPost';
@@ -9,8 +9,8 @@ import { PostType } from 'lib/types';
 const Home: NextPage = ({ allPosts }: any) => {
   return (
     <Container>
-      <div className="max-w-4xl mx-auto py-12 md:py-14 px-5 sm:px-12 lg:px-6">
-        <div className="mb-6 md:mb-8">
+      <div className="max-w-4xl mx-auto py-12 md:py-20 px-7">
+        <div className="mb-8">
           <svg
             className="h-16 w-16 md:w-[4.5rem] md:h-[4.5rem]"
             viewBox="0 0 150 150"
@@ -88,51 +88,75 @@ const Home: NextPage = ({ allPosts }: any) => {
             </defs>
           </svg>
         </div>
-        <h1 className="text-black dark:text-white text-3xl sm:text-4xl md:text-5xl font-bold w-full md:max-w-2xl mb-4 md:mb-6">
-          FrontEnd Engineer, JavaScript Developer
-        </h1>
-        <p className="max-w-xl text-gray-700 dark:text-gray-400 text-base lg:text-lg">
+        <h1>FrontEnd Engineer, JavaScript Developer</h1>
+        <p className="text-lg">
           I’m Eduardo. I write scode, design & build web products. Lorem ipsum
           dolor sit amet consectetur.
         </p>
       </div>
       <div className="w-full py-12 md:py-14 mb-12">
-        <div className="max-w-4xl mx-auto px-5 sm:px-12 lg:px-6 mb-8">
-          <h2 className="text-2xl md:text-3xl font-bold w-full md:max-w-xl">
-            Take a sneak peek of my work
-          </h2>
+        <h2 className="max-w-4xl mx-auto px-7 mb-8">
+          Take a sneak peek of my work
+        </h2>
+        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center justify-start px-7 w-full gap-4">
+          <div className="border rounded-xl border-color h-[24rem] bg-grey-50 dark:bg-grey-970"></div>
+          <div className="border rounded-xl border-color h-[24rem] bg-grey-50 dark:bg-grey-970"></div>
         </div>
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center justify-start px-6 lg:px-6 w-full gap-6">
-          <div className="border rounded-lg border-zinc-200 dark:border-zinc-700 h-[24rem] bg-zinc-100 dark:bg-zinc-800"></div>
-          <div className="border rounded-lg border-zinc-200 dark:border-zinc-700 h-[24rem] bg-zinc-100 dark:bg-zinc-800"></div>
-        </div>
-        <div className="max-w-4xl mx-auto px-5 sm:px-12 lg:px-6 w-full py-6">
+        <div className="max-w-4xl mx-auto px-7 w-full my-6">
           <Link href="/projects">
-            <a className="inline-block text-indigo-600 dark:text-indigo-300 font-medium">
-              View more →
+            <a className="inline-block text-iris dark:text-iris-light font-medium dark:font-normal">
+              View more
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="inline-block h-3 w-3 stroke-current ml-1"
+                viewBox="0 0 256 256"
+              >
+                <rect width="256" height="256" fill="none" stroke="none"></rect>
+                <polyline
+                  points="96 48 176 128 96 208"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="24"
+                ></polyline>
+              </svg>
             </a>
           </Link>
         </div>
       </div>
-      <div className="w-full mb-28">
-        <div className="max-w-4xl mx-auto px-5 sm:px-12 lg:px-6 mb-8">
-          <h2 className="text-2xl md:text-3xl font-bold w-full md:max-w-xl">
-            Featured Posts
-          </h2>
-        </div>
-        <div className="w-full md:px-12 lg:px-6 max-w-4xl mx-auto">
+      <div className="w-full">
+        <h2 className="max-w-4xl mx-auto px-7 mb-8">Featured Posts</h2>
+        <div className="w-full md:px-7 max-w-4xl mx-auto">
           <div className="relative grid gap-y-2 max-w-4xl mx-auto">
-            <hr className="absolute left-0 top-[2%] w-0 h-[96%] border-l border-gray-200 dark:border-zinc-800 hidden md:block " />
+            <hr className="absolute left-0 top-[2%] w-0 h-[96%] border-l border-color-subtle hidden md:block " />
             {allPosts &&
               allPosts.map((post: PostType) => (
-                <BlogPost key={post.slug} post={post}></BlogPost>
+                <BlogPost
+                  key={post.slug}
+                  post={post}
+                  headingType="h3"
+                ></BlogPost>
               ))}
           </div>
         </div>
-        <div className="max-w-4xl mx-auto px-5 sm:px-12 lg:px-6 w-full py-6">
+        <div className="max-w-4xl mx-auto px-7 w-full mt-6">
           <Link href="/blog">
-            <a className="inline-block text-indigo-600 dark:text-indigo-300 font-medium">
-              Read all posts →
+            <a className="inline-block text-iris dark:text-iris-light font-medium dark:font-normal">
+              Read all posts
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="inline-block h-3 w-3 stroke-current ml-1"
+                viewBox="0 0 256 256"
+              >
+                <rect width="256" height="256" fill="none" stroke="none"></rect>
+                <polyline
+                  points="96 48 176 128 96 208"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="24"
+                ></polyline>
+              </svg>
             </a>
           </Link>
         </div>
