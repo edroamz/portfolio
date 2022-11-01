@@ -31,21 +31,21 @@ module.exports = {
           }
         ],
         xl: [
-          '1.35rem',
+          '1.275rem',
           {
-            lineHeight: '1.85rem',
-            letterSpacing: '-0.05rem'
+            lineHeight: '2.1rem',
+            letterSpacing: '-0.035rem'
           }
         ],
         '2xl': [
-          '1.5rem',
+          '1.65rem',
           {
-            lineHeight: '2rem',
+            lineHeight: '2.25rem',
             letterSpacing: '-0.065rem'
           }
         ],
         '3xl': [
-          '2rem',
+          '2.1rem',
           {
             lineHeight: '2.35rem',
             letterSpacing: '-0.075rem'
@@ -55,14 +55,14 @@ module.exports = {
           '2.5rem',
           {
             lineHeight: '3rem',
-            letterSpacing: '-0.045rem'
+            letterSpacing: '-0.085rem'
           }
         ],
         '5xl': [
-          '3rem',
+          '3.35rem',
           {
-            lineHeight: '3.5rem',
-            letterSpacing: '-0.05rem'
+            lineHeight: '3.7rem',
+            letterSpacing: '-0.1rem'
           }
         ]
       },
@@ -106,11 +106,15 @@ module.exports = {
           930: '#161722',
           950: '#12131d',
           970: '#0d0d18',
-          980: '#0a0a12',
           1000: '#000000'
         },
-        header: 'hsla(0,0%,98.8%,.8)',
+        header: 'hsla(0,0%,100%,.8)',
         'header-dark': 'hsla(240,29.7%,7.3%,.8)'
+      },
+      spacing: {
+        wordmark: 'theme(spacing.6)',
+        header: '76px',
+        content: 'calc(100vh - theme(spacing.header))'
       },
       boxShadow: {
         DEFAULT: '0px 2px 4px rgba(0,0,0,0.1)',

@@ -35,8 +35,8 @@ const projects = [
 
 const Projects: NextPage = () => {
   return (
-    <Container>
-      <div className="max-w-4xl mx-auto pt-12 md:pt-20 pb-4 px-7">
+    <Container title="Projects - Eduardo R. Ambriz">
+      <div className="max-w-5xl mx-auto pt-12 md:pt-20 pb-4 px-7">
         <h1>Things I’ve made trying to put my dent in the universe.</h1>
         <p className="text-lg mb-8">
           I’ve worked on tons of little projects over the years but these are

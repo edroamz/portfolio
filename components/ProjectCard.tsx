@@ -10,7 +10,7 @@ export default function ProjectCard({
   excerpt
 }: IProjectCardProps) {
   return (
-    <div className="bg-white dark:bg-grey-980 shadow hover:shadow-lg dark:shadow-none h-full dark:border-x-transparent dark:border-y dark:border-x sm:dark:border-grey-880 sm:dark:even:border-r-transparent sm:dark:odd:border-l-transparent lg:dark:even:border-grey-880 lg:dark:odd:border-grey-880 dark:border-grey-880 hover:transition-shadow rounded-lg break-words">
+    <div className="bg-white dark:bg-grey-1000 shadow hover:shadow-lg dark:shadow-none h-full dark:border-x-transparent dark:border-y dark:border-x sm:dark:border-grey-800 sm:dark:even:border-r-transparent sm:dark:odd:border-l-transparent lg:dark:even:border-grey-800 lg:dark:odd:border-grey-800 dark:border-grey-800 hover:transition-shadow rounded-lg break-words">
       <div className="h-full p-7">
         <div className="h-full flex flex-col justify-between gap-y-7">
           <div>
@@ -19,63 +19,36 @@ export default function ProjectCard({
           </div>
           <div className="flex flex-row items-center justify-between gap-x-4">
             <a
-              className="block flex-1/2"
               href={`/projects/${slug}`}
               rel="noreferrer"
               target="_blank"
+              className="flex-1/2 flex flex-row items-center justify-center w-full px-1 h-10 border border-cobalt dark:border-cobalt/80 bg-cobalt/90 hover:bg-cobalt focus:bg-cobalt dark:bg-cobalt/90 dark:hover:bg-cobalt/75 dark:focus:bg-cobalt/75 text-white dark:text-grey-50 text-sm tracking-normal flex-nowrap hover:transition-colors focus:transition-colors rounded-[5px] break-words"
             >
-              <button className="flex flex-row items-center justify-center w-full px-1 h-10 border border-cobalt dark:border-cobalt/80 bg-cobalt/90 hover:bg-cobalt dark:bg-cobalt/90 dark:hover:bg-cobalt/75 text-white dark:text-grey-50 text-sm tracking-normal flex-nowrap hover-transition-colors rounded-[5px] break-words">
-                <span>
-                  Live Site
-                  <svg
-                    className="inline-block stroke-current h-4 w-4 ml-[6px]"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 256 256"
-                  >
-                    {/* <path fill="none" d="M0 0h256v256H0z" />
-                    <path
-                      fill="none"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="24"
-                      d="M64 192 192 64M88 64h104v104"
-                    /> */}
-                    <path fill="none" d="M0 0h256v256H0z" />
-                    <path
-                      fill="none"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="20"
-                      d="M216 100V40h-60M144 112l72-72M184 144v64a8 8 0 0 1-8 8H48a8 8 0 0 1-8-8V80a8 8 0 0 1 8-8h64"
-                    />
-                    {/* <path fill="none" d="M0 0h256v256H0z" />
-                          <path
-                            d="m132.5 61.3 9.6-9.7a44.1 44.1 0 0 1 62.3 62.3l-30.3 30.2a43.9 43.9 0 0 1-62.2 0"
-                            fill="none"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="18"
-                          />
-                          <path
-                            d="m123.5 194.7-9.6 9.7a44.1 44.1 0 0 1-62.3-62.3l30.3-30.2a43.9 43.9 0 0 1 62.2 0"
-                            fill="none"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="18"
-                          /> */}
-                  </svg>
-                </span>
-              </button>
+              <span>
+                Live Site
+                <svg
+                  className="inline-block stroke-current h-5 w-5 ml-2"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 256 256"
+                >
+                  <path fill="none" d="M0 0h256v256H0z" />
+                  <path
+                    fill="none"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="18"
+                    d="M64 192 192 64M88 64h104v104"
+                  />
+                </svg>
+              </span>
             </a>
             <a
-              className="block flex-1/2"
               href={`/projects/${slug}`}
               rel="noreferrer"
               target="_blank"
+              className="flex-1/2 flex flex-row items-center justify-center w-full px-1 h-10 border border-grey-100 hover:border-grey-800 focus:border-grey-800 dark:border-grey-800 dark:hover:border-grey-50 dark:focus:border-gray-50 bg-transparent text-grey-500 dark:text-grey-400 dark:hover:text-grey-50 dark:focus:text-grey-50 text-sm tracking-normal flex-nowrap hover:transition-colors focus:transition-colors rounded-[5px] break-words "
             >
-              <button className="flex flex-row items-center justify-center w-full px-1 h-10 border border-grey-100 hover:border-grey-800 dark:border-grey-700 dark:hover:border-grey-50 bg-transparent text-grey-500 dark:text-grey-400 dark:hover:text-grey-50 text-sm tracking-normal flex-nowrap hover-transition-colors rounded-[5px] break-words ">
-                <span>Source Code</span>
-              </button>
+              <span>Source Code</span>
             </a>
           </div>
         </div>

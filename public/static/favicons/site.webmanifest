@@ -1,14 +1,14 @@
 {
-    "name": "Edroamz",
-    "short_name": "Edroamz",
+    "name": "Eduardo R. Ambriz",
+    "short_name": "Eduardo R. Ambriz",
     "icons": [
         {
-            "src": "/android-chrome-192x192.png",
+            "src": "/static/favicons/android-chrome-192x192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/android-chrome-512x512.png",
+            "src": "/static/favicons/android-chrome-512x512.png",
             "sizes": "512x512",
             "type": "image/png"
         }

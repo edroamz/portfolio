@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import * as Dialog from '@radix-ui/react-dialog';
-import NextLink from 'next/link';
+import * as Popover from '@radix-ui/react-popover';
+import cn from 'classnames';
 import { motion, AnimatePresence } from 'framer-motion';
 
-import { navLinks } from 'data/navLinks';
+import NavLink from 'components/NavLink';
 
-export default function MobileMenu() {
+export default function MobileMenuNew() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   function toggleMenu() {
@@ -17,106 +17,77 @@ export default function MobileMenu() {
   }
 
   return (
-    <>
-      <Dialog.Root open={isMenuOpen} onOpenChange={toggleMenu}>
-        <Dialog.Trigger asChild>
-          <button
-            className="visible md:hidden p-2"
-            aria-label="Open menu"
-            type="button"
-          >
-            <MenuIcon aria-hidden="true" />
-          </button>
-        </Dialog.Trigger>
-        <AnimatePresence>
-          {isMenuOpen && (
-            <Dialog.Portal forceMount>
-              <Dialog.Overlay asChild>
-                <motion.div
-                  className="visible md:invisible fixed inset-0 z-50 bg-zinc-800/40 backdrop-blur-sm dark:bg-black/80 opacity-100"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.15, ease: 'easeInOut' }}
-                ></motion.div>
-              </Dialog.Overlay>
-              <Dialog.Content asChild>
-                <motion.div
-                  className="visible md:invisible fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-white p-8 ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-zinc-800 opacity-100 scale-100"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.15, ease: 'linear' }}
-                >
-                  <div className="flex flex-row-reverse items-center justify-between">
-                    <Dialog.Close asChild>
-                      <button
-                        className="p-2"
-                        aria-label="Close menu"
-                        type="button"
-                      >
-                        <CrossIcon aria-hidden="true" />
-                      </button>
-                    </Dialog.Close>
-                    <Dialog.Title className="text-sm font-medium text-zinc-600 dark:text-zinc-400">
-                      Navigation
-                    </Dialog.Title>
-                  </div>
-                  <div>
-                    <nav className="mt-6">
-                      <ul className="-my-2 divide-y divide-zinc-100 dark:divide-zinc-100/5 text-base text-zinc-800 dark:text-zinc-300">
-                        {navLinks.map(({ uuid, text, href }) => (
-                          <li key={uuid}>
-                            <NextLink href={href}>
-                              <a className="block py-3">{text}</a>
-                            </NextLink>
-                          </li>
-                        ))}
-                      </ul>
-                    </nav>
-                  </div>
-                </motion.div>
-              </Dialog.Content>
-            </Dialog.Portal>
-          )}
-        </AnimatePresence>
-      </Dialog.Root>
-    </>
-  );
-}
-
-function MenuIcon(props: JSX.IntrinsicElements['svg']) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className="w-6 h-6"
-      {...props}
-    >
-      <path
-        fillRule="evenodd"
-        d="M3 9a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 9zm0 6.75a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
-        clipRule="evenodd"
-      />
-    </svg>
-  );
-}
-
-function CrossIcon(props: JSX.IntrinsicElements['svg']) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className="w-6 h-6"
-      {...props}
-    >
-      <path
-        fillRule="evenodd"
-        d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z"
-        clipRule="evenodd"
-      />
-    </svg>
+    <Popover.Root open={isMenuOpen} onOpenChange={toggleMenu}>
+      <Popover.Trigger asChild>
+        <button
+          className="visible md:hidden p-2 pr-0 h-10 w-10 hover:transition-colors focus-visible:outline-none focus-visible:ring-2 dark:focus-visible:ring-grey-0 focus-visible:ring-grey-1000 rounded-md group"
+          type="button"
+          aria-label="Menu"
+        >
+          <div className="flex flex-col items-center justify-center w-full h-full">
+            <div
+              className={cn(
+                'transition h-px w-[22px] bg-grey-500 group-hover:bg-grey-1000 dark:bg-grey-400 dark:group-hover:bg-grey-100',
+                isMenuOpen
+                  ? '-rotate-45 translate-y-[1px]'
+                  : 'translate-y-[5px]'
+              )}
+            ></div>
+            <div
+              className={cn(
+                'transition h-px w-[22px] bg-grey-500 group-hover:bg-grey-1000 dark:bg-grey-400 dark:group-hover:bg-grey-100',
+                isMenuOpen ? 'rotate-45' : '-translate-y-[5px]'
+              )}
+            ></div>
+          </div>
+        </button>
+      </Popover.Trigger>
+      <AnimatePresence>
+        {isMenuOpen && (
+          <Popover.Portal forceMount>
+            <Popover.Content sideOffset={18} align="center" asChild>
+              <motion.nav
+                className="visible md:invisible h-content w-screen inset-x-4 z-20 bg-white dark:bg-grey-970 opacity-100 translate-y-0"
+                initial={{ opacity: 0, translateY: '2rem' }}
+                animate={{ opacity: 1, translateY: 0 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.15, ease: 'linear' }}
+              >
+                <ul className="h-full px-7 py-12 divide-y divide-grey-150 dark:divide-grey-800 text-base text-grey-1000 dark:text-grey-0">
+                  <li>
+                    <NavLink
+                      className="block text-lg py-4"
+                      href="/projects"
+                      text="Projects"
+                    ></NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      className="block text-lg py-4"
+                      href="/blog"
+                      text="Blog"
+                    ></NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      className="block text-lg py-4"
+                      href="/about"
+                      text="About"
+                    ></NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      className="block text-lg py-4"
+                      href="/uses"
+                      text="Uses"
+                    ></NavLink>
+                  </li>
+                </ul>
+              </motion.nav>
+            </Popover.Content>
+          </Popover.Portal>
+        )}
+      </AnimatePresence>
+    </Popover.Root>
   );
 }

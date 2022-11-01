@@ -4,8 +4,8 @@ import Container from 'components/Container';
 
 export default function NotFound() {
   return (
-    <Container title="404 – Eduardo Rodriguez">
-      <div className="max-w-4xl mx-auto px-7 flex flex-col items-center justify-center gap-y-4 mt-24">
+    <Container title="404 – Eduardo R. Ambriz">
+      <div className="max-w-5xl mx-auto px-7 flex flex-col items-center justify-center gap-y-4 mt-24">
         <span className="text-coral-dark dark:text-coral font-medium tracking-widest">
           404
         </span>
