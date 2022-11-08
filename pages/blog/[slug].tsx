@@ -1,22 +1,22 @@
 import BlogLayout from 'layouts/blog';
-import { getAllPosts, getPostBySlug, markdownToHtml } from 'lib/mdx';
-import { PostType } from 'lib/types';
+import { getAllPosts, getPostBySlug, getMdxSource } from 'lib/mdx';
+import { IPost } from 'lib/interfaces';
 
-type Props = {
-  post: PostType;
-};
+interface IProps {
+  post: IPost;
+}
 
-export default function PostPage({ post }: Props) {
+export default function PostPage({ post }: IProps) {
   return <BlogLayout post={post}></BlogLayout>;
 }
 
-type Params = {
+interface IParams {
   params: {
     slug: string;
   };
-};
+}
 
-export async function getStaticProps({ params }: Params) {
+export async function getStaticProps({ params }: IParams) {
   const post = getPostBySlug(params.slug, [
     'title',
     'datePublished',
@@ -26,13 +26,14 @@ export async function getStaticProps({ params }: Params) {
     'ogImage',
     'coverImage'
   ]);
-  const content = await markdownToHtml(post.content || '');
+
+  const mdxSource = await getMdxSource(post.content || '');
 
   return {
     props: {
       post: {
         ...post,
-        content
+        mdxSource
       }
     }
   };

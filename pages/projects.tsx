@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 
 import Container from 'components/Container';
+import Wrapper from 'components/Wrapper';
 import ProjectCard from 'components/ProjectCard';
 
 const projects = [
@@ -36,7 +37,7 @@ const projects = [
 const Projects: NextPage = () => {
   return (
     <Container title="Projects - Eduardo R. Ambriz">
-      <div className="max-w-5xl mx-auto pt-12 md:pt-20 pb-4 px-7">
+      <Wrapper className="py-16 md:py-20">
         <h1>Things I’ve made trying to put my dent in the universe.</h1>
         <p className="text-lg mb-8">
           I’ve worked on tons of little projects over the years but these are
@@ -49,7 +50,7 @@ const Projects: NextPage = () => {
             <ProjectCard key={project.id} {...project}></ProjectCard>
           ))}
         </div>
-      </div>
+      </Wrapper>
     </Container>
   );
 };

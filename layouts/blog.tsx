@@ -2,14 +2,18 @@ import { useRouter } from 'next/router';
 import Image from 'next/image';
 
 import Container from 'components/Container';
+import Wrapper from 'components/Wrapper';
 import TimeFormatter from 'components/TimeFormatter';
-import { PostType } from 'lib/types';
+import MDXComponents from 'components/MDXComponents';
 
-type Props = {
-  post: PostType;
-};
+import { IPost } from 'lib/interfaces';
+import { MDXRemote } from 'next-mdx-remote';
 
-export default function BlogLayout({ post }: Props) {
+interface IProps {
+  post: IPost;
+}
+
+export default function BlogLayout({ post }: IProps) {
   const router = useRouter();
 
   return (
@@ -19,106 +23,62 @@ export default function BlogLayout({ post }: Props) {
       date={post.datePublished}
       type="article"
     >
-      {/* <article className="max-w-5xl mx-auto pt-12 md:pt-20 px-7 pb-6 mb-28">
-        <div className="w-full flex flex-col lg:flex-row gap-x-12 gap-y-10">
-          <div className="lg:basis-1/6">
-            <button
-              className="inline-block text-iris dark:text-iris-light font-medium dark:font-normal"
-              type="button"
-              onClick={() => router.back()}
-              aria-label="Go back"
-            >
-              <svg
-                className="inline-block h-3 w-3 stroke-current mr-1"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 256 256"
-              >
-                <path fill="none" d="M0 0h256v256H0z" />
-                <path
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="24"
-                  d="m160 208-80-80 80-80"
-                />
-              </svg>
-              Go back
-            </button>
-          </div>
-          <div className="lg:basis-5/6">
-            <div className="w-full flex items-center mb-6 md:mb-8">
-              <span className="h-3 w-0.5 rounded-full bg-grey-200 dark:bg-grey-500 mr-2"></span>
-              <span className="w-full text-gray-700 dark:text-gray-500">
-                <TimeFormatter dateString={post.datePublished}></TimeFormatter>
-              </span>
-            </div>
-            <h1 className="mb-10">{post.title}</h1>
-            <div
-              className="w-full markdown-content"
-              dangerouslySetInnerHTML={{ __html: post.content }}
-            ></div>
-          </div>
-        </div>
-      </article> */}
-      <article className="relative max-w-5xl mx-auto">
-        <div className="flex flex-col mx-auto pt-12 md:pt-20 px-7 pb-6 mb-28">
-          <div className="absolute left-0 pl-7">
-            <button
-              className="inline-block text-lg text-iris-dark dark:text-iris-light font-medium"
-              type="button"
-              onClick={() => router.back()}
-              aria-label="Go back"
-            >
-              {/* <svg
-                className="inline-block h-3 w-3 stroke-current mr-1"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 256 256"
-              >
-                <path fill="none" d="M0 0h256v256H0z" />
-                <path
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="24"
-                  d="m160 208-80-80 80-80"
-                />
-              </svg> */}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 256 256"
-                className="inline-block h-5 w-5 stroke-current mr-2"
-              >
-                <path fill="none" stroke="none" d="M0 0h256v256H0z" />
-                <path
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="18"
-                  d="M216 128H40M112 56l-72 72 72 72"
-                />
-              </svg>
-              Go back
-            </button>
-          </div>
-          <h1 className="mb-6 mt-28">{post.title}</h1>
-          <div className="w-full flex items-center font-medium text-gray-700 dark:text-gray-400 mb-16">
-            <span className="h-3 w-0.5 rounded-full bg-grey-200 dark:bg-grey-500 mr-3"></span>
-            <span className="">
+      <Wrapper as="article" className="blog-article pt-10 pb-16 md:pb-20">
+        <button
+          className="inline-flex items-center text-lg text-cobalt-dark dark:text-blue-400 font-medium leading-none tracking-tight self-start mb-10"
+          type="button"
+          onClick={() => router.back()}
+          aria-label="Go back"
+        >
+          <svg
+            className="inline-block h-4 w-4 stroke-current mr-1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 256 256"
+          >
+            <path fill="none" d="M0 0h256v256H0z" />
+            <path
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="24"
+              d="m160 208-80-80 80-80"
+            />
+          </svg>
+          Go back
+        </button>
+        <div className="flex flex-col items-center">
+          <div className="inline-flex flex-row items-center justify-center gap-x-2 mb-5">
+            <span className="font-medium uppercase text-grey-600 dark:text-grey-300">
               <TimeFormatter dateString={post.datePublished}></TimeFormatter>
             </span>
-            <span className=" ml-2">— 10 min read</span>
+            <span className="text-grey-600 dark:text-grey-300 text-lg">•</span>
+            <span className="font-medium uppercase  text-grey-600 dark:text-grey-300">
+              {post.readingTime}
+            </span>
           </div>
-          <img
-            src="https://res.cloudinary.com/kentcdodds-com/image/upload/w_1100,q_auto,f_auto,b_rgb:e6e9ee/unsplash/photo-1587096473086-abb7a1ec4393"
-            alt="alt"
-            className="mb-12 rounded-lg"
-          />
-          <div
-            className="w-full max-w-3xl mx-auto markdown-content"
-            dangerouslySetInnerHTML={{ __html: post.content }}
-          ></div>
+          <h1 className="text-center mb-8">{post.title}</h1>
         </div>
-      </article>
+        <div className="text-lg max-w-prose mx-auto mb-16 md:mb-20">
+          <div className="flex flex-row items-center justify-center md:justify-end gap-x-3">
+            <div className="relative h-7 w-7 rounded-full overflow-hidden">
+              <Image
+                src={`${post.author.picture}`}
+                alt={`${post.author.name}`}
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
+            <span className="font-medium text-grey-800 dark:text-grey-200">
+              {post.author.name}
+            </span>
+          </div>
+        </div>
+
+        <div className="w-full text-lg md:max-w-prose mx-auto">
+          <div className="border-t border-grey-100 dark:border-grey-880 pt-8 md:pt-10"></div>
+          <MDXRemote {...post.mdxSource} components={MDXComponents}></MDXRemote>
+        </div>
+      </Wrapper>
     </Container>
   );
 }

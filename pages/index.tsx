@@ -1,16 +1,25 @@
 import Link from 'next/link';
 import type { NextPage } from 'next';
 import * as Separator from '@radix-ui/react-separator';
+import Image from 'next/image';
 
+import Wrapper from 'components/Wrapper';
+import SectionLabel from 'components/SectionLabel';
 import Container from 'components/Container';
 import BlogPost from 'components/BlogPost';
 import { getAllPosts } from 'lib/mdx';
-import { PostType } from 'lib/types';
+import { IPost } from 'lib/interfaces';
+import project1 from '/public/static/images/project1.jpg';
+import project2 from '/public/static/images/project2.jpg';
 
-const Home: NextPage = ({ allPosts }: any) => {
+interface HomeProps {
+  allPosts: IPost[];
+}
+
+const Home: NextPage<HomeProps> = ({ allPosts }) => {
   return (
     <Container>
-      <section className="max-w-5xl mx-auto py-12 md:py-20 px-7">
+      <Wrapper as="section" className="py-16 md:py-20">
         <div className="mb-8">
           <svg
             className="h-16 w-16 md:w-[4.5rem] md:h-[4.5rem]"
@@ -90,43 +99,46 @@ const Home: NextPage = ({ allPosts }: any) => {
           </svg>
         </div>
         <h1>FrontEnd Engineer, JavaScript Developer</h1>
-        <p className="text-xl">
+        <p className="text-xl leading-9 md:text-[24px] md:leading-10">
           I’m Eduardo. I write scode, design & build web products. Lorem ipsum
           dolor sit amet consectetur.
         </p>
-      </section>
-      <section className="w-full py-12 md:py-14 mb-12">
-        <span className="block max-w-5xl mx-auto px-7 text-electric-dark dark:text-electric font-semibold tracking-tight text-2xl mb-5">
-          Curated work
-        </span>
-        <h2 className="max-w-5xl mx-auto px-7 mb-8">
+      </Wrapper>
+      <section className="w-full py-16 md:py-20">
+        <Wrapper className="mb-5">
+          <SectionLabel className="text-3xl">Curated work</SectionLabel>
+        </Wrapper>
+
+        <h3 className="text-3xl md:text-4xl max-w-5xl mx-auto px-7 mb-8">
           Take a sneak peek of my work
-        </h2>
+        </h3>
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center justify-start px-7 w-full gap-4">
-          <div
-            className="border rounded-xl border-color h-[24rem] bg-grey-50 dark:bg-grey-930"
-            style={{
-              background:
-                'url(https://images.unsplash.com/photo-1502945015378-0e284ca1a5be?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)',
-              backgroundRepeat: 'round'
-            }}
-          ></div>
-          <div
-            className="border rounded-xl border-color h-[24rem] bg-grey-50 dark:bg-grey-930"
-            style={{
-              background:
-                'url(https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80)',
-              backgroundRepeat: 'round'
-            }}
-          ></div>
+          <div className="relative border rounded-xl border-color h-[24rem] w-full bg-grey-50 dark:bg-grey-930 overflow-hidden">
+            <Image
+              src={project1}
+              alt="project1"
+              layout="fill"
+              objectFit="cover"
+              placeholder="blur"
+            ></Image>
+          </div>
+          <div className="relative border rounded-xl border-color h-[24rem] w-full bg-grey-50 dark:bg-grey-930 overflow-hidden">
+            <Image
+              src={project2}
+              alt="project2"
+              layout="fill"
+              objectFit="cover"
+              placeholder="blur"
+            ></Image>
+          </div>
         </div>
-        <div className="max-w-5xl mx-auto px-7 w-full my-6">
+        <Wrapper className="mt-7">
           <Link href="/projects">
-            <a className="inline-block text-lg text-iris-dark dark:text-iris-light font-medium">
+            <a className="inline-flex items-center text-lg text-cobalt-dark dark:text-blue-400 font-medium leading-none tracking-tight">
               View more
-              {/* <svg
+              <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="inline-block h-3 w-3 stroke-current ml-4"
+                className="inline-block h-4 w-4 stroke-current ml-1"
                 viewBox="0 0 256 256"
               >
                 <rect width="256" height="256" fill="none" stroke="none"></rect>
@@ -137,32 +149,18 @@ const Home: NextPage = ({ allPosts }: any) => {
                   strokeLinejoin="round"
                   strokeWidth="24"
                 ></polyline>
-              </svg> */}
-              <svg
-                className="inline-block h-5 w-5 stroke-current ml-2"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 256 256"
-              >
-                <path fill="none" stroke="none" d="M0 0h256v256H0z" />
-                <path
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="18"
-                  d="M40 128h176M144 56l72 72-72 72"
-                />
               </svg>
             </a>
           </Link>
-        </div>
+        </Wrapper>
       </section>
-      <section className="w-full">
-        <span className="block max-w-5xl mx-auto px-7 text-electric-dark dark:text-electric font-semibold tracking-tight text-2xl mb-5">
-          Featured posts
-        </span>
-        <h2 className="max-w-5xl mx-auto px-7 mb-7">
+      <section className="w-full py-16 md:py-20">
+        <Wrapper className="mb-5">
+          <SectionLabel>Featured posts</SectionLabel>
+        </Wrapper>
+        <h3 className="text-3xl md:text-4xl max-w-5xl mx-auto px-7 mb-8">
           Most popular posts I’ve written
-        </h2>
+        </h3>
         <div className="w-full md:px-7 max-w-5xl mx-auto">
           <div className="relative grid gap-y-2 max-w-5xl mx-auto">
             <Separator.Root
@@ -171,22 +169,18 @@ const Home: NextPage = ({ allPosts }: any) => {
               className="absolute left-0 top-[2%] w-0 h-[96%] border-l border-color-subtle hidden md:block "
             />
             {allPosts &&
-              allPosts.map((post: PostType) => (
-                <BlogPost
-                  key={post.slug}
-                  post={post}
-                  headingType="h3"
-                ></BlogPost>
+              allPosts.map((post: IPost) => (
+                <BlogPost key={post.slug} post={post} heading="h4"></BlogPost>
               ))}
           </div>
         </div>
-        <div className="max-w-5xl mx-auto px-7 w-full mt-6">
-          <Link href="/blog">
-            <a className="inline-block text-lg text-iris-dark dark:text-iris-light font-medium">
+        <Wrapper className="mt-7">
+          <Link href="/projects">
+            <a className="inline-flex items-center text-lg text-cobalt-dark dark:text-blue-400 font-medium leading-none tracking-tight">
               Read all posts
-              {/* <svg
+              <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="inline-block h-4 w-4 stroke-current ml-3"
+                className="inline-block h-4 w-4 stroke-current ml-1"
                 viewBox="0 0 256 256"
               >
                 <rect width="256" height="256" fill="none" stroke="none"></rect>
@@ -197,24 +191,10 @@ const Home: NextPage = ({ allPosts }: any) => {
                   strokeLinejoin="round"
                   strokeWidth="24"
                 ></polyline>
-              </svg> */}
-              <svg
-                className="inline-block h-5 w-5 stroke-current ml-2"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 256 256"
-              >
-                <path fill="none" stroke="none" d="M0 0h256v256H0z" />
-                <path
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="18"
-                  d="M40 128h176M144 56l72 72-72 72"
-                />
               </svg>
             </a>
           </Link>
-        </div>
+        </Wrapper>
       </section>
     </Container>
   );

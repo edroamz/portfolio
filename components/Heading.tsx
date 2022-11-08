@@ -9,13 +9,13 @@ const elements: { [key: string]: string } = {
   h6: 'h6'
 };
 
-type Props = {
+interface IProps {
   type: string;
   children: any;
   [key: string]: any;
-};
+}
 
-function Heading({ type, children, ...props }: Props) {
+function Heading({ type, children, ...props }: IProps) {
   const customTag = React.createElement(
     elements[type] || elements.h1,
     props,

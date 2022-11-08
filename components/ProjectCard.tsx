@@ -10,7 +10,7 @@ export default function ProjectCard({
   excerpt
 }: IProjectCardProps) {
   return (
-    <div className="bg-white dark:bg-grey-1000 shadow hover:shadow-lg dark:shadow-none h-full dark:border-x-transparent dark:border-y dark:border-x sm:dark:border-grey-800 sm:dark:even:border-r-transparent sm:dark:odd:border-l-transparent lg:dark:even:border-grey-800 lg:dark:odd:border-grey-800 dark:border-grey-800 hover:transition-shadow rounded-lg break-words">
+    <div className="bg-white dark:bg-grey-1000 shadow dark:shadow-none h-full dark:border-x-transparent dark:border-y dark:border-x sm:dark:border-grey-800 sm:dark:even:border-r-transparent sm:dark:odd:border-l-transparent lg:dark:even:border-grey-800 lg:dark:odd:border-grey-800 dark:border-grey-800 rounded-lg break-words">
       <div className="h-full p-7">
         <div className="h-full flex flex-col justify-between gap-y-7">
           <div>
@@ -46,7 +46,7 @@ export default function ProjectCard({
               href={`/projects/${slug}`}
               rel="noreferrer"
               target="_blank"
-              className="flex-1/2 flex flex-row items-center justify-center w-full px-1 h-10 border border-grey-100 hover:border-grey-800 focus:border-grey-800 dark:border-grey-800 dark:hover:border-grey-50 dark:focus:border-gray-50 bg-transparent text-grey-500 dark:text-grey-400 dark:hover:text-grey-50 dark:focus:text-grey-50 text-sm tracking-normal flex-nowrap hover:transition-colors focus:transition-colors rounded-[5px] break-words "
+              className="flex-1/2 flex flex-row items-center justify-center w-full px-1 h-10 border border-grey-150 hover:border-grey-800 focus:border-grey-800 dark:border-grey-800 dark:hover:border-grey-50 dark:focus:border-gray-50 bg-transparent font-medium text-grey-600 hover:text-grey-1000 dark:text-grey-300 dark:hover:text-grey-50 dark:focus:text-grey-50 text-sm tracking-normal flex-nowrap hover:transition-colors focus:transition-colors rounded-[5px] break-words "
             >
               <span>Source Code</span>
             </a>

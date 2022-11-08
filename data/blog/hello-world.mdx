@@ -1,0 +1,208 @@
+---
+title: 'Learn How to Pre-render Pages Using Static Generation with Next.js'
+excerpt: 'Every Git branch and PR receives a live, production-like URL that everyone on your team can visit.'
+coverImage: '/assets/blog/hello-world/cover.jpg'
+datePublished: '2020-03-16T05:35:07.322Z'
+author:
+  name: Eduardo R. Ambriz
+  picture: '/static/images/avatar-placeholder.jpg'
+ogImage:
+  url: '/assets/blog/hello-world/cover.jpg'
+---
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
+
+## Random subtitle
+
+Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidunt. Gravida in fermentum et sollicitudin ac orci phasellus egestas tellus.
+
+Volutpat consequat mauris nunc congue nisi vitae. Id aliquet risus feugiat in ante metus dictum at tempor. Sed blandit libero volutpat sed cras. Sed odio morbi quis commodo odio aenean sed adipiscing.
+
+Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in. Nibh cras pulvinar mattis nunc sed. Luctus accumsan tortor posuere ac ut consequat semper viverra. Fringilla ut morbi tincidunt augue interdum velit euismod.
+
+## Lorem Ipsum
+
+Tristique senectus et netus et malesuada fames ac turpis. Ridiculous mus mauris vitae ultricies leo integer malesuada nunc vel. In mollis nunc sed id semper.
+
+Egestas tellus rutrum tellus pellentesque. Phasellus vestibulum lorem sed risus ultricies tristique nulla. Quis blandit turpis cursus in hac habitasse platea dictumst quisque. Eros donec ac odio tempor orci dapibus ultrices. Aliquam sem et tortor consequat id porta nibh. Adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla.
+
+Diam vulputate ut pharetra sit amet. Ut tellus elementum sagittis vitae et leo. Arcu non odio euismod lacinia at quis risus sed vulputate.
+
+```python:pages/index.py
+name = 'Scott'
+print 'Hi my name is ' + name
+```
+
+Phasellus vestibulum lorem sed risus ultricies tristique nulla. Quis blandit turpis cursus in hac habitasse platea dictumst quisque.
+
+```typescript:pages/api/revalidate.ts
+export default async function handler(req, res) {
+  // Check for secret to confirm this is a valid request
+  if (req.query.secret !== process.env.REVALIDATE_SECRET) {
+    return res.status(401).json({ message: 'Invalid token' });
+  }
+
+  try {
+    // Regenerate our index route showing the images
+    await res.unstable_revalidate('/');
+    return res.json({ revalidated: true });
+  } catch (err) {
+    // If there was an error, Next.js will continue
+    // to show the last successfully generated page
+    return res.status(500).send('Error revalidating');
+  }
+}
+```
+
+Velit euismod in pellentesque massa placerat.
+
+```javascript
+const { data } = await supabaseAdmin.from('images').select('*');
+```
+
+Finally, lets add the next code:
+
+```tsx {2,7-17}
+function BlurImage({ image }: { image: Image }) {
+  const [isLoading, setLoading] = useState(true);
+
+  return (
+    <a href={image.href} className="group">
+      <div className="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
+        <Image
+          alt=""
+          src={image.imageSrc}
+          layout="fill"
+          objectFit="cover"
+          className={cn(
+            'group-hover:opacity-75 duration-700 ease-in-out',
+            isLoading
+              ? 'grayscale blur-2xl scale-110'
+              : 'grayscale-0 blur-0 scale-100'
+          )}
+          onLoadingComplete={() => setLoading(false)}
+        />
+      </div>
+      <h3 className="mt-4 text-sm text-gray-700">{image.name}</h3>
+      <p className="mt-1 text-lg font-medium text-gray-900">{image.username}</p>
+    </a>
+  );
+}
+```
+
+## Another Subtitle
+
+```js
+await supabaseAdmin.from('images').insert([{
+  name: 'Pedro Duarte',
+  href: 'https://twitter.com/peduarte/status/1463897468383412231',
+  username: '@peduarte',
+  imageSrc: 'https://pbs.twimg.com/media/FFDOtLkWYAsWjTM?format=jpg',
+});
+```
+
+### I am an h3
+
+```tsx
+export default function Gallery({ images }: { images: Image[] }) {
+  return (
+    <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+      <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+        {images.map((image) => (
+          <BlurImage key={image.id} image={image} />
+        ))}
+      </div>
+    </div>
+  );
+}
+```
+
+## Be obvious
+
+If you can be obvious in a way that no one has before, go for it.
+
+```css
+@keyframes color {
+  0% {
+    fill: #99002f;
+  }
+  50% {
+    fill: #ffc426;
+  }
+  100% {
+    fill: #99002f;
+  }
+}
+
+svg path {
+  animation-name: color;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.85, 0.01, 0.25, 1);
+}
+
+.container {
+  animation: spin 2s infinite cubic-bezier(0.85, 0.01, 0.25, 1);
+}
+```
+
+Some random spotify code next
+
+```js:lib/spotify.js
+import querystring from 'querystring';
+
+const client_id = process.env.SPOTIFY_CLIENT_ID;
+const client_secret = process.env.SPOTIFY_CLIENT_SECRET;
+const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN;
+
+const basic = Buffer.from(`${client_id}:${client_secret}`).toString('base64');
+const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
+
+const getAccessToken = async () => {
+  const response = await fetch(TOKEN_ENDPOINT, {
+    method: 'POST',
+    headers: {
+      Authorization: `Basic ${basic}`,
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: querystring.stringify({
+      grant_type: 'refresh_token',
+      refresh_token
+    })
+  });
+
+  return response.json();
+};
+```
+
+### Creating an API Route
+
+Let's test our communication with Spotify. First, create a new file at `pages/api/top-tracks.js`. Then, import the new function `getTopTracks`.
+
+```js:pages/api/top-tracks.js
+import { getTopTracks } from '../../lib/spotify';
+
+export default async (_, res) => {
+  const response = await getTopTracks();
+  const { items } = await response.json();
+
+  const tracks = items.slice(0, 10).map((track) => ({
+    artist: track.artists.map((_artist) => _artist.name).join(', '),
+    songUrl: track.external_urls.spotify,
+    title: track.name
+  }));
+
+  return res.status(200).json({ tracks });
+};
+
+```
+
+## Conclusion
+
+Purposeful formatting brought you to this point, and it will carry readers through your articles as well.
+
+Great formatting prioritizes the **human reader** by providing them with organized, scannable, media-rich, intent-driven content. All of which are now in your toolbox after reading this article.
+
+Remember, getting people to click on your article is only half the battle. The other half is getting them to this point.

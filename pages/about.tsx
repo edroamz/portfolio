@@ -1,11 +1,13 @@
 import type { NextPage } from 'next';
-import Container from 'components/Container';
 import * as Tabs from '@radix-ui/react-tabs';
+
+import Container from 'components/Container';
+import Wrapper from 'components/Wrapper';
 
 const About: NextPage = () => {
   return (
     <Container title="About - Eduardo R. Ambriz">
-      <div className="max-w-5xl mx-auto pt-12 md:pt-20 px-7">
+      <Wrapper className="py-16 md:py-20">
         <h1 className="mb-7">About Me</h1>
         <div className="flex gap-x-20 gap-y-14">
           <Tabs.Root defaultValue="short">
@@ -49,7 +51,7 @@ const About: NextPage = () => {
             </Tabs.Content>
           </Tabs.Root>
         </div>
-      </div>
+      </Wrapper>
     </Container>
   );
 };

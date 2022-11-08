@@ -16,7 +16,7 @@ module.exports = {
       },
       fontSize: {
         sm: [
-          '0.875rem',
+          '0.925rem',
           {
             lineHeight: '1.9rem',
             letterSpacing: '0.0175rem'
@@ -24,17 +24,17 @@ module.exports = {
         ],
         base: ['1rem', '1.85rem'],
         lg: [
-          '1.125rem',
+          '1.145rem',
           {
             lineHeight: '2rem',
             letterSpacing: '0.0025rem'
           }
         ],
         xl: [
-          '1.275rem',
+          '1.365rem',
           {
-            lineHeight: '2.1rem',
-            letterSpacing: '-0.035rem'
+            lineHeight: '2rem',
+            letterSpacing: '-0.0375rem'
           }
         ],
         '2xl': [
@@ -45,21 +45,21 @@ module.exports = {
           }
         ],
         '3xl': [
-          '2.1rem',
+          '2.15rem',
           {
             lineHeight: '2.35rem',
             letterSpacing: '-0.075rem'
           }
         ],
         '4xl': [
-          '2.5rem',
+          '2.55rem',
           {
             lineHeight: '3rem',
             letterSpacing: '-0.085rem'
           }
         ],
         '5xl': [
-          '3.35rem',
+          '3.4rem',
           {
             lineHeight: '3.7rem',
             letterSpacing: '-0.1rem'

@@ -1,12 +1,15 @@
 import NextLink from 'next/link';
-import Wordmark from 'components/Wordmark';
 import Link from 'next/link';
+import * as Separator from '@radix-ui/react-separator';
+
+import Wrapper from 'components/Wrapper';
+import Wordmark from 'components/Wordmark';
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-grey-0 dark:bg-grey-1000 ring-2 ring-grey-80 dark:ring-grey-900 rounded-tl-[2rem] rounded-tr-[2rem] lg:rounded-tl-[3rem] lg:rounded-tr-[3rem] mt-44">
+    <footer className="w-full bg-grey-0 dark:bg-grey-1000 ring-2 ring-grey-80 dark:ring-grey-900 rounded-tl-[2rem] rounded-tr-[2rem] lg:rounded-tl-[3rem] lg:rounded-tr-[3rem] mt-20">
       <div className="flex flex-col">
-        <div className="w-full max-w-5xl mx-auto px-7 flex flex-col md:flex-row gap-y-12 gap-x-7 items-baseline py-12 md:py-16">
+        <Wrapper className="w-full flex flex-col md:flex-row gap-y-12 gap-x-7 items-baseline py-12 md:py-16">
           <div className="flex-1/3">
             <NextLink href="/">
               <a
@@ -18,49 +21,48 @@ export default function Footer() {
             </NextLink>
           </div>
           <div className="flex-1/3 w-full">
-            <span className="text-lg block font-medium text-grey-1000 dark:text-grey-50 mb-4">
+            <span className="font-mono block text-lg tracking-tight font-medium text-grey-1000 dark:text-grey-50 mb-4">
               Resources
             </span>
             <ul className="space-y-4">
               <li>
                 <Link href="/projects">
-                  <a className="block leading-none hover:transition-colors text-grey-500 dark:text-grey-300 hover:text-grey-1000 dark:hover:text-grey-120">
+                  <a className="block leading-none hover:transition-colors text-grey-700 dark:text-grey-300 hover:text-grey-1000 dark:hover:text-grey-120">
                     Projects
                   </a>
                 </Link>
               </li>
               <li>
                 <Link href="/blog">
-                  <a className="block leading-none hover:transition-colors text-grey-500 dark:text-grey-300 hover:text-grey-1000 dark:hover:text-grey-120">
+                  <a className="block leading-none hover:transition-colors text-grey-700 dark:text-grey-300 hover:text-grey-1000 dark:hover:text-grey-120">
                     Blog
                   </a>
                 </Link>
               </li>
               <li>
                 <Link href="/about">
-                  <a className="block leading-none hover:transition-colors text-grey-500 dark:text-grey-300 hover:text-grey-1000 dark:hover:text-grey-120">
+                  <a className="block leading-none hover:transition-colors text-grey-700 dark:text-grey-300 hover:text-grey-1000 dark:hover:text-grey-120">
                     About
                   </a>
                 </Link>
               </li>
               <li>
                 <Link href="/uses">
-                  <a className="block leading-none hover:transition-colors text-grey-500 dark:text-grey-300 hover:text-grey-1000 dark:hover:text-grey-120">
+                  <a className="block leading-none hover:transition-colors text-grey-700 dark:text-grey-300 hover:text-grey-1000 dark:hover:text-grey-120">
                     Uses
                   </a>
                 </Link>
               </li>
               <li>
                 <Link href="/snippets">
-                  <a className="block leading-none hover:transition-colors text-grey-500 dark:text-grey-300 hover:text-grey-1000 dark:hover:text-grey-120">
+                  <a className="block leading-none hover:transition-colors text-grey-700 dark:text-grey-300 hover:text-grey-1000 dark:hover:text-grey-120">
                     Snippets
                   </a>
                 </Link>
               </li>
-
               <li>
                 <Link href="/">
-                  <a className="block leading-none hover:transition-colors text-grey-500 dark:text-grey-300 hover:text-grey-1000 dark:hover:text-grey-120">
+                  <a className="block leading-none hover:transition-colors text-grey-700 dark:text-grey-300 hover:text-grey-1000 dark:hover:text-grey-120">
                     Sitemap.xml
                   </a>
                 </Link>
@@ -68,48 +70,52 @@ export default function Footer() {
             </ul>
           </div>
           <div className="flex-1/3 w-full pt-12 md:p-0 border-t border-grey-100 dark:border-grey-880 md:border-none">
-            <span className="text-grey-700 dark:text-grey-300">
+            <p className="text-grey-500 dark:text-grey-400">
               This Web site is built with{' '}
               <a
-                className="text-grey-500 hover:text-grey-1000 dark:text-grey-400 dark:hover:text-grey-200 hover:transition-colors"
+                className="text-grey-700 hover:text-grey-1000 dark:text-grey-300 dark:hover:text-grey-120 hover:transition-colors"
                 href="https://nextjs.org/"
               >
                 Next.js
               </a>
               ,{' '}
               <a
-                className="text-grey-500 hover:text-grey-1000 dark:text-grey-400 dark:hover:text-grey-200 hover:transition-colors"
+                className="text-grey-700 hover:text-grey-1000 dark:text-grey-300 dark:hover:text-grey-120 hover:transition-colors"
                 href="https://tailwindcss.com/"
               >
                 Tailwind CSS
               </a>
               ,{' '}
               <a
-                className="text-grey-500 hover:text-grey-1000 dark:text-grey-400 dark:hover:text-grey-200 hover:transition-colors"
+                className="text-grey-700 hover:text-grey-1000 dark:text-grey-300 dark:hover:text-grey-120 hover:transition-colors"
                 href="https://www.radix-ui.com/"
               >
                 Radix UI
               </a>
               , and hosted on{' '}
               <a
-                className="text-grey-500 hover:text-grey-1000 dark:text-grey-400 dark:hover:text-grey-200 hover:transition-colors"
+                className="text-grey-700 hover:text-grey-1000 dark:text-grey-300 dark:hover:text-grey-120 hover:transition-colors"
                 href="https://vercel.com/"
               >
                 Vercel
               </a>
               .
-            </span>
+            </p>
           </div>
-        </div>
+        </Wrapper>
         <div className="w-full max-w-5xl mx-auto md:px-7">
-          <div className="border-t border-grey-100 dark:border-grey-880 md:w-full md:max-w-5xl md:mx-auto"></div>
+          <Separator.Root
+            decorative
+            orientation="horizontal"
+            className="border-t border-grey-100 dark:border-grey-880 md:w-full md:max-w-5xl md:mx-auto"
+          />
         </div>
-        <div className="w-full max-w-5xl mx-auto px-7 flex flex-col md:items-center md:flex-row md:justify-between pt-12 pb-24 gap-y-5">
-          <span className="text-sm text-grey-700 dark:text-grey-300">
+        <Wrapper className="w-full flex flex-col-reverse md:items-center md:flex-row md:justify-between pt-12 pb-24 gap-y-7">
+          <span className="text-sm text-grey-500 dark:text-grey-400">
             © 2022 Eduardo R. Ambriz. All rights reserved.
           </span>
           <div>
-            <ul className="flex flex-row gap-x-7">
+            <ul className="inline-flex flex-row items-center gap-x-4">
               <li>
                 <a
                   className="group hover:transition-colors"
@@ -118,7 +124,7 @@ export default function Footer() {
                   rel="noreferrer"
                 >
                   <svg
-                    className="inline-block h-6 w-6 text-grey-500 group-hover:text-grey-700 dark:text-grey-400 dark:group-hover:text-grey-200"
+                    className="inline-flex h-6 w-6 text-grey-500 group-hover:text-grey-700 dark:text-grey-400 dark:group-hover:text-grey-200"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                   >
@@ -130,6 +136,11 @@ export default function Footer() {
                   </svg>
                 </a>
               </li>
+              <Separator.Root
+                decorative
+                orientation="vertical"
+                className="inline-flex w-px h-5 bg-grey-120 dark:bg-grey-880"
+              ></Separator.Root>
               <li>
                 <a
                   className="group hover:transition-colors"
@@ -138,7 +149,7 @@ export default function Footer() {
                   rel="noreferrer"
                 >
                   <svg
-                    className="inline-block h-6 w-6 text-grey-500 group-hover:text-grey-700 dark:text-grey-400 dark:group-hover:text-grey-200"
+                    className="inline-flex h-6 w-6 text-grey-500 group-hover:text-grey-700 dark:text-grey-400 dark:group-hover:text-grey-200"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                   >
@@ -152,7 +163,7 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-        </div>
+        </Wrapper>
       </div>
     </footer>
   );

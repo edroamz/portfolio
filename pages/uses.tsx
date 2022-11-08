@@ -1,22 +1,28 @@
 import { NextPage } from 'next';
 
 import Container from 'components/Container';
+import Wrapper from 'components/Wrapper';
 
 const Uses: NextPage = () => {
   return (
-    <Container title="Projects - Eduardo R. Ambriz">
-      <div className="max-w-5xl mx-auto pt-12 md:pt-20 pb-4 px-7">
+    <Container title="Uses - Eduardo R. Ambriz">
+      <Wrapper className="py-16 md:py-20">
         <h1>Uses</h1>
-        <p className="text-lg mb-8">
+        <p className="text-lg mb-7">
           Here’s a collection of things I love and use regularity.
         </p>
-        <div className="mt-16">
-          <h2 className="text-3xl">Office</h2>
-          <ul className="list-disc list-inside text-lg space-y-1 px-7">
+        <div className="flex flex-row items-start gap-x-3 w-full bg-white dark:bg-grey-900 py-2 px-5 md:px-6 border border-grey-120 dark:border-grey-700 rounded-lg">
+          <span className="text-cobalt-dark dark:text-blue-400 text-lg">
+            Full disclosure, some links on this site are affiliate links.
+          </span>
+        </div>
+        <div className="mt-14">
+          <h2 className="text-2xl">Office</h2>
+          <ul className="list-disc list-inside space-y-1 px-1 md:px-4 text-lg">
             <li>
-              <span className="text-grey-500 dark:text-grey-400">
+              <span className="text-grey-700 dark:text-grey-300">
                 <a
-                  className="font-medium text-xl text-grey-600 dark:text-grey-200 hover:transition-colors hover:text-grey-1000 dark:hover:text-grey-50"
+                  className="font-medium text-grey-900 dark:text-grey-150 hover:transition-colors hover:text-grey-1000 dark:hover:text-grey-50"
                   href="https://google.com"
                 >
                   Thing
@@ -26,9 +32,9 @@ const Uses: NextPage = () => {
               </span>
             </li>
             <li>
-              <span className="text-grey-500 dark:text-grey-400">
+              <span className="text-grey-700 dark:text-grey-300">
                 <a
-                  className="font-medium text-xl text-grey-600 dark:text-grey-200 hover:transition-colors hover:text-grey-1000 dark:hover:text-grey-50"
+                  className="font-medium text-grey-900 dark:text-grey-150 hover:transition-colors hover:text-grey-1000 dark:hover:text-grey-50"
                   href="https://google.com"
                 >
                   Thing
@@ -37,9 +43,9 @@ const Uses: NextPage = () => {
               </span>
             </li>
             <li>
-              <span className="text-grey-500 dark:text-grey-400">
+              <span className="text-grey-700 dark:text-grey-300">
                 <a
-                  className="font-medium text-xl text-grey-600 dark:text-grey-200 hover:transition-colors hover:text-grey-1000 dark:hover:text-grey-50"
+                  className="font-medium text-grey-900 dark:text-grey-150 hover:transition-colors hover:text-grey-1000 dark:hover:text-grey-50"
                   href="https://google.com"
                 >
                   Thing
@@ -48,9 +54,9 @@ const Uses: NextPage = () => {
               </span>
             </li>
             <li>
-              <span className="text-grey-500 dark:text-grey-400">
+              <span className="text-grey-700 dark:text-grey-300">
                 <a
-                  className="font-medium text-xl text-grey-600 dark:text-grey-200 hover:transition-colors hover:text-grey-1000 dark:hover:text-grey-50"
+                  className="font-medium text-grey-900 dark:text-grey-150 hover:transition-colors hover:text-grey-1000 dark:hover:text-grey-50"
                   href="https://google.com"
                 >
                   Thing
@@ -59,9 +65,9 @@ const Uses: NextPage = () => {
               </span>
             </li>
             <li>
-              <span className="text-grey-500 dark:text-grey-400">
+              <span className="text-grey-700 dark:text-grey-300">
                 <a
-                  className="font-medium text-xl text-grey-600 dark:text-grey-200 hover:transition-colors hover:text-grey-1000 dark:hover:text-grey-50"
+                  className="font-medium text-grey-900 dark:text-grey-150 hover:transition-colors hover:text-grey-1000 dark:hover:text-grey-50"
                   href="https://google.com"
                 >
                   Thing
@@ -71,7 +77,7 @@ const Uses: NextPage = () => {
             </li>
           </ul>
         </div>
-      </div>
+      </Wrapper>
     </Container>
   );
 };

@@ -13,7 +13,7 @@ export default function DarkModeToggle() {
     <>
       {mounted && (
         <button
-          className="p-2 md:pr-0 hover:transition-colors focus-visible:outline-none focus-visible:ring-2 dark:focus-visible:ring-grey-0 focus-visible:ring-grey-1000 group rounded-md"
+          className="px-2 py-1 md:pr-0 hover:transition-colors focus-visible:outline-none focus-visible:ring-2 dark:focus-visible:ring-grey-0 focus-visible:ring-grey-1000 group rounded-md"
           type="button"
           aria-pressed={theme === 'dark'}
           onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}

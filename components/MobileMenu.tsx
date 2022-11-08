@@ -20,14 +20,14 @@ export default function MobileMenuNew() {
     <Popover.Root open={isMenuOpen} onOpenChange={toggleMenu}>
       <Popover.Trigger asChild>
         <button
-          className="visible md:hidden p-2 pr-0 h-10 w-10 hover:transition-colors focus-visible:outline-none focus-visible:ring-2 dark:focus-visible:ring-grey-0 focus-visible:ring-grey-1000 rounded-md group"
+          className="visible md:hidden px-2 py-1 pr-0 h-8 w-8 hover:transition-colors focus-visible:outline-none focus-visible:ring-2 dark:focus-visible:ring-grey-0 focus-visible:ring-grey-1000 rounded-md group"
           type="button"
           aria-label="Menu"
         >
           <div className="flex flex-col items-center justify-center w-full h-full">
             <div
               className={cn(
-                'transition h-px w-[22px] bg-grey-500 group-hover:bg-grey-1000 dark:bg-grey-400 dark:group-hover:bg-grey-100',
+                'transition h-px w-6 bg-grey-500 group-hover:bg-grey-1000 dark:bg-grey-400 dark:group-hover:bg-grey-100',
                 isMenuOpen
                   ? '-rotate-45 translate-y-[1px]'
                   : 'translate-y-[5px]'
@@ -35,7 +35,7 @@ export default function MobileMenuNew() {
             ></div>
             <div
               className={cn(
-                'transition h-px w-[22px] bg-grey-500 group-hover:bg-grey-1000 dark:bg-grey-400 dark:group-hover:bg-grey-100',
+                'transition h-px w-6 bg-grey-500 group-hover:bg-grey-1000 dark:bg-grey-400 dark:group-hover:bg-grey-100',
                 isMenuOpen ? 'rotate-45' : '-translate-y-[5px]'
               )}
             ></div>
@@ -47,7 +47,7 @@ export default function MobileMenuNew() {
           <Popover.Portal forceMount>
             <Popover.Content sideOffset={18} align="center" asChild>
               <motion.nav
-                className="visible md:invisible h-content w-screen inset-x-4 z-20 bg-white dark:bg-grey-970 opacity-100 translate-y-0"
+                className="visible md:invisible h-content w-screen inset-x-4 z-10 bg-white dark:bg-grey-970 opacity-100 translate-y-0"
                 initial={{ opacity: 0, translateY: '2rem' }}
                 animate={{ opacity: 1, translateY: 0 }}
                 exit={{ opacity: 0 }}
@@ -66,6 +66,13 @@ export default function MobileMenuNew() {
                       className="block text-lg py-4"
                       href="/blog"
                       text="Blog"
+                    ></NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      className="block text-lg py-4"
+                      href="/snippets"
+                      text="Snippets"
                     ></NavLink>
                   </li>
                   <li>
