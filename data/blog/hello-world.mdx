@@ -12,21 +12,52 @@ ogImage:
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
+> Tell them what you are going to tell them, tell them, then tell them what you told them.
+
 Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
 
 ## Random subtitle
 
+> _“Most sentences can be cut in half.”_ — Josh Spector
+
 Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidunt. Gravida in fermentum et sollicitudin ac orci phasellus egestas tellus.
 
+<Image
+  src="/static/images/project1.jpg"
+  width="714"
+  height="500"
+  alt="some random img"
+/>
+
 Volutpat consequat mauris nunc congue nisi vitae. Id aliquet risus feugiat in ante metus dictum at tempor. Sed blandit libero volutpat sed cras. Sed odio morbi quis commodo odio aenean sed adipiscing.
+
+<Image
+  caption="hello there, dont mind me. I am just a regular image caption"
+  src="/static/images/project2.jpg"
+  width="714"
+  height="500"
+  alt="other random img"
+/>
 
 Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in. Nibh cras pulvinar mattis nunc sed. Luctus accumsan tortor posuere ac ut consequat semper viverra. Fringilla ut morbi tincidunt augue interdum velit euismod.
 
 ## Lorem Ipsum
 
-Tristique senectus et netus et malesuada fames ac turpis. Ridiculous mus mauris vitae ultricies leo integer malesuada nunc vel. In mollis nunc sed id semper.
+Tristique senectus [Link with title](https://google.com 'Here the title goes') et netus et malesuada fames ac turpis. Ridiculous mus mauris vitae ultricies leo integer malesuada nunc vel. In mollis nunc sed id semper.
 
-Egestas tellus rutrum tellus pellentesque. Phasellus vestibulum lorem sed risus ultricies tristique nulla. Quis blandit turpis cursus in hac habitasse platea dictumst quisque. Eros donec ac odio tempor orci dapibus ultrices. Aliquam sem et tortor consequat id porta nibh. Adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla.
+- First item
+- Second item
+  - Indented item
+  - Indented item
+- Third item
+
+Egestas tellus rutrum tellus pellentesque. [This link goes to projects](/projects 'Go to projects page'). Phasellus vestibulum lorem sed risus ultricies tristique nulla. Quis blandit turpis cursus in hac habitasse platea dictumst quisque. Eros donec ac odio tempor orci dapibus ultrices. Aliquam sem et tortor consequat id porta nibh. Adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla.
+
+1. First item
+2. Second item
+   1. Indented item
+   2. Indented item
+3. Third item
 
 Diam vulputate ut pharetra sit amet. Ut tellus elementum sagittis vitae et leo. Arcu non odio euismod lacinia at quis risus sed vulputate.
 
@@ -37,7 +68,7 @@ print 'Hi my name is ' + name
 
 Phasellus vestibulum lorem sed risus ultricies tristique nulla. Quis blandit turpis cursus in hac habitasse platea dictumst quisque.
 
-```typescript:pages/api/revalidate.ts
+```typescript:pages/api/revalidate.ts showLineNumbers
 export default async function handler(req, res) {
   // Check for secret to confirm this is a valid request
   if (req.query.secret !== process.env.REVALIDATE_SECRET) {
@@ -64,7 +95,7 @@ const { data } = await supabaseAdmin.from('images').select('*');
 
 Finally, lets add the next code:
 
-```tsx {2,7-17}
+```tsx {2,7-17} showLineNumbers
 function BlurImage({ image }: { image: Image }) {
   const [isLoading, setLoading] = useState(true);
 
@@ -94,7 +125,7 @@ function BlurImage({ image }: { image: Image }) {
 
 ## Another Subtitle
 
-```js
+```js {2,4}
 await supabaseAdmin.from('images').insert([{
   name: 'Pedro Duarte',
   href: 'https://twitter.com/peduarte/status/1463897468383412231',
@@ -120,6 +151,10 @@ export default function Gallery({ images }: { images: Image[] }) {
 ```
 
 ## Be obvious
+
+<Callout emoji="💡">
+  **Blog formatting** is the practice of making the best ideas the most obvious
+</Callout>
 
 If you can be obvious in a way that no one has before, go for it.
 
@@ -179,7 +214,7 @@ const getAccessToken = async () => {
 
 ### Creating an API Route
 
-Let's test our communication with Spotify. First, create a new file at `pages/api/top-tracks.js`. Then, import the new function `getTopTracks`.
+Let's test our communication with Spotify. First, create a new file at `pages/api/top-tracks.js`. Then, import the new function **`getTopTracks`**.
 
 ```js:pages/api/top-tracks.js
 import { getTopTracks } from '../../lib/spotify';
@@ -196,7 +231,6 @@ export default async (_, res) => {
 
   return res.status(200).json({ tracks });
 };
-
 ```
 
 ## Conclusion

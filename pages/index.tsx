@@ -113,7 +113,7 @@ const Home: NextPage<HomeProps> = ({ allPosts }) => {
           Take a sneak peek of my work
         </h3>
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center justify-start px-7 w-full gap-4">
-          <div className="relative border rounded-xl border-color h-[24rem] w-full bg-grey-50 dark:bg-grey-930 overflow-hidden">
+          <div className="relative border rounded-xl border-grey-120 dark:border-grey-880 h-[24rem] w-full bg-grey-50 dark:bg-grey-930 overflow-hidden">
             <Image
               src={project1}
               alt="project1"
@@ -122,7 +122,7 @@ const Home: NextPage<HomeProps> = ({ allPosts }) => {
               placeholder="blur"
             ></Image>
           </div>
-          <div className="relative border rounded-xl border-color h-[24rem] w-full bg-grey-50 dark:bg-grey-930 overflow-hidden">
+          <div className="relative border rounded-xl border-grey-120 dark:border-grey-880 h-[24rem] w-full bg-grey-50 dark:bg-grey-930 overflow-hidden">
             <Image
               src={project2}
               alt="project2"
@@ -166,7 +166,7 @@ const Home: NextPage<HomeProps> = ({ allPosts }) => {
             <Separator.Root
               decorative
               orientation="vertical"
-              className="absolute left-0 top-[2%] w-0 h-[96%] border-l border-color-subtle hidden md:block "
+              className="absolute left-0 top-[2%] w-0 h-[96%] border-l border-grey-100 dark:border-grey-900 hidden md:block "
             />
             {allPosts &&
               allPosts.map((post: IPost) => (

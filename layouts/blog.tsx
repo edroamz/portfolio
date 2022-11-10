@@ -74,7 +74,7 @@ export default function BlogLayout({ post }: IProps) {
           </div>
         </div>
 
-        <div className="w-full text-lg md:max-w-prose mx-auto">
+        <div className="prose">
           <div className="border-t border-grey-100 dark:border-grey-880 pt-8 md:pt-10"></div>
           <MDXRemote {...post.mdxSource} components={MDXComponents}></MDXRemote>
         </div>

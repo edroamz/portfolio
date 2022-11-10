@@ -19,33 +19,34 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
   const fileName = slug.replace(/\.mdx$/, '');
   const fullPath = join(postsDirectory, `${fileName}.mdx`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
-  const { data: frontMatter, content } = matter(fileContents);
+  const { data: frontMatter } = matter(fileContents);
 
   interface IItems {
     [key: string]: string;
   }
 
   const items: IItems = {};
-
   // Ensure only the minimal needed data is exposed
   fields.forEach((field) => {
     if (field === 'slug') {
       items[field] = fileName;
     }
     if (field === 'content') {
-      items[field] = content;
+      items[field] = fileContents;
     }
 
     if (typeof frontMatter[field] !== 'undefined') {
       items[field] = frontMatter[field];
     }
   });
-  items['readingTime'] = readingTime(content).text;
+  items['readingTime'] = readingTime(fileContents).text;
+
   return items;
 }
 
-export async function getMdxSource(markdownContent: string) {
-  const mdxSource = await serialize(markdownContent, {
+export async function getMdxSource(content: string) {
+  const mdxSource = await serialize(content, {
+    parseFrontmatter: true,
     mdxOptions: {
       remarkPlugins: [remarkGfm],
       rehypePlugins: [
@@ -55,8 +56,9 @@ export async function getMdxSource(markdownContent: string) {
         [
           rehypeAutolinkHeadings,
           {
+            behavior: 'wrap',
             properties: {
-              className: ['anchor']
+              className: ['permalink']
             }
           }
         ]

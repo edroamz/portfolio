@@ -13,7 +13,7 @@ const About: NextPage = () => {
           <Tabs.Root defaultValue="short">
             <Tabs.List
               aria-label="Bio versions"
-              className="border-b border-color"
+              className="border-b border-grey-120 dark:border-grey-880"
             >
               <Tabs.Trigger value="short" className="tab-trigger">
                 <span className="tab-trigger__text tab-trigger__text--first ">

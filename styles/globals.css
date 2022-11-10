@@ -124,43 +124,73 @@
   }
 
   /* Markdown styles */
-  .blog-article h2,
-  .blog-article h3,
-  .blog-article h4,
-  .blog-article h5,
-  .blog-article h6 {
-    @apply mb-4 font-semibold;
+  .prose {
+    @apply w-full text-lg md:max-w-prose mx-auto;
   }
 
-  .blog-article h2 {
-    @apply mt-12;
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5,
+  .prose h6 {
+    @apply font-semibold;
   }
 
-  .blog-article h3 {
-    @apply mt-8;
+  .prose h2 {
+    @apply pt-16 m-0;
   }
 
-  .blog-article p {
-    @apply text-lg;
+  .prose h3 {
+    @apply pt-12 m-0;
   }
 
-  .blog-article p,
-  .blog-article ul,
-  .blog-article ol,
-  .blog-article blockquote {
-    @apply my-6;
+  .prose p {
+    @apply text-[18px] leading-9 text-grey-950 dark:text-grey-200;
+  }
+
+  .prose p strong {
+    @apply text-grey-1000 dark:text-grey-100;
+  }
+
+  .prose p,
+  .prose ul,
+  .prose ol,
+  .prose pre,
+  .prose .rehype-code-title,
+  .prose blockquote {
+    @apply mt-6;
+  }
+
+  .prose blockquote p {
+    @apply text-2xl leading-relaxed tracking-normal font-medium text-center text-grey-880 dark:text-grey-150 mx-7;
+  }
+
+  .prose ul {
+    @apply list-disc list-inside space-y-3 px-1 md:px-4;
+  }
+
+  .prose ul ul {
+    @apply mt-3 px-3 md:px-6;
+  }
+
+  .prose ol {
+    @apply list-decimal list-inside space-y-3 px-1 md:px-4;
+  }
+
+  .prose ol ol {
+    @apply mt-3 px-3 md:px-6;
+  }
+
+  .prose a:not(.permalink) {
+    @apply text-cobalt-dark dark:text-blue-400 underline;
+  }
+
+  .callout p {
+    @apply m-0;
   }
 }
 
 @layer utilities {
-  .border-color {
-    @apply border-grey-120 dark:border-grey-880;
-  }
-
-  .border-color-subtle {
-    @apply border-grey-100 dark:border-grey-900;
-  }
-
   .flex-1\/2 {
     flex: 1 1 50%;
   }
@@ -170,6 +200,7 @@
   }
 }
 
+/* Syntax highlighter styles */
 .token.comment,
 .token.prolog,
 .token.doctype,
@@ -207,13 +238,13 @@
 .token.literal-property,
 .token.property-access,
 .token.attr-value {
-  @apply text-grey-800 dark:text-grey-200;
+  @apply text-grey-1000 dark:text-grey-200;
 }
 
 .token.tag,
 .token.selector,
 .token.class-name {
-  @apply text-green-700 dark:text-green-400;
+  @apply text-lime-700 dark:text-green-400;
 }
 
 .token.keyword.module,
@@ -223,21 +254,21 @@
 }
 
 pre {
-  @apply whitespace-pre-wrap break-words text-sm border border-grey-120 bg-white dark:border-grey-800 dark:bg-grey-1000 rounded-lg;
+  @apply whitespace-pre-wrap break-words text-base tracking-tight border border-grey-120 dark:border-grey-800 bg-white dark:bg-grey-1000 rounded-lg;
 }
 
 code {
-  @apply text-grey-970 dark:text-grey-200 px-1 py-0.5 border border-grey-120 dark:border-grey-880 bg-white dark:bg-grey-1000;
+  @apply text-base text-grey-1000 dark:text-grey-150 px-2 py-1 border border-grey-120 dark:border-grey-800 bg-white dark:bg-grey-1000 mx-1 rounded-sm;
 }
 
 pre code {
-  @apply text-gray-800 dark:text-gray-200 p-0;
+  @apply block text-grey-1000 dark:text-grey-200 p-0;
   border: initial;
 }
 
 code[class*='language-'],
 pre[class*='language-'] {
-  @apply text-grey-970 dark:text-grey-200;
+  @apply text-grey-1000 dark:text-grey-200;
 }
 
 pre::-webkit-scrollbar {
@@ -251,13 +282,27 @@ pre {
 }
 
 .rehype-code-title {
-  @apply px-5 py-2 font-mono text-sm text-grey-1000 bg-grey-50/50 border border-b-0 border-gray-200 rounded-t-lg dark:text-grey-100 dark:border-gray-700 dark:bg-grey-930;
+  @apply px-5 py-2 font-bold font-mono text-base tracking-tight text-grey-1000 bg-grey-50 border border-b-0 border-grey-150 rounded-t-lg dark:text-grey-150 dark:border-grey-800 dark:bg-grey-930;
 }
 
 .rehype-code-title + pre {
-  @apply text-sm mt-0 rounded-t-none;
+  @apply text-base tracking-tight mt-0 rounded-t-none;
 }
 
 .highlight-line {
-  @apply block -mx-5 bg-grey-50 dark:bg-grey-900 border-l-2 border-blue-700 dark:border-blue-400;
+  /* .pl-22px = .px-5(20px) + .border-2(2px) */
+  @apply block -mx-6 pl-[22px] bg-grey-50 dark:bg-grey-900 border-l-2 border-blue-700 dark:border-blue-300;
+}
+
+.code-line.line-number:not(.highlight-line) {
+  display: block;
+}
+
+.line-number::before {
+  @apply mr-6 text-grey-500 text-right dark:text-neutral-400/90;
+  content: attr(line);
+}
+
+.permalink {
+  @apply no-underline hover:underline hover:underline-offset-4 after:content-['#'] after:pl-1 after:inline-block after:text-xl sm:after:text-2xl after:text-transparent hover:after:text-grey-500 dark:hover:after:text-grey-400;
 }
