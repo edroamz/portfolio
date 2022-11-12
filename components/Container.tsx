@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import Head from 'next/head';
 import NextLink from 'next/link';
 import { SkipNavLink, SkipNavContent } from '@reach/skip-nav';
@@ -8,9 +9,13 @@ import DarkModeToggle from 'components/DarkModeToggle';
 import MobileMenu from 'components/MobileMenu';
 import Footer from 'components/Footer';
 
-export default function Container(props: any) {
+interface Props {
+  [key: string]: ReactNode;
+}
+
+export default function Container(props: Props) {
   const { children, ...customMeta } = props;
-  const meta = {
+  const meta: { [key: string]: string } = {
     title: 'Eduardo R. Ambriz - Developer, writer.',
     description: `Front-end developer, JavaScript enthusiast.`,
     type: 'website',
@@ -22,6 +27,9 @@ export default function Container(props: any) {
       <Head>
         <title>{meta.title}</title>
         <meta name="description" content={meta.description} />
+        {meta.date && (
+          <meta property="article:published_time" content={meta.date} />
+        )}
       </Head>
       <SkipNavLink>Skip to content</SkipNavLink>
       <div className="h-header sticky flex flex-col justify-center top-0 w-full max-w-full shadow-border-bottom dark:shadow-border-bottom-dark bg-white dark:bg-grey-970 md:bg-header md:dark:bg-header-dark z-20">

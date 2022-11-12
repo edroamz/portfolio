@@ -73,28 +73,35 @@ export default function Footer() {
             <p className="text-grey-500 dark:text-grey-400">
               This Web site is built with{' '}
               <a
-                className="text-grey-700 hover:text-grey-1000 dark:text-grey-300 dark:hover:text-grey-120 hover:transition-colors"
+                className="underline decoration-dotted text-grey-700 hover:text-grey-1000 dark:text-grey-300 dark:hover:text-grey-120 hover:transition-colors"
                 href="https://nextjs.org/"
               >
                 Next.js
               </a>
               ,{' '}
               <a
-                className="text-grey-700 hover:text-grey-1000 dark:text-grey-300 dark:hover:text-grey-120 hover:transition-colors"
+                className="underline decoration-dotted text-grey-700 hover:text-grey-1000 dark:text-grey-300 dark:hover:text-grey-120 hover:transition-colors"
+                href="https://www.typescriptlang.org/"
+              >
+                Typescript
+              </a>
+              ,{' '}
+              <a
+                className="underline decoration-dotted text-grey-700 hover:text-grey-1000 dark:text-grey-300 dark:hover:text-grey-120 hover:transition-colors"
                 href="https://tailwindcss.com/"
               >
                 Tailwind CSS
               </a>
               ,{' '}
               <a
-                className="text-grey-700 hover:text-grey-1000 dark:text-grey-300 dark:hover:text-grey-120 hover:transition-colors"
+                className="underline decoration-dotted text-grey-700 hover:text-grey-1000 dark:text-grey-300 dark:hover:text-grey-120 hover:transition-colors"
                 href="https://www.radix-ui.com/"
               >
                 Radix UI
               </a>
               , and hosted on{' '}
               <a
-                className="text-grey-700 hover:text-grey-1000 dark:text-grey-300 dark:hover:text-grey-120 hover:transition-colors"
+                className="underline decoration-dotted text-grey-700 hover:text-grey-1000 dark:text-grey-300 dark:hover:text-grey-120 hover:transition-colors"
                 href="https://vercel.com/"
               >
                 Vercel

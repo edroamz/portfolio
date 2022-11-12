@@ -1,21 +1,27 @@
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 
-export interface IAuthor {
+export interface Author {
   name: string;
   picture: string;
 }
 
-export interface IPost {
+export interface Post {
   slug: string;
   title: string;
   datePublished: string;
-  coverImage: string;
-  author: IAuthor;
+  author: Author;
   excerpt: string;
+  coverImage: string;
   ogImage: {
     url: string;
   };
-  content: string;
-  mdxSource: MDXRemoteSerializeResult;
+  content: MDXRemoteSerializeResult;
   readingTime: string;
+}
+
+export interface Snippet {
+  slug: string;
+  title: string;
+  description: string;
+  content: MDXRemoteSerializeResult;
 }

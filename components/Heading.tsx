@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 const elements: { [key: string]: string } = {
   h1: 'h1',
@@ -9,13 +9,13 @@ const elements: { [key: string]: string } = {
   h6: 'h6'
 };
 
-interface IProps {
+interface Props {
   type: string;
-  children: any;
-  [key: string]: any;
+  children: ReactNode;
+  [key: string]: ReactNode;
 }
 
-function Heading({ type, children, ...props }: IProps) {
+function Heading({ type = 'h1', children, ...props }: Props) {
   const customTag = React.createElement(
     elements[type] || elements.h1,
     props,
@@ -23,9 +23,5 @@ function Heading({ type, children, ...props }: IProps) {
   );
   return customTag;
 }
-
-Heading.defaultProps = {
-  type: 'h1'
-};
 
 export default Heading;

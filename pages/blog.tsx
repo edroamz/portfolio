@@ -1,10 +1,16 @@
-import { getAllPosts } from 'lib/mdx';
+import { NextPage } from 'next';
+import { getAllFiles } from 'lib/mdx';
+import { Post } from 'lib/interfaces';
 
 import Container from 'components/Container';
 import Wrapper from 'components/Wrapper';
 import BlogPost from 'components/BlogPost';
 
-export default function Blog({ allPosts }: any) {
+interface Props {
+  allPosts: Post[];
+}
+
+const Blog: NextPage<Props> = ({ allPosts }) => {
   return (
     <Container
       title="Blog – Eduardo R. Ambriz"
@@ -21,17 +27,17 @@ export default function Blog({ allPosts }: any) {
         <div className="relative mt-12 md:mt-14 lg:mt-16 grid gap-y-2 max-w-5xl mx-auto">
           <hr className="absolute left-0 top-[2%] w-0 h-[96%] border-l border-grey-100 dark:border-grey-900 hidden md:block " />
           {allPosts &&
-            allPosts.map((post: any) => (
+            allPosts.map((post: Post) => (
               <BlogPost key={post.slug} post={post}></BlogPost>
             ))}
         </div>
       </div>
     </Container>
   );
-}
+};
 
 export const getStaticProps = async () => {
-  const allPosts = getAllPosts([
+  const allPosts = getAllFiles('blog', [
     'title',
     'datePublished',
     'slug',
@@ -44,3 +50,5 @@ export const getStaticProps = async () => {
     props: { allPosts }
   };
 };
+
+export default Blog;

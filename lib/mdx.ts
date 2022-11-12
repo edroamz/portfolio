@@ -1,31 +1,37 @@
 import { join } from 'path';
 import fs from 'fs';
 import { serialize } from 'next-mdx-remote/serialize';
+import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import matter from 'gray-matter';
-import readingTime from 'reading-time';
 import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
 import rehypeCodeTitles from 'rehype-code-titles';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypePrism from 'rehype-prism-plus';
+import readingTime from 'reading-time';
 
-const postsDirectory = join(process.cwd(), '/data/blog');
+type Type = 'blog' | 'snippets';
 
-export function getPostSlugs() {
-  return fs.readdirSync(postsDirectory);
+function getFilesDirectory(type: Type): string {
+  return join(process.cwd(), `/data/${type}`);
 }
 
-export function getPostBySlug(slug: string, fields: string[] = []) {
+export function getFileSlugs(type: Type) {
+  return fs.readdirSync(getFilesDirectory(type));
+}
+
+export function getFileBySlug(type: Type, slug: string, fields: string[] = []) {
   const fileName = slug.replace(/\.mdx$/, '');
-  const fullPath = join(postsDirectory, `${fileName}.mdx`);
+  const filesDirectory = getFilesDirectory(type);
+  const fullPath = join(filesDirectory, `${fileName}.mdx`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data: frontMatter } = matter(fileContents);
 
-  interface IItems {
+  interface Items {
     [key: string]: string;
   }
 
-  const items: IItems = {};
+  const items: Items = {};
   // Ensure only the minimal needed data is exposed
   fields.forEach((field) => {
     if (field === 'slug') {
@@ -44,8 +50,10 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
   return items;
 }
 
-export async function getMdxSource(content: string) {
-  const mdxSource = await serialize(content, {
+export async function getSerializedMDXContent(
+  content: string
+): Promise<MDXRemoteSerializeResult> {
+  const result = await serialize(content, {
     parseFrontmatter: true,
     mdxOptions: {
       remarkPlugins: [remarkGfm],
@@ -58,7 +66,7 @@ export async function getMdxSource(content: string) {
           {
             behavior: 'wrap',
             properties: {
-              className: ['permalink']
+              className: ['permalink-to-header']
             }
           }
         ]
@@ -67,13 +75,13 @@ export async function getMdxSource(content: string) {
     }
   });
 
-  return mdxSource;
+  return result;
 }
 
-export function getAllPosts(fields: string[] = []) {
-  const slugs = getPostSlugs();
+export function getAllFiles(type: Type, fields: string[] = []) {
+  const slugs = getFileSlugs(type);
   const posts = slugs
-    .map((slug) => getPostBySlug(slug, fields))
+    .map((slug) => getFileBySlug(type, slug, fields))
     // sort posts by date in descending order
     .sort((post1, post2) =>
       post1.datePublished > post2.datePublished ? -1 : 1

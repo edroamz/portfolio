@@ -1,6 +1,13 @@
 import Link from 'next/link';
+import { Snippet } from 'lib/interfaces';
 
-export default function SnippetCard({ slug, title, excerpt }: any) {
+interface Props {
+  snippet: Snippet;
+}
+
+export default function SnippetCard({ snippet }: Props) {
+  const { slug, title, description } = snippet;
+
   return (
     <Link href={`/snippets/${slug}`}>
       <a className="h-full bg-white dark:bg-grey-1000 shadow hover:shadow-lg dark:shadow-none dark:border-x-transparent dark:border-y dark:border-x sm:dark:border-grey-800 sm:dark:even:border-r-transparent sm:dark:odd:border-l-transparent lg:dark:even:border-grey-800 lg:dark:odd:border-grey-800 dark:border-grey-800 lg:dark:hover:even:border-white lg:dark:odd:hover:border-white dark:hover:border-white hover:transition-shadow dark:hover:transition-colors rounded-lg break-words">
@@ -33,7 +40,7 @@ export default function SnippetCard({ slug, title, excerpt }: any) {
               </div>
 
               <h2 className="text-xl mb-2">{title}</h2>
-              <p>{excerpt}</p>
+              <p>{description}</p>
             </div>
           </div>
         </div>

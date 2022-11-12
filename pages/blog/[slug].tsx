@@ -1,46 +1,47 @@
 import BlogLayout from 'layouts/blog';
-import { getAllPosts, getPostBySlug, getMdxSource } from 'lib/mdx';
-import { IPost } from 'lib/interfaces';
+import { getAllFiles, getFileBySlug, getSerializedMDXContent } from 'lib/mdx';
+import { Post } from 'lib/interfaces';
 
-interface IProps {
-  post: IPost;
+interface Props {
+  post: Post;
 }
 
-export default function PostPage({ post }: IProps) {
+export default function PostPage({ post }: Props) {
   return <BlogLayout post={post}></BlogLayout>;
 }
 
-interface IParams {
+interface Params {
   params: {
     slug: string;
   };
 }
 
-export async function getStaticProps({ params }: IParams) {
-  const post = getPostBySlug(params.slug, [
+export async function getStaticProps({ params }: Params) {
+  const post = getFileBySlug('blog', params.slug, [
     'title',
     'datePublished',
     'slug',
     'author',
+    'excerpt',
     'content',
     'ogImage',
     'coverImage'
   ]);
 
-  const mdxSource = await getMdxSource(post.content || '');
+  const serializedContent = await getSerializedMDXContent(post.content || '');
 
   return {
     props: {
       post: {
         ...post,
-        mdxSource
+        content: serializedContent
       }
     }
   };
 }
 
 export async function getStaticPaths() {
-  const posts = getAllPosts(['slug']);
+  const posts = getAllFiles('blog', ['slug']);
 
   return {
     paths: posts.map((post) => {

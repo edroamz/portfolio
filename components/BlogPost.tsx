@@ -2,14 +2,14 @@ import Link from 'next/link';
 
 import TimeFormatter from 'components/TimeFormatter';
 import Heading from 'components/Heading';
-import { IPost } from 'lib/interfaces';
+import { Post } from 'lib/interfaces';
 
-interface IProps {
-  post: IPost;
+interface Props {
+  post: Post;
   heading?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 
-export default function BlogPost({ post, heading = 'h2' }: IProps) {
+export default function BlogPost({ post, heading = 'h2' }: Props) {
   const { slug, datePublished, title, excerpt, readingTime } = post;
 
   return (
@@ -46,7 +46,3 @@ export default function BlogPost({ post, heading = 'h2' }: IProps) {
     </Link>
   );
 }
-
-BlogPost.defaultProps = {
-  heading: 'h2'
-};

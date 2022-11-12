@@ -4,16 +4,16 @@ import * as Separator from '@radix-ui/react-separator';
 import Image from 'next/image';
 
 import Wrapper from 'components/Wrapper';
-import SectionLabel from 'components/SectionLabel';
+import GradientText from 'components/GradientText';
 import Container from 'components/Container';
 import BlogPost from 'components/BlogPost';
-import { getAllPosts } from 'lib/mdx';
-import { IPost } from 'lib/interfaces';
+import { getAllFiles } from 'lib/mdx';
+import { Post } from 'lib/interfaces';
 import project1 from '/public/static/images/project1.jpg';
 import project2 from '/public/static/images/project2.jpg';
 
 interface HomeProps {
-  allPosts: IPost[];
+  allPosts: Post[];
 }
 
 const Home: NextPage<HomeProps> = ({ allPosts }) => {
@@ -106,9 +106,8 @@ const Home: NextPage<HomeProps> = ({ allPosts }) => {
       </Wrapper>
       <section className="w-full py-16 md:py-20">
         <Wrapper className="mb-5">
-          <SectionLabel className="text-3xl">Curated work</SectionLabel>
+          <GradientText as="h2">Curated work</GradientText>
         </Wrapper>
-
         <h3 className="text-3xl md:text-4xl max-w-5xl mx-auto px-7 mb-8">
           Take a sneak peek of my work
         </h3>
@@ -156,7 +155,7 @@ const Home: NextPage<HomeProps> = ({ allPosts }) => {
       </section>
       <section className="w-full py-16 md:py-20">
         <Wrapper className="mb-5">
-          <SectionLabel>Featured posts</SectionLabel>
+          <GradientText as="h2">Featured posts</GradientText>
         </Wrapper>
         <h3 className="text-3xl md:text-4xl max-w-5xl mx-auto px-7 mb-8">
           Most popular posts I’ve written
@@ -169,7 +168,7 @@ const Home: NextPage<HomeProps> = ({ allPosts }) => {
               className="absolute left-0 top-[2%] w-0 h-[96%] border-l border-grey-100 dark:border-grey-900 hidden md:block "
             />
             {allPosts &&
-              allPosts.map((post: IPost) => (
+              allPosts.map((post: Post) => (
                 <BlogPost key={post.slug} post={post} heading="h4"></BlogPost>
               ))}
           </div>
@@ -201,7 +200,7 @@ const Home: NextPage<HomeProps> = ({ allPosts }) => {
 };
 
 export const getStaticProps = async () => {
-  const allPosts = getAllPosts([
+  const allPosts = getAllFiles('blog', [
     'title',
     'datePublished',
     'slug',

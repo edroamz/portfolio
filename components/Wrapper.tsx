@@ -1,24 +1,23 @@
-import React from 'react';
+import { createElement, PropsWithChildren } from 'react';
 import cn from 'classnames';
 
-interface IProps {
+interface Props {
   as?: 'div' | 'section' | 'article';
   className?: string;
-  children: any;
   [key: string]: any;
 }
 
-const Wrapper = ({ as, className, children, ...props }: IProps) => {
-  const type = as || 'div';
-  const classnames = cn('max-w-5xl mx-auto px-7', className);
+const Wrapper = ({
+  as = 'div',
+  className,
+  children,
+  ...props
+}: PropsWithChildren<Props>) => {
+  const type: string = as;
+  const classnames: string = cn('max-w-5xl mx-auto px-7', className);
   const componentProps = { className: classnames, ...props };
 
-  const component = React.createElement(type, componentProps, children);
-  return component;
-};
-
-Wrapper.defaultProps = {
-  as: 'div'
+  return createElement(type, componentProps, children);
 };
 
 export default Wrapper;

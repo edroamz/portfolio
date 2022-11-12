@@ -1,4 +1,4 @@
-interface IProjectCardProps {
+interface ProjectCardProps {
   slug: string;
   title: string;
   excerpt: string;
@@ -8,7 +8,7 @@ export default function ProjectCard({
   slug,
   title,
   excerpt
-}: IProjectCardProps) {
+}: ProjectCardProps) {
   return (
     <div className="bg-white dark:bg-grey-1000 shadow dark:shadow-none h-full dark:border-x-transparent dark:border-y dark:border-x sm:dark:border-grey-800 sm:dark:even:border-r-transparent sm:dark:odd:border-l-transparent lg:dark:even:border-grey-800 lg:dark:odd:border-grey-800 dark:border-grey-800 rounded-lg break-words">
       <div className="h-full p-7">

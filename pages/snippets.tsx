@@ -4,7 +4,14 @@ import Wrapper from 'components/Wrapper';
 import Container from 'components/Container';
 import SnippetCard from 'components/SnippetCard';
 
-const Snippets: NextPage = () => {
+import { Snippet } from 'lib/interfaces';
+import { getAllFiles } from 'lib/mdx';
+
+interface Props {
+  allSnippets: Snippet[];
+}
+
+const Snippets: NextPage<Props> = ({ allSnippets }) => {
   return (
     <Container title="Snippets - Eduardo R. Ambriz">
       <Wrapper className="py-16 md:py-20">
@@ -13,30 +20,22 @@ const Snippets: NextPage = () => {
           Here’s a collection of short, useful and sweet stuff.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 items-start justify-between mx-auto gap-7">
-          <SnippetCard
-            slug="gradient-text"
-            title="Gradient text"
-            excerpt="Lorem ipsum dolor sit, amet consectetur adipisicing elit."
-          ></SnippetCard>
-          <SnippetCard
-            slug="blur-effect-on-navbar"
-            title="Blur effect on navbar"
-            excerpt="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis ab tempore tenetur quidem aut."
-          ></SnippetCard>
-          <SnippetCard
-            slug="cool-trick"
-            title="Cool trick"
-            excerpt="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque voluptatem, porro dignissimos iure voluptatum dolorem obcaecati nulla quia cumque magni."
-          ></SnippetCard>
-          <SnippetCard
-            slug="cool-trick 2"
-            title="Cool trick 2"
-            excerpt="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, esse."
-          ></SnippetCard>
+          {allSnippets &&
+            allSnippets.map((snippet: Snippet) => (
+              <SnippetCard key={snippet.slug} snippet={snippet}></SnippetCard>
+            ))}
         </div>
       </Wrapper>
     </Container>
   );
+};
+
+export const getStaticProps = async () => {
+  const allSnippets = getAllFiles('snippets', ['title', 'slug', 'description']);
+
+  return {
+    props: { allSnippets }
+  };
 };
 
 export default Snippets;
