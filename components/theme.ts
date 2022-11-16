@@ -49,7 +49,7 @@ export const buttonVariants: {
 
 export const linkVariants: { [key in LinkVariantType]: string } = {
   common:
-    'hover:transition-colors hover:duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-grey-1000 dark:focus-visible:ring-grey-0 rounded-sm',
+    'hover:transition-colors hover:duration-200 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-grey-1000 dark:focus-visible:ring-grey-0 rounded-sm',
   primary:
     'font-medium inline-flex items-center text-cobalt-dark hover:text-grey-1000 dark:text-blue-400 dark:hover:text-grey-100',
   nav: 'font-medium overflow-hidden px-2 py-1 text-grey-500 hover:text-grey-1000 dark:text-grey-200 dark:hover:text-grey-50 focus-visible:hover:text-grey-1000 dark:focus-visible:hover:text-grey-50',
@@ -62,5 +62,5 @@ export const linkVariants: { [key in LinkVariantType]: string } = {
     'underline decoration-dotted underline-offset-4 decoration-grey-500 text-grey-700 hover:text-grey-1000 dark:text-grey-300 dark:hover:text-grey-120',
   wordmark:
     'inline-flex items-center justify-center py-2 focus-visible:ring-cobalt-dark',
-  group: 'group'
+  block: 'block w-full'
 };

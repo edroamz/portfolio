@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router';
-import Link from 'next/link';
 import Image from 'next/image';
 
 import Container from 'components/Container';
@@ -86,12 +85,12 @@ export default function BlogLayout({ post }: Props) {
                     />
                   </div>
                 </InternalLink>
-                <div className="ml-1 flex flex-col items-baseline justify-center gap-y-2">
-                  <span className="text-sm leading-none tracking-wider font-medium uppercase text-grey-600 dark:text-grey-300">
+                <div className="ml-1 flex flex-col items-baseline justify-center">
+                  <span className="text-[13.5px] tracking-wider font-medium uppercase text-grey-600 dark:text-grey-300">
                     Written by
                   </span>
                   <InternalLink href="/about" textSize="lg">
-                    <span className="font-semibold leading-none text-grey-700 hover:text-grey-1000 dark:text-grey-150 dark:hover:text-grey-0">
+                    <span className="font-semibold text-grey-700 hover:text-grey-1000 dark:text-grey-150 dark:hover:text-grey-0">
                       {post.author.name}
                     </span>
                   </InternalLink>
@@ -99,29 +98,31 @@ export default function BlogLayout({ post }: Props) {
               </div>
             </div>
             <div className="flex-1/2 flex justify-end items-center gap-2">
-              <ExternalLink href="https://twitter.com" variant="primary">
-                Discuss on Twitter
+              <ExternalLink href="https://twitter.com">
+                <span className="text-grey-700 hover:text-grey-1000 dark:text-grey-150 dark:hover:text-grey-0">
+                  Discuss on Twitter
+                </span>
               </ExternalLink>
               <span className="text-grey-600 dark:text-grey-300 text-lg">
                 •
               </span>
-              <ExternalLink href="https://github.com" variant="primary">
-                Suggest Change on Github
+              <ExternalLink href="https://github.com">
+                <span className="text-grey-700 hover:text-grey-1000 dark:text-grey-150 dark:hover:text-grey-0">
+                  Suggest Change on Github
+                </span>
               </ExternalLink>
             </div>
           </div>
           <hr className="border-grey-120 dark:border-grey-880 mt-7" />
           <section className="flex flex-col items-center justify-center mt-16 md:mt-20">
-            <Link href="/blog/preview">
-              <a className="block w-full">
-                <h6 className="font-semibold text-center text-sm text-grey-700 dark:text-grey-150">
-                  — Read this next —
-                </h6>
-                <p className="text-center font-medium text-iris-dark dark:text-purple-300">
-                  5 ways to get the work done
-                </p>
-              </a>
-            </Link>
+            <InternalLink href="/blog/preview" variant="block">
+              <h6 className="font-medium text-center text-sm text-grey-700 dark:text-grey-150">
+                — Read this next —
+              </h6>
+              <p className="text-center text-xl font-medium text-cobalt-dark group-hover:text-grey-1000 dark:text-blue-400 dark:group-hover:text-grey-100">
+                5 ways to get the work done
+              </p>
+            </InternalLink>
           </section>
         </div>
       </Wrapper>

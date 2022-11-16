@@ -27,4 +27,4 @@ export type LinkVariantType =
   | 'footerNav'
   | 'underline'
   | 'wordmark'
-  | 'group';
+  | 'block';

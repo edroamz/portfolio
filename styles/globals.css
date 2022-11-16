@@ -280,5 +280,5 @@ pre {
 }
 
 .permalink-to-header {
-  @apply no-underline hover:underline hover:underline-offset-8 after:content-['#'] after:pl-1 after:inline-block after:text-[0.85em] after:text-transparent hover:after:text-grey-500 dark:hover:after:text-grey-400;
+  @apply no-underline hover:underline decoration-2 hover:underline-offset-8 after:content-['#'] after:pl-1 after:inline-block after:text-[0.85em] after:text-transparent hover:after:text-grey-500 dark:hover:after:text-grey-400;
 }

@@ -98,10 +98,7 @@ export default function Footer() {
           <div>
             <ul className="inline-flex flex-row items-center gap-x-4">
               <li>
-                <ExternalLink
-                  href="https://www.linkedin.com/in/edroamz/"
-                  variant="group"
-                >
+                <ExternalLink href="https://www.linkedin.com/in/edroamz/">
                   <svg
                     className="inline-flex h-6 w-6 text-grey-500 group-hover:text-grey-700 dark:text-grey-400 dark:group-hover:text-grey-200"
                     xmlns="http://www.w3.org/2000/svg"
@@ -121,7 +118,7 @@ export default function Footer() {
                 className="inline-flex w-px h-5 bg-grey-120 dark:bg-grey-880"
               ></Separator.Root>
               <li>
-                <ExternalLink href="https://github.com/edroamz" variant="group">
+                <ExternalLink href="https://github.com/edroamz">
                   <svg
                     className="inline-flex h-6 w-6 text-grey-500 group-hover:text-grey-700 dark:text-grey-400 dark:group-hover:text-grey-200"
                     xmlns="http://www.w3.org/2000/svg"
