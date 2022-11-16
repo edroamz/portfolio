@@ -10,17 +10,21 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypePrism from 'rehype-prism-plus';
 import readingTime from 'reading-time';
 
-type Type = 'blog' | 'snippets';
+type MDXType = 'blog' | 'snippets';
 
-function getFilesDirectory(type: Type): string {
+function getFilesDirectory(type: MDXType): string {
   return join(process.cwd(), `/data/${type}`);
 }
 
-export function getFileSlugs(type: Type) {
+export function getFileSlugs(type: MDXType) {
   return fs.readdirSync(getFilesDirectory(type));
 }
 
-export function getFileBySlug(type: Type, slug: string, fields: string[] = []) {
+export function getFileBySlug(
+  type: MDXType,
+  slug: string,
+  fields: string[] = []
+) {
   const fileName = slug.replace(/\.mdx$/, '');
   const filesDirectory = getFilesDirectory(type);
   const fullPath = join(filesDirectory, `${fileName}.mdx`);
@@ -78,7 +82,7 @@ export async function getSerializedMDXContent(
   return result;
 }
 
-export function getAllFiles(type: Type, fields: string[] = []) {
+export function getAllFiles(type: MDXType, fields: string[] = []) {
   const slugs = getFileSlugs(type);
   const posts = slugs
     .map((slug) => getFileBySlug(type, slug, fields))

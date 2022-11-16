@@ -126,12 +126,14 @@ function BlurImage({ image }: { image: Image }) {
 ## Another Subtitle
 
 ```js {2,4}
-await supabaseAdmin.from('images').insert([{
-  name: 'Pedro Duarte',
-  href: 'https://twitter.com/peduarte/status/1463897468383412231',
-  username: '@peduarte',
-  imageSrc: 'https://pbs.twimg.com/media/FFDOtLkWYAsWjTM?format=jpg',
-});
+await supabaseAdmin.from('images').insert([
+  {
+    name: 'Pedro Duarte',
+    href: 'https://twitter.com/peduarte/status/1463897468383412231',
+    username: '@peduarte',
+    imageSrc: 'https://pbs.twimg.com/media/FFDOtLkWYAsWjTM?format=jpg'
+  }
+]);
 ```
 
 ### I am an h3
@@ -153,10 +155,15 @@ export default function Gallery({ images }: { images: Image[] }) {
 ## Be obvious
 
 <Callout emoji="💡">
-  **Blog formatting** is the practice of making the best ideas the most obvious
-</Callout>
+  **Blog formatting** is the practice of making the _best ideas_ the most obvious.
 
 If you can be obvious in a way that no one has before, go for it.
+
+</Callout>
+
+Phasellus vestibulum lorem sed risus ultricies tristique nulla. Quis blandit turpis cursus in hac habitasse platea dictumst quisque.
+
+Thasellus vestibulum lorem sed risus ultricies tristique nulla. Quis blandit turpis cursus in hac habitasse platea dictumst quisque.
 
 ```css
 @keyframes color {

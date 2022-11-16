@@ -9,7 +9,12 @@ export default function SnippetCard({ snippet }: Props) {
   const { slug, title, description } = snippet;
 
   return (
-    <Link href={`/snippets/${slug}`}>
+    <Link
+      href={{
+        pathname: '/snippets/[slug]',
+        query: { slug }
+      }}
+    >
       <a className="h-full bg-white dark:bg-grey-1000 shadow hover:shadow-lg dark:shadow-none dark:border-x-transparent dark:border-y dark:border-x sm:dark:border-grey-800 sm:dark:even:border-r-transparent sm:dark:odd:border-l-transparent lg:dark:even:border-grey-800 lg:dark:odd:border-grey-800 dark:border-grey-800 lg:dark:hover:even:border-white lg:dark:odd:hover:border-white dark:hover:border-white hover:transition-shadow dark:hover:transition-colors rounded-lg break-words">
         <div className="h-full p-7">
           <div className="h-full flex flex-col justify-between gap-y-7">

@@ -2,6 +2,7 @@ import { NextPage } from 'next';
 
 import Container from 'components/Container';
 import Wrapper from 'components/Wrapper';
+import Callout from 'components/Callout';
 
 const Uses: NextPage = () => {
   return (
@@ -11,11 +12,9 @@ const Uses: NextPage = () => {
         <p className="text-lg mb-7">
           Here’s a collection of things I love and use regularity.
         </p>
-        <div className="flex flex-row items-start gap-x-3 w-full bg-white dark:bg-grey-900 py-2 px-5 md:px-6 border border-grey-120 dark:border-grey-700 rounded-lg">
-          <span className="text-cobalt-dark dark:text-blue-400 text-lg">
-            Full disclosure, some links on this site are affiliate links.
-          </span>
-        </div>
+        <Callout>
+          <p>Full disclosure, some links on this site are affiliate links.</p>
+        </Callout>
         <div className="mt-14">
           <h2 className="text-2xl">Office</h2>
           <ul className="list-disc list-inside space-y-1 px-1 md:px-4 text-lg">

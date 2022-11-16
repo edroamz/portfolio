@@ -1,8 +1,8 @@
-interface ProjectCardProps {
+type ProjectCardProps = {
   slug: string;
   title: string;
   excerpt: string;
-}
+};
 
 export default function ProjectCard({
   slug,

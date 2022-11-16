@@ -6,9 +6,12 @@ import Container from 'components/Container';
 import Wrapper from 'components/Wrapper';
 import TimeFormatter from 'components/TimeFormatter';
 import MDXComponents from 'components/MDXComponents';
+import Button from 'components/Button';
 
 import { Post } from 'lib/interfaces';
 import { MDXRemote } from 'next-mdx-remote';
+import ExternalLink from 'components/ExternalLink';
+import InternalLink from 'components/InternalLink';
 
 interface Props {
   post: Post;
@@ -24,10 +27,9 @@ export default function BlogLayout({ post }: Props) {
       date={post.datePublished}
       type="article"
     >
-      <Wrapper as="article" className="blog-article pt-10 pb-16 md:pb-20">
-        <button
-          className="inline-flex items-center text-lg text-cobalt-dark dark:text-blue-400 font-medium leading-none tracking-tight self-start mb-10"
-          type="button"
+      <Wrapper as="article" className="pt-10 pb-16 md:pb-20">
+        <Button
+          variant="primaryLink"
           onClick={() => router.back()}
           aria-label="Go back"
         >
@@ -46,8 +48,8 @@ export default function BlogLayout({ post }: Props) {
             />
           </svg>
           Go back
-        </button>
-        <div className="flex flex-col items-center">
+        </Button>
+        <div className="flex flex-col items-center mt-10">
           <div className="inline-flex flex-row items-center justify-center gap-x-2 mb-5">
             <span className="font-medium uppercase text-grey-600 dark:text-grey-300">
               <TimeFormatter dateString={post.datePublished}></TimeFormatter>
@@ -74,48 +76,38 @@ export default function BlogLayout({ post }: Props) {
           <div className="flex flex-col md:flex-row justify-between items-baseline gap-y-10">
             <div className="flex-1/2">
               <div className="inline-flex flex-row items-center justify-start gap-x-3">
-                <Link href="/about">
-                  <a>
-                    <div className="relative h-10 w-10 rounded-full overflow-hidden">
-                      <Image
-                        src={`${post.author.picture}`}
-                        alt={`${post.author.name}`}
-                        layout="fill"
-                        objectFit="cover"
-                      />
-                    </div>
-                  </a>
-                </Link>
+                <InternalLink href="/about">
+                  <div className="relative h-10 w-10 rounded-full overflow-hidden">
+                    <Image
+                      src={`${post.author.picture}`}
+                      alt={`${post.author.name}`}
+                      layout="fill"
+                      objectFit="cover"
+                    />
+                  </div>
+                </InternalLink>
                 <div className="ml-1 flex flex-col items-baseline justify-center gap-y-2">
                   <span className="text-sm leading-none tracking-wider font-medium uppercase text-grey-600 dark:text-grey-300">
                     Written by
                   </span>
-                  <Link href="/about">
-                    <a>
-                      <span className="font-semibold leading-none text-grey-900 dark:text-grey-150">
-                        {post.author.name}
-                      </span>
-                    </a>
-                  </Link>
+                  <InternalLink href="/about" textSize="lg">
+                    <span className="font-semibold leading-none text-grey-700 hover:text-grey-1000 dark:text-grey-150 dark:hover:text-grey-0">
+                      {post.author.name}
+                    </span>
+                  </InternalLink>
                 </div>
               </div>
             </div>
             <div className="flex-1/2 flex justify-end items-center gap-2">
-              <a
-                className="underline text-base font-medium text-cobalt-dark dark:text-blue-400"
-                href="https://github.com"
-              >
+              <ExternalLink href="https://twitter.com" variant="primary">
                 Discuss on Twitter
-              </a>
+              </ExternalLink>
               <span className="text-grey-600 dark:text-grey-300 text-lg">
                 •
               </span>
-              <a
-                className="underline text-base font-medium text-cobalt-dark dark:text-blue-400"
-                href="https://github.com"
-              >
+              <ExternalLink href="https://github.com" variant="primary">
                 Suggest Change on Github
-              </a>
+              </ExternalLink>
             </div>
           </div>
           <hr className="border-grey-120 dark:border-grey-880 mt-7" />

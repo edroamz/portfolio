@@ -5,6 +5,7 @@ import Image from 'next/image';
 
 import Wrapper from 'components/Wrapper';
 import GradientText from 'components/GradientText';
+import InternalLink from 'components/InternalLink';
 import Container from 'components/Container';
 import BlogPost from 'components/BlogPost';
 import { getAllFiles } from 'lib/mdx';
@@ -106,7 +107,9 @@ const Home: NextPage<HomeProps> = ({ allPosts }) => {
       </Wrapper>
       <section className="w-full py-16 md:py-20">
         <Wrapper className="mb-5">
-          <GradientText as="h2">Curated work</GradientText>
+          <GradientText as="h2" variant="santaMonica" textSize="3xl">
+            Curated work
+          </GradientText>
         </Wrapper>
         <h3 className="text-3xl md:text-4xl max-w-5xl mx-auto px-7 mb-8">
           Take a sneak peek of my work
@@ -132,30 +135,30 @@ const Home: NextPage<HomeProps> = ({ allPosts }) => {
           </div>
         </div>
         <Wrapper className="mt-7">
-          <Link href="/projects">
-            <a className="inline-flex items-center text-lg text-cobalt-dark dark:text-blue-400 font-medium leading-none tracking-tight">
-              View more
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="inline-block h-4 w-4 stroke-current ml-1"
-                viewBox="0 0 256 256"
-              >
-                <rect width="256" height="256" fill="none" stroke="none"></rect>
-                <polyline
-                  points="96 48 176 128 96 208"
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="24"
-                ></polyline>
-              </svg>
-            </a>
-          </Link>
+          <InternalLink href="/projects" textSize="lg" variant="primary">
+            View more{' '}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="inline-block h-4 w-4 stroke-current ml-1"
+              viewBox="0 0 256 256"
+            >
+              <rect width="256" height="256" fill="none" stroke="none"></rect>
+              <polyline
+                points="96 48 176 128 96 208"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="24"
+              ></polyline>
+            </svg>
+          </InternalLink>
         </Wrapper>
       </section>
       <section className="w-full py-16 md:py-20">
         <Wrapper className="mb-5">
-          <GradientText as="h2">Featured posts</GradientText>
+          <GradientText as="h2" variant="miami" textSize="3xl">
+            Featured posts
+          </GradientText>
         </Wrapper>
         <h3 className="text-3xl md:text-4xl max-w-5xl mx-auto px-7 mb-8">
           Most popular posts I’ve written
@@ -174,25 +177,23 @@ const Home: NextPage<HomeProps> = ({ allPosts }) => {
           </div>
         </div>
         <Wrapper className="mt-7">
-          <Link href="/projects">
-            <a className="inline-flex items-center text-lg text-cobalt-dark dark:text-blue-400 font-medium leading-none tracking-tight">
-              Read all posts
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="inline-block h-4 w-4 stroke-current ml-1"
-                viewBox="0 0 256 256"
-              >
-                <rect width="256" height="256" fill="none" stroke="none"></rect>
-                <polyline
-                  points="96 48 176 128 96 208"
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="24"
-                ></polyline>
-              </svg>
-            </a>
-          </Link>
+          <InternalLink href="/projects" textSize="lg" variant="primary">
+            Read all posts{' '}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="inline-block h-4 w-4 stroke-current ml-1"
+              viewBox="0 0 256 256"
+            >
+              <rect width="256" height="256" fill="none" stroke="none"></rect>
+              <polyline
+                points="96 48 176 128 96 208"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="24"
+              ></polyline>
+            </svg>
+          </InternalLink>
         </Wrapper>
       </section>
     </Container>

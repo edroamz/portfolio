@@ -1,6 +1,7 @@
-import React, { ReactNode } from 'react';
+import { ReactNode, createElement, ComponentPropsWithoutRef } from 'react';
+import { HeadingType } from 'lib/types';
 
-const elements: { [key: string]: string } = {
+const headings: { [key in HeadingType]: string } = {
   h1: 'h1',
   h2: 'h2',
   h3: 'h3',
@@ -9,19 +10,19 @@ const elements: { [key: string]: string } = {
   h6: 'h6'
 };
 
-interface Props {
-  type: string;
+type HeadingProps = ComponentPropsWithoutRef<HeadingType> & {
+  type: HeadingType;
   children: ReactNode;
-  [key: string]: ReactNode;
-}
+};
 
-function Heading({ type = 'h1', children, ...props }: Props) {
-  const customTag = React.createElement(
-    elements[type] || elements.h1,
-    props,
-    children
-  );
-  return customTag;
+function Heading({
+  type = 'h1',
+  children,
+  ...props
+}: HeadingProps): JSX.Element {
+  const headingType: string = headings[type];
+
+  return createElement(headingType, props, children);
 }
 
 export default Heading;

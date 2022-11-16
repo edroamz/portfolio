@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import Callout from 'components/Callout';
 
 const CustomLink = (props: any): JSX.Element => {
   if (!props.href) {
@@ -31,15 +32,6 @@ function RoundedImage(props: any): JSX.Element {
   ) : (
     <div className="my-10">
       <Image alt={props.alt} className="rounded-lg" {...props}></Image>
-    </div>
-  );
-}
-
-function Callout(props: any): JSX.Element {
-  return (
-    <div className="flex gap-x-3 bg-grey-80 dark:bg-grey-900 bg-gradient-to-r from-grey-50 to-grey-80 dark:from-grey-900 dark:to-grey-880 border border-grey-120  dark:border-grey-700 rounded-md px-4 py-4 mt-6">
-      <div className="flex items-baseline">{props.emoji}</div>
-      <div className="callout">{props.children}</div>
     </div>
   );
 }

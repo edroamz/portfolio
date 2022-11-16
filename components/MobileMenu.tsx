@@ -3,7 +3,7 @@ import * as Popover from '@radix-ui/react-popover';
 import cn from 'classnames';
 import { motion, AnimatePresence } from 'framer-motion';
 
-import NavLink from 'components/NavLink';
+import InternalLink from 'components/InternalLink';
 
 export default function MobileMenuNew() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -45,7 +45,7 @@ export default function MobileMenuNew() {
       <AnimatePresence>
         {isMenuOpen && (
           <Popover.Portal forceMount>
-            <Popover.Content sideOffset={18} align="center" asChild>
+            <Popover.Content sideOffset={22} align="center" asChild>
               <motion.nav
                 className="visible md:invisible h-content w-screen inset-x-4 z-10 bg-white dark:bg-grey-970 opacity-100 translate-y-0"
                 initial={{ opacity: 0, translateY: '2rem' }}
@@ -53,41 +53,51 @@ export default function MobileMenuNew() {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.15, ease: 'linear' }}
               >
-                <ul className="h-full px-7 py-12 divide-y divide-grey-150 dark:divide-grey-800 text-base text-grey-1000 dark:text-grey-0">
+                <ul className="h-full px-7 py-12 divide-y divide-grey-150 dark:divide-grey-800">
                   <li>
-                    <NavLink
-                      className="block text-lg py-4"
+                    <InternalLink
                       href="/projects"
-                      text="Projects"
-                    ></NavLink>
+                      variant="mobileNav"
+                      textSize="lg"
+                    >
+                      Projects
+                    </InternalLink>
                   </li>
                   <li>
-                    <NavLink
-                      className="block text-lg py-4"
+                    <InternalLink
                       href="/blog"
-                      text="Blog"
-                    ></NavLink>
+                      variant="mobileNav"
+                      textSize="lg"
+                    >
+                      Blog
+                    </InternalLink>
                   </li>
                   <li>
-                    <NavLink
-                      className="block text-lg py-4"
+                    <InternalLink
                       href="/snippets"
-                      text="Snippets"
-                    ></NavLink>
+                      variant="mobileNav"
+                      textSize="lg"
+                    >
+                      Snippets
+                    </InternalLink>
                   </li>
                   <li>
-                    <NavLink
-                      className="block text-lg py-4"
+                    <InternalLink
                       href="/about"
-                      text="About"
-                    ></NavLink>
+                      variant="mobileNav"
+                      textSize="lg"
+                    >
+                      About
+                    </InternalLink>
                   </li>
                   <li>
-                    <NavLink
-                      className="block text-lg py-4"
+                    <InternalLink
                       href="/uses"
-                      text="Uses"
-                    ></NavLink>
+                      variant="mobileNav"
+                      textSize="lg"
+                    >
+                      Uses
+                    </InternalLink>
                   </li>
                 </ul>
               </motion.nav>

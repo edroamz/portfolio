@@ -1,20 +1,25 @@
-import Link from 'next/link';
-
 import TimeFormatter from 'components/TimeFormatter';
 import Heading from 'components/Heading';
+import InternalLink from 'components/InternalLink';
 import { Post } from 'lib/interfaces';
+import { HeadingType } from 'lib/types';
 
 interface Props {
   post: Post;
-  heading?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  heading?: HeadingType;
 }
 
 export default function BlogPost({ post, heading = 'h2' }: Props) {
   const { slug, datePublished, title, excerpt, readingTime } = post;
 
   return (
-    <Link href={`/blog/${slug}`}>
-      <a className="blog-post-link">
+    <InternalLink
+      href={{
+        pathname: '/blog/[slug]',
+        query: { slug }
+      }}
+    >
+      <div className="md:w-full flex flex-col md:flex-row items-baseline justify-between md:gap-x-12 lg:gap-x-14 py-6 md:py-7 hover:bg-grey-80 dark:hover:bg-grey-930 hover:transition-none rounded-md md:rounded-xl px-7">
         <div className="w-full flex flex-row md:hidden items-center gap-x-2 mb-3 md:mb-0">
           <span className="block h-3 w-0.5 rounded-full bg-grey-200 dark:bg-grey-500"></span>
           <span className="inline-flex items-center uppercase text-grey-600 dark:text-grey-300">
@@ -38,11 +43,8 @@ export default function BlogPost({ post, heading = 'h2' }: Props) {
             {title}
           </Heading>
           <p className="text-lg mb-3">{excerpt}</p>
-          <span className="inline-block text-lg text-cobalt-dark dark:text-blue-400 font-medium leading-none tracking-tight underline underline-offset-4">
-            Read more
-          </span>
         </div>
-      </a>
-    </Link>
+      </div>
+    </InternalLink>
   );
 }
