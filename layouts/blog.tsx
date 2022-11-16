@@ -80,8 +80,8 @@ export default function BlogLayout({ post }: Props) {
                     <Image
                       src={`${post.author.picture}`}
                       alt={`${post.author.name}`}
-                      layout="fill"
-                      objectFit="cover"
+                      fill
+                      className="object-cover"
                     />
                   </div>
                 </InternalLink>

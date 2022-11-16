@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import type { NextPage } from 'next';
 import * as Separator from '@radix-ui/react-separator';
 import Image from 'next/image';
@@ -119,8 +118,8 @@ const Home: NextPage<HomeProps> = ({ allPosts }) => {
             <Image
               src={project1}
               alt="project1"
-              layout="fill"
-              objectFit="cover"
+              fill
+              className="object-cover"
               placeholder="blur"
             ></Image>
           </div>
@@ -128,8 +127,8 @@ const Home: NextPage<HomeProps> = ({ allPosts }) => {
             <Image
               src={project2}
               alt="project2"
-              layout="fill"
-              objectFit="cover"
+              fill
+              className="object-cover"
               placeholder="blur"
             ></Image>
           </div>
