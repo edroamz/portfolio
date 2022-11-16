@@ -40,8 +40,8 @@ function InternalLink({
   };
 
   return (
-    <Link {...linkProps}>
-      <a className={classNames}>{children}</a>
+    <Link className={classNames} {...linkProps}>
+      {children}
     </Link>
   );
 }
