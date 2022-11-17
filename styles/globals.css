@@ -9,7 +9,7 @@
   }
 
   body {
-    @apply bg-grey-0 dark:bg-grey-970 bg-gradient-to-b from-white to-grey-0 dark:from-grey-970 dark:to-grey-970 w-screen overflow-x-hidden text-base;
+    @apply bg-white dark:bg-grey-970 w-screen overflow-x-hidden text-base;
   }
 
   h1,
@@ -50,43 +50,6 @@
     @apply w-auto overflow-visible m-0 whitespace-normal fixed top-[18px] left-7 z-50 h-10 flex items-center underline outline-none px-4 font-medium text-cobalt-dark dark:text-cobalt-light bg-white dark:bg-grey-970 ring-2 ring-cobalt-dark dark:ring-cobalt-light rounded-md;
   }
 
-  /* Tab trigger styles */
-  .tab-trigger {
-    @apply relative inline-flex;
-  }
-
-  .tab-trigger__text {
-    @apply font-medium text-lg hover:transition-colors text-grey-500 hover:text-grey-900 dark:text-grey-400 dark:hover:text-grey-50 border-b border-b-transparent px-4 pb-2;
-  }
-
-  .tab-trigger__text--first {
-    @apply pl-0 pr-4;
-  }
-
-  .tab-trigger__text--last {
-    @apply pr-0 pl-4;
-  }
-
-  .tab-trigger__border {
-    @apply absolute h-px bg-transparent left-4 bottom-0 right-4;
-  }
-
-  .tab-trigger__border--first {
-    @apply left-0;
-  }
-
-  .tab-trigger__border--last {
-    @apply right-0;
-  }
-
-  .tab-trigger[data-state='active'] .tab-trigger__text {
-    @apply text-iris hover:bg-transparent hover:text-iris dark:text-iris-light dark:hover:bg-transparent dark:hover:text-iris-light;
-  }
-
-  .tab-trigger[data-state='active'] .tab-trigger__border {
-    @apply bg-iris dark:bg-iris-light;
-  }
-
   /* Markdown styles */
   .prose {
     @apply w-full text-lg md:max-w-prose mx-auto;
@@ -109,7 +72,7 @@
   }
 
   .prose p {
-    @apply text-[18px] leading-9 text-grey-950 dark:text-grey-200;
+    @apply text-lg leading-9 text-grey-950 dark:text-grey-200;
   }
 
   .prose p strong {
@@ -126,7 +89,7 @@
   }
 
   .prose blockquote p {
-    @apply text-2xl leading-relaxed tracking-normal font-medium text-center text-grey-880 dark:text-grey-150 mx-7;
+    @apply text-2xl leading-relaxed font-medium text-center text-grey-880 dark:text-grey-150 mx-7;
   }
 
   .prose ul li,
@@ -147,19 +110,23 @@
     @apply list-none;
   }
 
-  .prose ul ul,
-  .prose ol ol {
-    @apply mt-1 pl-2 space-y-1;
-  }
-
   .prose ul li {
     background-image: url("data:image/svg+xml,%3Csvg width='12' height='1' viewBox='0 0 14 1' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline y1='0.5' x2='14' y2='0.5' stroke='%235E6AD2'/%3E%3C/svg%3E%0A");
     background-repeat: no-repeat;
     background-position: 0px 0.8em;
   }
 
+  .prose ol li::marker {
+    @apply text-grey-1000 dark:text-grey-50;
+  }
+
+  .prose ul ul,
+  .prose ol ol {
+    @apply mt-1 pl-2 space-y-1;
+  }
+
   .prose a:not(.permalink-to-header) {
-    @apply font-medium text-cobalt-dark hover:text-grey-1000 dark:text-blue-400 dark:hover:text-grey-100 hover:transition-colors duration-200;
+    @apply font-medium text-cobalt-dark hover:text-grey-1000 dark:text-blue-400 dark:hover:text-grey-100 hover:transition-colors hover:duration-200;
   }
 }
 
@@ -178,7 +145,7 @@
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  @apply text-grey-500 dark:text-neutral-400/90;
+  @apply text-grey-400;
 }
 
 .token.punctuation,
@@ -231,11 +198,11 @@ pre {
 }
 
 code {
-  @apply text-base text-grey-1000 dark:text-grey-150 px-2 py-2 bg-grey-80 dark:bg-grey-900 border border-grey-120 dark:border-grey-700 rounded-md mx-1;
+  @apply text-base text-grey-1000 dark:text-grey-150 px-2 py-2 bg-grey-50 dark:bg-grey-900 border border-grey-120 dark:border-grey-700 rounded-md mx-1;
 }
 
 pre code {
-  @apply block text-grey-1000 dark:text-grey-200 p-0 bg-white dark:bg-grey-1000;
+  @apply block text-grey-1000 dark:text-grey-200 p-0 m-0 bg-white dark:bg-grey-1000;
   border: initial;
 }
 
@@ -263,11 +230,7 @@ pre {
 }
 
 .highlight-line {
-  /* 
-  .pl-22px = px-5 + border-2
-      22px = 20px + 2px
-  */
-  @apply block -mx-6 pl-[22px] bg-grey-50 dark:bg-grey-900 border-l-2 border-blue-700 dark:border-blue-300;
+  @apply block -mx-5 pl-[18px] bg-grey-50 dark:bg-grey-900 border-l-2 border-blue-700 dark:border-blue-300;
 }
 
 .code-line.line-number:not(.highlight-line) {
@@ -275,8 +238,12 @@ pre {
 }
 
 .line-number::before {
-  @apply mr-6 text-grey-500 text-right dark:text-neutral-400/90;
+  @apply mr-6 text-grey-300 text-right dark:text-grey-500;
   content: attr(line);
+}
+
+.line-number::before.highlight-line {
+  @apply text-grey-900 dark:text-grey-150;
 }
 
 .permalink-to-header {

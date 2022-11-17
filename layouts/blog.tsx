@@ -119,7 +119,7 @@ export default function BlogLayout({ post }: Props) {
               <h6 className="font-medium text-center text-sm text-grey-700 dark:text-grey-150">
                 — Read this next —
               </h6>
-              <p className="text-center text-xl font-medium text-cobalt-dark group-hover:text-grey-1000 dark:text-blue-400 dark:group-hover:text-grey-100">
+              <p className="text-center text-lg font-medium text-cobalt-dark group-hover:text-grey-1000 dark:text-blue-400 dark:group-hover:text-grey-100">
                 5 ways to get the work done
               </p>
             </InternalLink>

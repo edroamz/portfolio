@@ -9,7 +9,7 @@ export default function NotFound() {
       <Wrapper className="py-16 md:py-20">
         <div className="flex flex-col items-start sm:items-center justify-center gap-y-3">
           <GradientText variant="santaMonica" textSize="xl">
-            404
+            <span className="font-extrabold tracking-wide">404</span>
           </GradientText>
           <h1 className="mb-0">Page not found.</h1>
           <p className="text-lg text-left sm:text-center mb-8 max-w-prose">

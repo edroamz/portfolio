@@ -25,7 +25,7 @@ function RoundedImage(props: any): JSX.Element {
   return props.caption ? (
     <figure className="my-10">
       <Image alt={props.alt} className="rounded-lg" {...props}></Image>
-      <figcaption className="text-sm text-center text-grey-880 dark:text-grey-200 px-4 pt-2">
+      <figcaption className="text-base text-center text-grey-880 dark:text-grey-200 px-4 pt-4">
         {props.caption}
       </figcaption>
     </figure>

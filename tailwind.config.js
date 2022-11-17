@@ -1,5 +1,4 @@
 const { fontFamily } = require('tailwindcss/defaultTheme');
-const plugin = require('tailwindcss/plugin');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -12,7 +11,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['IBM Plex Sans', ...fontFamily.sans]
+        sans: ['Inter', ...fontFamily.sans]
       },
       fontSize: {
         sm: [
@@ -22,47 +21,53 @@ module.exports = {
             letterSpacing: '0.0175rem'
           }
         ],
-        base: ['1rem', '1.85rem'],
+        base: [
+          '1rem',
+          {
+            lineHeight: '1.85rem',
+            letterSpacing: '-0.02rem'
+          }
+        ],
         lg: [
-          '1.145rem',
+          '1.125rem',
           {
             lineHeight: '2rem',
-            letterSpacing: '0.0025rem'
+            letterSpacing: '-0.015rem'
           }
         ],
         xl: [
-          '1.365rem',
+          '1.345rem',
           {
             lineHeight: '2rem',
-            letterSpacing: '-0.0375rem'
+            letterSpacing: '-0.0475rem'
           }
         ],
         '2xl': [
-          '1.65rem',
+          '1.6rem',
           {
             lineHeight: '2.25rem',
-            letterSpacing: '-0.065rem'
+            letterSpacing: '-0.075rem'
           }
         ],
         '3xl': [
           '2.15rem',
           {
             lineHeight: '2.35rem',
-            letterSpacing: '-0.075rem'
+            letterSpacing: '-0.08rem'
           }
         ],
         '4xl': [
           '2.55rem',
           {
             lineHeight: '3rem',
-            letterSpacing: '-0.085rem'
+            letterSpacing: '-0.1rem'
           }
         ],
         '5xl': [
-          '3.4rem',
+          '3.2rem',
           {
             lineHeight: '3.7rem',
-            letterSpacing: '-0.1rem'
+            letterSpacing: '-0.13rem'
           }
         ]
       },
@@ -122,28 +127,5 @@ module.exports = {
         'border-bottom-dark': 'inset 0 -1px 0 0 rgba(255,255,255,0.1)'
       }
     }
-  },
-  plugins: [
-    plugin(function ({ addBase }) {
-      const fonts = {
-        '@font-face': [
-          {
-            fontFamily: 'IBM Plex Sans',
-            fontStyle: 'normal',
-            fontWeight: '100 900',
-            fontDisplay: 'optional',
-            src: 'url(/fonts/ibm-plex-sans-var.woff2) format("woff2");'
-          },
-          {
-            fontFamily: 'IBM Plex Sans',
-            fontStyle: 'italic',
-            fontWeight: '100 900',
-            fontDisplay: 'optional',
-            src: 'url(/fonts/ibm-plex-sans-var-italic.woff2) format("woff2");'
-          }
-        ]
-      };
-      addBase(fonts);
-    })
-  ]
+  }
 };

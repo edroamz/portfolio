@@ -19,13 +19,13 @@ export default function BlogPost({ post, heading = 'h2' }: Props) {
         query: { slug }
       }}
     >
-      <div className="md:w-full flex flex-col md:flex-row items-baseline justify-between md:gap-x-12 lg:gap-x-14 py-6 md:py-7 hover:bg-grey-80 dark:hover:bg-grey-930 hover:transition-none rounded-md md:rounded-xl px-7">
+      <div className="md:w-full flex flex-col md:flex-row items-baseline justify-between md:gap-x-12 lg:gap-x-14 py-6 md:py-7 hover:bg-grey-50 dark:hover:bg-grey-930 hover:transition-none rounded-md md:rounded-xl px-7">
         <div className="w-full flex flex-row md:hidden items-center gap-x-2 mb-3 md:mb-0">
           <span className="block h-3 w-0.5 rounded-full bg-grey-200 dark:bg-grey-500"></span>
           <span className="inline-flex items-center uppercase text-grey-600 dark:text-grey-300">
             <TimeFormatter dateString={datePublished}></TimeFormatter>
           </span>
-          <span className="">—</span>
+          <span>—</span>
           <span className="inline-block uppercase text-grey-600 dark:text-grey-300">
             {readingTime}
           </span>
