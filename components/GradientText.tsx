@@ -19,27 +19,27 @@ import cn from 'classnames';
 type TextType = 'p' | 'span' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
 type GradientTextProps = ComponentPropsWithoutRef<TextType> & {
-  variant: GradientVariantType;
-  direction?: GradientDirectionType;
   textSize?: TextSizeType;
+  direction?: GradientDirectionType;
+  variant: GradientVariantType;
   as?: TextType;
   children: ReactNode;
 };
 
 const GradientText = ({
-  variant,
-  direction = 'right',
   textSize = 'xl',
+  direction = 'right',
+  variant,
   as = 'span',
   children,
   ...props
 }: GradientTextProps): JSX.Element => {
   const type: string = as;
   const classNames: string = cn(
-    'inline-block m-0 bg-clip-text font-bold',
+    'inline-block m-0 bg-clip-text font-bold [&_p]:text-[length:inherit]',
+    textSizes[textSize],
     gradientDirections[direction],
-    gradientVariants[variant],
-    textSizes[textSize]
+    gradientVariants[variant]
   );
   const styles: CSSProperties = { WebkitTextFillColor: 'transparent' };
   const componentProps: ComponentPropsWithoutRef<TextType> = {

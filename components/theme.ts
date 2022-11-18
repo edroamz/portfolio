@@ -33,6 +33,7 @@ export const textSizes: { [key in TextSizeType]: string } = {
   base: 'text-base tracking-tight',
   lg: 'text-lg tracking-tight leading-8',
   xl: 'text-xl',
+  '2xl': 'text-2xl',
   '3xl': 'text-3xl md:text-4xl'
 };
 

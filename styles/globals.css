@@ -103,17 +103,21 @@
   }
 
   .prose ol {
-    @apply list-decimal list-inside;
+    @apply list-decimal list-outside;
   }
 
   .prose ul {
-    @apply list-none;
+    @apply list-none list-inside;
   }
 
   .prose ul li {
-    background-image: url("data:image/svg+xml,%3Csvg width='12' height='1' viewBox='0 0 14 1' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline y1='0.5' x2='14' y2='0.5' stroke='%235E6AD2'/%3E%3C/svg%3E%0A");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 256 256'%3E%3Cpath fill='none' d='M0 0h256v256H0z'/%3E%3Cpath fill='none' stroke='%235b53ff' stroke-linecap='round' stroke-linejoin='round' stroke-width='16' d='M40 128h176'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
-    background-position: 0px 0.8em;
+    background-position: 0px 0.4em;
+  }
+
+  .prose ol li {
+    @apply ml-5 pl-[0.3rem];
   }
 
   .prose ol li::marker {

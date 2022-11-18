@@ -10,7 +10,7 @@ export type GradientDirectionType =
   | 'left'
   | 'topLeft';
 
-export type TextSizeType = 'sm' | 'base' | 'lg' | 'xl' | '3xl';
+export type TextSizeType = 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl';
 
 export type HeadingType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 

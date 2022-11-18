@@ -47,11 +47,6 @@ export default function SnippetsLayout({ snippet }: Props) {
             <h1 className="text-center mb-8">{snippet.title}</h1>
           </div>
         </div>
-        <div className="text-lg max-w-prose mx-auto mb-16 md:mb-20">
-          <p className="text-center text-xl md:text-2xl md:tracking-tight leading-9 md:leading-relaxed">
-            {snippet.description}
-          </p>
-        </div>
 
         <div className="prose">
           <div className="border-t border-grey-100 dark:border-grey-880 pt-8 md:pt-10"></div>

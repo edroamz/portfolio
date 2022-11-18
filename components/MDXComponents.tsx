@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import Callout from 'components/Callout';
+import GradientText from 'components/GradientText';
 
 const CustomLink = (props: any): JSX.Element => {
   if (!props.href) {
@@ -39,7 +40,8 @@ function RoundedImage(props: any): JSX.Element {
 const MDXComponents = {
   Image: RoundedImage,
   a: CustomLink,
-  Callout
+  Callout,
+  GradientText
 };
 
 export default MDXComponents;
