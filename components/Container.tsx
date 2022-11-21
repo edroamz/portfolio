@@ -35,7 +35,7 @@ export default function Container(props: Props) {
         <header className="static flex flex-row items-center gap-x-4 w-full max-w-5xl mx-auto px-7">
           <div className="h-full flex flex-1 items-center justify-start">
             <InternalLink href="/" variant="wordmark">
-              <Wordmark className="h-wordmark text-grey-1000 dark:text-grey-50"></Wordmark>
+              <Wordmark className="h-wordmark text-grey-1000 dark:text-grey-0"></Wordmark>
             </InternalLink>
           </div>
           <div className="h-full hidden md:flex flex-1 items-center justify-center m-0 w-full bg-transparent">
@@ -52,13 +52,13 @@ export default function Container(props: Props) {
                   </InternalLink>
                 </li>
                 <li>
-                  <InternalLink href="/snippets" variant="nav">
-                    Snippets
+                  <InternalLink href="/uses" variant="nav">
+                    Uses
                   </InternalLink>
                 </li>
                 <li>
-                  <InternalLink href="/about" variant="nav">
-                    About
+                  <InternalLink href="/snippets" variant="nav">
+                    Snippets
                   </InternalLink>
                 </li>
               </ul>

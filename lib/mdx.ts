@@ -13,7 +13,7 @@ import readingTime from 'reading-time';
 type MDXType = 'blog' | 'snippets';
 
 function getFilesDirectory(type: MDXType): string {
-  return join(process.cwd(), `/data/${type}`);
+  return join(process.cwd(), `/content/${type}`);
 }
 
 export function getFileSlugs(type: MDXType) {

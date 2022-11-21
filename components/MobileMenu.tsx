@@ -45,7 +45,7 @@ export default function MobileMenuNew() {
       <AnimatePresence>
         {isMenuOpen && (
           <Popover.Portal forceMount>
-            <Popover.Content sideOffset={22} align="center" asChild>
+            <Popover.Content sideOffset={16} align="center" asChild>
               <motion.nav
                 className="visible md:invisible h-content w-screen inset-x-4 z-10 bg-white dark:bg-grey-970 opacity-100 translate-y-0"
                 initial={{ opacity: 0, translateY: '2rem' }}
@@ -74,29 +74,20 @@ export default function MobileMenuNew() {
                   </li>
                   <li>
                     <InternalLink
-                      href="/snippets"
-                      variant="mobileNav"
-                      textSize="lg"
-                    >
-                      Snippets
-                    </InternalLink>
-                  </li>
-                  <li>
-                    <InternalLink
-                      href="/about"
-                      variant="mobileNav"
-                      textSize="lg"
-                    >
-                      About
-                    </InternalLink>
-                  </li>
-                  <li>
-                    <InternalLink
                       href="/uses"
                       variant="mobileNav"
                       textSize="lg"
                     >
                       Uses
+                    </InternalLink>
+                  </li>
+                  <li>
+                    <InternalLink
+                      href="/snippets"
+                      variant="mobileNav"
+                      textSize="lg"
+                    >
+                      Snippets
                     </InternalLink>
                   </li>
                 </ul>

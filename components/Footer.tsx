@@ -7,7 +7,7 @@ import InternalLink from 'components/InternalLink';
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-grey-0 dark:bg-grey-1000 ring-2 ring-grey-80 dark:ring-grey-900 rounded-tl-[2rem] rounded-tr-[2rem] lg:rounded-tl-[3rem] lg:rounded-tr-[3rem] mt-20">
+    <footer className="w-full bg-grey-0 dark:bg-grey-1000 ring-2 ring-grey-100 dark:ring-grey-900 rounded-tl-[2rem] rounded-tr-[2rem] lg:rounded-tl-[3rem] lg:rounded-tr-[3rem] mt-20">
       <div className="flex flex-col">
         <Wrapper className="w-full flex flex-col md:flex-row gap-y-12 gap-x-7 items-baseline py-12 md:py-16">
           <div className="flex-1/3">
@@ -28,11 +28,6 @@ export default function Footer() {
               <li>
                 <InternalLink href="/blog" variant="footerNav">
                   Blog
-                </InternalLink>
-              </li>
-              <li>
-                <InternalLink href="/about" variant="footerNav">
-                  About
                 </InternalLink>
               </li>
               <li>
@@ -96,31 +91,34 @@ export default function Footer() {
             © 2022 Eduardo R. Ambriz. All rights reserved.
           </span>
           <div>
-            <ul className="inline-flex flex-row items-center gap-x-4">
+            <ul className="inline-flex flex-row items-center justify-center gap-x-3">
               <li>
-                <ExternalLink href="https://www.linkedin.com/in/edroamz/">
+                <ExternalLink
+                  href="https://www.linkedin.com/in/edroamz/"
+                  variant="block"
+                >
                   <svg
-                    className="inline-flex h-6 w-6 text-grey-500 group-hover:text-grey-700 dark:text-grey-400 dark:group-hover:text-grey-200"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
+                    className="h-5 w-5 text-grey-500 group-hover:text-grey-700 dark:text-grey-400 dark:group-hover:text-grey-200"
+                    fill="currentColor"
+                    viewBox="0 0 16 16"
+                    role="img"
+                    focusable="false"
                   >
-                    <path fill="none" d="M0 0h24v24H0z" />
-                    <path
-                      fill="currentColor"
-                      d="M18.335 18.339H15.67v-4.177c0-.996-.02-2.278-1.39-2.278-1.389 0-1.601 1.084-1.601 2.205v4.25h-2.666V9.75h2.56v1.17h.035c.358-.674 1.228-1.387 2.528-1.387 2.7 0 3.2 1.778 3.2 4.091v4.715zM7.003 8.575a1.546 1.546 0 0 1-1.548-1.549 1.548 1.548 0 1 1 1.547 1.549zm1.336 9.764H5.666V9.75H8.34v8.589zM19.67 3H4.329C3.593 3 3 3.58 3 4.297v15.406C3 20.42 3.594 21 4.328 21h15.338C20.4 21 21 20.42 21 19.703V4.297C21 3.58 20.4 3 19.666 3h.003z"
-                    />
+                    <path d="M12.1 15H15L15 9.87c0-2.519-.542-4.454-3.48-4.454-1.121-.042-2.218.54-2.784 1.51V5.648H5.953V15h2.899v-4.626c0-1.22.23-2.4 1.74-2.4 1.489 0 1.508 1.395 1.508 2.48V15ZM1 2.685c0 .924.76 1.685 1.682 1.685.923 0 1.682-.761 1.682-1.686C4.364 1.76 3.604 1 2.682 1 1.76 1 1 1.76 1 2.685ZM1.23 15h2.902V5.648H1.23V15Z"></path>
                   </svg>
                 </ExternalLink>
               </li>
               <Separator.Root
                 decorative
                 orientation="vertical"
-                className="inline-flex w-px h-5 bg-grey-120 dark:bg-grey-880"
-              ></Separator.Root>
+                className="text-grey-150 dark:text-grey-700 text-xs"
+              >
+                |
+              </Separator.Root>
               <li>
-                <ExternalLink href="https://github.com/edroamz">
+                <ExternalLink href="https://github.com/edroamz" variant="block">
                   <svg
-                    className="inline-flex h-6 w-6 text-grey-500 group-hover:text-grey-700 dark:text-grey-400 dark:group-hover:text-grey-200"
+                    className="h-5 w-5 text-grey-500 group-hover:text-grey-700 dark:text-grey-400 dark:group-hover:text-grey-200"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                   >

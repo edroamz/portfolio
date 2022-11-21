@@ -14,6 +14,13 @@ module.exports = {
         sans: ['Inter', ...fontFamily.sans]
       },
       fontSize: {
+        xs: [
+          '0.875rem',
+          {
+            lineHeight: '1.65rem',
+            letterSpacing: '0.0175rem'
+          }
+        ],
         sm: [
           '0.925rem',
           {
@@ -31,14 +38,14 @@ module.exports = {
         lg: [
           '1.125rem',
           {
-            lineHeight: '2rem',
+            lineHeight: '2.2rem',
             letterSpacing: '-0.015rem'
           }
         ],
         xl: [
           '1.345rem',
           {
-            lineHeight: '2rem',
+            lineHeight: '2.45rem',
             letterSpacing: '-0.0475rem'
           }
         ],
@@ -46,28 +53,28 @@ module.exports = {
           '1.6rem',
           {
             lineHeight: '2.25rem',
-            letterSpacing: '-0.075rem'
+            letterSpacing: '-0.03rem'
           }
         ],
         '3xl': [
-          '2.15rem',
+          '2.25rem',
           {
-            lineHeight: '2.35rem',
-            letterSpacing: '-0.08rem'
+            lineHeight: '3.35rem',
+            letterSpacing: '-0.06rem'
           }
         ],
         '4xl': [
-          '2.55rem',
+          '2.65rem',
           {
-            lineHeight: '3rem',
-            letterSpacing: '-0.1rem'
+            lineHeight: '3.85rem',
+            letterSpacing: '-0.05rem'
           }
         ],
         '5xl': [
           '3.2rem',
           {
             lineHeight: '3.7rem',
-            letterSpacing: '-0.13rem'
+            letterSpacing: '-0.1rem'
           }
         ]
       },
@@ -118,7 +125,7 @@ module.exports = {
       },
       spacing: {
         wordmark: 'theme(spacing.6)',
-        header: '76px',
+        header: '64px',
         content: 'calc(100vh - theme(spacing.header))'
       },
       boxShadow: {

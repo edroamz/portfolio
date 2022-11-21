@@ -11,9 +11,9 @@ export const gradientVariants: {
   [key in GradientVariantType]: string;
 } = {
   gotham: 'from-grey-1000 to-grey-800',
-  miami:
+  winter:
     'from-cobalt-dark to-electric-dark dark:from-cobalt-light dark:to-electric-light',
-  santaMonica:
+  sunset:
     'from-coral-dark via-iris-dark to-cobalt-dark dark:from-coral-light dark:via-iris-light dark:to-cobalt-light'
 };
 
@@ -29,6 +29,7 @@ export const gradientDirections: { [key in GradientDirectionType]: string } = {
 };
 
 export const textSizes: { [key in TextSizeType]: string } = {
+  xs: 'text-xs',
   sm: 'text-sm',
   base: 'text-base tracking-tight',
   lg: 'text-lg tracking-tight leading-8',
@@ -38,7 +39,7 @@ export const textSizes: { [key in TextSizeType]: string } = {
 };
 
 export const buttonSizes: { [key in ButtonSizeType]: string } = {
-  base: 'text-lg leading-none tracking-tight'
+  base: 'text-base leading-none tracking-normal'
 };
 
 export const buttonVariants: {
@@ -60,8 +61,9 @@ export const linkVariants: { [key in LinkVariantType]: string } = {
   footerNav:
     'block text-grey-700 dark:text-grey-300 hover:text-grey-1000 dark:hover:text-grey-120',
   underline:
-    'underline decoration-dotted underline-offset-4 decoration-grey-500 text-grey-700 hover:text-grey-1000 dark:text-grey-300 dark:hover:text-grey-120',
+    'underline decoration-dotted underline-offset-4 decoration-grey-500 text-grey-700 hover:text-grey-1000 dark:text-grey-300 dark:hover:text-grey-120 hover:decoration-grey-1000 dark:hover:decoration-grey-120',
   wordmark:
     'inline-flex items-center justify-center py-2 focus-visible:ring-cobalt-dark',
-  block: 'block w-full'
+  block: 'block w-full',
+  rounded: 'block rounded-xl'
 };

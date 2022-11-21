@@ -24,7 +24,7 @@ const Blog: NextPage<Props> = ({ allPosts }) => {
         </p>
       </Wrapper>
       <div className="w-full md:px-7 max-w-5xl mx-auto pb-16 md:pb-20">
-        <div className="relative mt-12 md:mt-14 lg:mt-16 grid gap-y-2 max-w-5xl mx-auto">
+        <div className="relative mt-12 md:mt-14 lg:mt-16 grid max-w-5xl mx-auto">
           <hr className="absolute left-0 top-[2%] w-0 h-[96%] border-l border-grey-100 dark:border-grey-900 hidden md:block " />
           {allPosts &&
             allPosts.map((post: Post) => (

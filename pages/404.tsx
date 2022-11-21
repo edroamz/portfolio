@@ -8,7 +8,7 @@ export default function NotFound() {
     <Container title="404 – Eduardo R. Ambriz">
       <Wrapper className="py-16 md:py-20">
         <div className="flex flex-col items-start sm:items-center justify-center gap-y-3">
-          <GradientText variant="santaMonica" textSize="xl">
+          <GradientText variant="sunset" textSize="xl">
             <span className="font-extrabold tracking-wide">404</span>
           </GradientText>
           <h1 className="mb-0">Page not found.</h1>
@@ -17,21 +17,7 @@ export default function NotFound() {
             the URL in the address bar and try again.
           </p>
           <InternalLink href="/" textSize="lg" variant="primary">
-            Go back home{' '}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="inline-block h-4 w-4 stroke-current ml-1"
-              viewBox="0 0 256 256"
-            >
-              <rect width="256" height="256" fill="none" stroke="none"></rect>
-              <polyline
-                points="96 48 176 128 96 208"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="24"
-              ></polyline>
-            </svg>
+            Go back home <span className="pl-2">→</span>
           </InternalLink>
         </div>
       </Wrapper>

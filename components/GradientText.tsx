@@ -36,7 +36,7 @@ const GradientText = ({
 }: GradientTextProps): JSX.Element => {
   const type: string = as;
   const classNames: string = cn(
-    'inline-block m-0 bg-clip-text font-bold [&_p]:text-[length:inherit]',
+    'inline-block m-0 bg-clip-text font-bold [&_p]:text-[length:inherit] [&_p]:leading-[1.2]',
     textSizes[textSize],
     gradientDirections[direction],
     gradientVariants[variant]

@@ -21,7 +21,7 @@ export default function SnippetsLayout({ snippet }: Props) {
     >
       <Wrapper as="section" className="pt-10 pb-16 md:pb-20">
         <button
-          className="inline-flex items-center text-lg text-cobalt-dark dark:text-blue-400 font-medium leading-none tracking-tight self-start mb-10"
+          className="inline-flex items-center text-base text-cobalt-dark dark:text-blue-400 font-medium leading-none tracking-tight self-start mb-10"
           type="button"
           onClick={() => router.back()}
           aria-label="Go back"
@@ -44,7 +44,7 @@ export default function SnippetsLayout({ snippet }: Props) {
         </button>
         <div className="flex flex-col items-center">
           <div className="inline-flex flex-row items-center justify-center gap-x-2 mb-5">
-            <h1 className="text-center mb-8">{snippet.title}</h1>
+            <h1 className="text-center">{snippet.title}</h1>
           </div>
         </div>
 

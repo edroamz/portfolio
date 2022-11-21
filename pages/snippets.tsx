@@ -13,7 +13,7 @@ interface Props {
 
 const Snippets: NextPage<Props> = ({ allSnippets }) => {
   return (
-    <Container title="Snippets - Eduardo R. Ambriz">
+    <Container title="Code Snippets - Eduardo R. Ambriz">
       <Wrapper className="py-16 md:py-20">
         <h1>Code Snippets</h1>
         <p className="text-lg mb-8">

@@ -1,4 +1,4 @@
-export type GradientVariantType = 'gotham' | 'miami' | 'santaMonica';
+export type GradientVariantType = 'gotham' | 'winter' | 'sunset';
 
 export type GradientDirectionType =
   | 'top'
@@ -10,7 +10,7 @@ export type GradientDirectionType =
   | 'left'
   | 'topLeft';
 
-export type TextSizeType = 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl';
+export type TextSizeType = 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl';
 
 export type HeadingType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
@@ -27,4 +27,5 @@ export type LinkVariantType =
   | 'footerNav'
   | 'underline'
   | 'wordmark'
-  | 'block';
+  | 'block'
+  | 'rounded';
