@@ -20,7 +20,7 @@ type ProductProps = {
 export default function Product({ product }: ProductProps): JSX.Element {
   const { title, excerpt, url } = product;
   return (
-    <div className="overflow-hidden">
+    <div>
       <ExternalLink href={url.href} variant="rounded">
         <Image
           src={project2}
