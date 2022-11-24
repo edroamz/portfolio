@@ -25,14 +25,16 @@ export default function Product({ product }: ProductProps): JSX.Element {
         <Image
           src={project2}
           alt=""
-          className="rounded-xl"
+          className="rounded-lg max-h-60 object-cover"
           placeholder="blur"
         />
       </ExternalLink>
-      <h4 className="text-xl mt-7">{title}</h4>
-      <p className="text-[17px] leading-8 mt-2 mb-4">{excerpt}</p>
-      <ExternalLink href={url.href} variant="primary" textSize="lg">
-        {url.pathname} <span className="pl-2 text-sm">→</span>
+      <h4 className="text-lg leading-relaxed mt-6">{title}</h4>
+      <p className="text-[16px] mt-1 mb-2">{excerpt}</p>
+      <ExternalLink href={url.href} variant="primary">
+        <span className="text-[16px]">
+          {url.pathname} <span className="pl-2 text-sm">→</span>
+        </span>
       </ExternalLink>
     </div>
   );

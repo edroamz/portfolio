@@ -38,33 +38,36 @@ export default function BlogLayout({ post }: Props) {
           Back
         </Button>
         <div className="flex flex-col items-center mt-5">
-          <div className="inline-flex flex-row items-center justify-center text-sm gap-x-3 mb-5">
-            <span className="font-medium uppercase text-grey-600 dark:text-grey-300">
+          <div className="inline-flex flex-row items-center justify-center gap-x-3 mb-4">
+            <span className="text-sm md:text-base tracking-normal font-medium text-grey-600 dark:text-grey-300">
+              Published on{' '}
               <TimeFormatter dateString={post.datePublished}></TimeFormatter>
             </span>
             <Separator.Root
               decorative
               orientation="vertical"
-              className="text-grey-150 dark:text-grey-700 text-[12px]"
+              className="text-grey-200 dark:text-grey-600 text-[12px]"
             >
               |
             </Separator.Root>
-            <span className="font-medium uppercase  text-grey-600 dark:text-grey-300">
+            <span className="text-sm md:text-base font-medium text-grey-600 dark:text-grey-300">
               {post.readingTime}
             </span>
           </div>
-          <h1 className="text-3xl md:text-4xl text-center font-extrabold mb-8">
+          <h1 className="text-3xl md:text-4xl text-center font-extrabold mb-4">
             {post.title}
           </h1>
-        </div>
-        <div className="mb-12">
           <p className=" text-center mx-auto text-xl max-w-3xl md:tracking-tight">
             {post.excerpt}
           </p>
         </div>
+        <Separator.Root
+          decorative
+          orientation="horizontal"
+          className="max-w-3xl mx-auto border-t border-grey-100 dark:border-grey-880 my-14"
+        ></Separator.Root>
 
         <div className="prose">
-          <div className="border-t border-grey-100 dark:border-grey-880 pt-4"></div>
           <MDXRemote {...post.content} components={MDXComponents}></MDXRemote>
         </div>
 
@@ -98,7 +101,7 @@ export default function BlogLayout({ post }: Props) {
             postUrl="https://placeholder.com"
             postTitle={post.title}
           ></SharePost>
-          <hr className="h-px w-full border-grey-120 dark:border-grey-880 mt-14" />
+          {/* <hr className="h-px w-full border-grey-100 dark:border-grey-880 mt-14" /> */}
           {/* <section className="flex flex-col items-center justify-center mt-16 md:mt-20">
             <InternalLink href="/blog/preview" variant="block">
               <h6 className="font-medium text-center text-sm text-grey-700 dark:text-grey-150">
@@ -110,6 +113,11 @@ export default function BlogLayout({ post }: Props) {
             </InternalLink>
           </section> */}
         </div>
+        <Separator.Root
+          decorative
+          orientation="horizontal"
+          className="max-w-5xl mx-auto border-t border-grey-100 dark:border-grey-900 mt-14"
+        ></Separator.Root>
         <section className="grid grid-cols-1 md:grid-cols-2 items-stretch justify-between gap-x-20 gap-y-16 mt-24 md:mt-28">
           <RecommendedPost post={post}></RecommendedPost>
           <RecommendedPost post={post}></RecommendedPost>

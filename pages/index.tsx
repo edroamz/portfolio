@@ -41,7 +41,7 @@ const Home: NextPage<HomeProps> = ({ allPosts }) => {
         <h3 className="text-3xl md:text-4xl max-w-5xl mx-auto px-7 mb-6">
           Take a sneak peek of my work
         </h3>
-        <section className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 items-stretch justify-between gap-x-16 gap-y-16 px-7 mt-12">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 items-stretch justify-between gap-x-16 gap-y-12 md:gap-y-16 px-7 mt-12">
           <Product
             product={{
               title: 'Cool website',
@@ -64,12 +64,7 @@ const Home: NextPage<HomeProps> = ({ allPosts }) => {
               }
             }}
           ></Product>
-        </section>
-        {/* <Wrapper className="mt-7">
-          <InternalLink href="/projects" textSize="lg" variant="primary">
-            View more <span className="pl-2">→</span>
-          </InternalLink>
-        </Wrapper> */}
+        </div>
       </section>
       <section className="w-full py-14 md:py-16">
         <Wrapper className="mb-4">

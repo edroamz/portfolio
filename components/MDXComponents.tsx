@@ -24,14 +24,14 @@ const CustomLink = (props: any): JSX.Element => {
 
 function RoundedImage(props: any): JSX.Element {
   return props.caption ? (
-    <figure className="flex flex-col items-center justify-center my-10">
+    <figure className="flex flex-col items-center justify-center my-8">
       <Image alt={props.alt} className="rounded-lg" {...props}></Image>
       <figcaption className="text-base text-center text-grey-880 dark:text-grey-200 px-4 pt-5">
         {props.caption}
       </figcaption>
     </figure>
   ) : (
-    <div className="flex flex-col items-center justify-center mt-10">
+    <div className="flex flex-col items-center justify-center mt-8">
       <Image alt={props.alt} className="rounded-lg" {...props}></Image>
     </div>
   );

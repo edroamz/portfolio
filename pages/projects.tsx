@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 
 import Container from 'components/Container';
 import Wrapper from 'components/Wrapper';
-import ProjectCard from 'components/ProjectCard';
+import Product from 'components/Product';
 
 const projects = [
   {
@@ -14,7 +14,7 @@ const projects = [
   },
   {
     id: 1,
-    title: 'Apple+',
+    title: 'Apple',
     excerpt:
       'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora dicta saepe sint, dolorum eligendi alias?',
     slug: '#'
@@ -37,20 +37,32 @@ const projects = [
 const Projects: NextPage = () => {
   return (
     <Container title="Projects - Eduardo R. Ambriz">
-      <Wrapper className="py-16 md:py-20">
+      <Wrapper className="pt-16 md:pt-20 mb-12">
         <h1>Things I’ve made trying to put my dent in the universe.</h1>
-        <p className="text-lg mb-8">
+        <p className="text-lg mb-8 max-w-prose">
           I’ve worked on tons of little projects over the years but these are
           the ones that I’m most proud of. Many of them are open-source, so if
           you see something that piques your interest, check out the code and
           contribute if you have ideas for how it can be improved.
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 items-start justify-between mx-auto gap-7">
+      </Wrapper>
+      <div className="max-w-5xl mx-auto px-7 pb-16 md:pb-20">
+        <div className="grid grid-cols-1 min-[900px]:grid-cols-3 items-start justify-between mx-auto gap-x-10 gap-y-12 min-[900px]:gap-y-10">
           {projects.map((project) => (
-            <ProjectCard key={project.id} {...project}></ProjectCard>
+            <Product
+              key={project.id}
+              product={{
+                title: `${project.title}`,
+                excerpt: `${project.excerpt}`,
+                url: {
+                  href: 'https://coolwebsite.com',
+                  pathname: `${project.title}.com`
+                }
+              }}
+            ></Product>
           ))}
         </div>
-      </Wrapper>
+      </div>
     </Container>
   );
 };

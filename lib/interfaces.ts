@@ -25,3 +25,9 @@ export interface Snippet {
   description: string;
   content: MDXRemoteSerializeResult;
 }
+
+export interface Uses {
+  title: string;
+  description: string;
+  content: MDXRemoteSerializeResult;
+}

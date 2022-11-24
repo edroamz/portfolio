@@ -98,7 +98,7 @@ export default function Footer() {
                   variant="block"
                 >
                   <svg
-                    className="h-5 w-5 text-grey-500 group-hover:text-grey-700 dark:text-grey-400 dark:group-hover:text-grey-200"
+                    className="h-5 w-5 text-grey-600 group-hover:text-grey-800 dark:text-grey-300 dark:group-hover:text-grey-200"
                     fill="currentColor"
                     viewBox="0 0 16 16"
                     role="img"
@@ -118,7 +118,7 @@ export default function Footer() {
               <li>
                 <ExternalLink href="https://github.com/edroamz" variant="block">
                   <svg
-                    className="h-5 w-5 text-grey-500 group-hover:text-grey-700 dark:text-grey-400 dark:group-hover:text-grey-200"
+                    className="h-5 w-5 text-grey-600 group-hover:text-grey-800 dark:text-grey-300 dark:group-hover:text-grey-200"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                   >
