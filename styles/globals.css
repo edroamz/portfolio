@@ -52,7 +52,7 @@
 
   /* Markdown styles */
   .prose {
-    @apply w-full text-lg md:max-w-prose mx-auto;
+    @apply w-full text-[17px] md:text-lg md:max-w-prose mx-auto text-grey-950 dark:text-grey-200;
   }
 
   .prose h2,
@@ -73,11 +73,7 @@
     @apply text-[20px] mt-8 m-0 scroll-m-20;
   }
 
-  .prose p {
-    @apply text-lg text-grey-950 dark:text-grey-200;
-  }
-
-  .prose p strong {
+  .prose strong {
     @apply text-grey-1000 dark:text-grey-120;
   }
 
@@ -243,7 +239,7 @@
 }
 
 pre {
-  @apply whitespace-pre-wrap break-words text-base tracking-tight bg-grey-50/80 dark:bg-grey-1000 rounded-md;
+  @apply whitespace-pre-wrap break-words tracking-tight bg-grey-50/80 dark:bg-grey-1000 rounded-md;
 }
 
 code {
@@ -251,7 +247,7 @@ code {
 }
 
 pre code {
-  @apply block tracking-tight text-grey-1000 dark:text-grey-200 p-0 m-0 bg-grey-50/70 dark:bg-grey-1000 border-none;
+  @apply block text-[17px] tracking-tight text-grey-1000 dark:text-grey-200 p-0 m-0 bg-grey-50/70 dark:bg-grey-1000 border-none;
 }
 
 code[class*='language-'],

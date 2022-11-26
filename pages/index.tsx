@@ -32,7 +32,7 @@ const Home: NextPage<HomeProps> = ({ allPosts }) => {
       </Wrapper>
       <section className="w-full py-14 md:py-16">
         <Wrapper className="mb-4">
-          <GradientText as="h2" variant="sunset">
+          <GradientText as="h2" variant="summer">
             <span className="uppercase tracking-wider text-[30px] font-extrabold">
               Curated work
             </span>

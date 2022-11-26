@@ -8,6 +8,7 @@ import { Snippet } from 'lib/interfaces';
 import { MDXRemote } from 'next-mdx-remote';
 import Button from 'components/Button';
 import * as Separator from '@radix-ui/react-separator';
+import GradientText from 'components/GradientText';
 
 interface Props {
   snippet: Snippet;
@@ -30,8 +31,13 @@ export default function SnippetsLayout({ snippet }: Props) {
           <span className="pr-2">←</span>
           Back
         </Button>
-        <div className="flex flex-col justify-center text-lg max-w-prose mx-auto mt-7">
-          <h1 className="text-3xl md:text-4xl text-left font-extrabold mb-1">
+        <div className="flex flex-col items-start justify-center text-lg max-w-prose mx-auto mt-7">
+          <GradientText variant="summer">
+            <span className="uppercase tracking-wider text-xl font-extrabold">
+              Snippet
+            </span>
+          </GradientText>
+          <h1 className="text-3xl md:text-4xl text-left font-extrabold my-1">
             {snippet.title}
           </h1>
           <p>{snippet.description}</p>

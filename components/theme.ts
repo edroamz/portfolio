@@ -13,7 +13,7 @@ export const gradientVariants: {
   gotham: 'from-grey-1000 to-grey-800',
   winter:
     'from-cobalt-dark to-electric-dark dark:from-cobalt-light dark:to-electric-light',
-  sunset:
+  summer:
     'from-coral-dark via-iris-dark to-cobalt-dark dark:from-coral-light dark:via-iris-light dark:to-cobalt-light'
 };
 

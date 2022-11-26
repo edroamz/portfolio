@@ -8,7 +8,7 @@ export default function NotFound() {
     <Container title="404 – Eduardo R. Ambriz">
       <Wrapper className="py-16 md:py-20">
         <div className="flex flex-col items-start sm:items-center justify-center gap-y-3">
-          <GradientText variant="sunset" textSize="xl">
+          <GradientText variant="summer" textSize="xl">
             <span className="font-extrabold tracking-wide">404</span>
           </GradientText>
           <h1 className="mb-0">Page not found.</h1>

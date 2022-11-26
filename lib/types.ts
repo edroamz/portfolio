@@ -1,4 +1,4 @@
-export type GradientVariantType = 'gotham' | 'winter' | 'sunset';
+export type GradientVariantType = 'gotham' | 'winter' | 'summer';
 
 export type GradientDirectionType =
   | 'top'

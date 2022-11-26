@@ -11,7 +11,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', ...fontFamily.sans]
+        sans: ['Inter', ...fontFamily.sans],
+        mono: ['JetBrains_Mono', ...fontFamily.mono]
       },
       fontSize: {
         xs: [
