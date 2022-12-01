@@ -40,11 +40,6 @@ export default function Footer() {
                   Snippets
                 </InternalLink>
               </li>
-              <li>
-                <InternalLink href="/sitemap" variant="footerNav">
-                  Sitemap.xml
-                </InternalLink>
-              </li>
             </ul>
           </div>
           <div className="flex-1/3 w-full pt-12 md:p-0 border-t border-grey-100 dark:border-grey-880 md:border-none">

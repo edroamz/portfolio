@@ -19,7 +19,9 @@ const Uses: NextPage<Props> = ({ uses }: Props): JSX.Element => {
     >
       <Wrapper className="pt-16 md:pt-20 mb-12">
         <h1>{uses.title}</h1>
-        <p className="text-lg mb-8 max-w-prose">{uses.description}</p>
+        <p className="text-lg md:text-xl mb-8 max-w-prose">
+          {uses.description}
+        </p>
       </Wrapper>
 
       <div className="px-7 pb-16 md:pb-20">
