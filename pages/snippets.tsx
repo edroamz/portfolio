@@ -16,8 +16,9 @@ const Snippets: NextPage<Props> = ({ allSnippets }) => {
     <Container title="Code Snippets - Eduardo R. Ambriz">
       <Wrapper className="py-16 md:py-20">
         <h1>Code Snippets</h1>
-        <p className="text-lg mb-8">
-          Here’s a collection of short, useful and sweet stuff.
+        <p className="text-lg max-w-prose mb-8">
+          These are a collection of short code snippets that I've found useful
+          in solving common development problems.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 items-start justify-between mx-auto gap-7">
           {allSnippets &&
