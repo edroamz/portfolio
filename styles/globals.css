@@ -50,7 +50,16 @@
     @apply w-auto overflow-visible m-0 whitespace-normal fixed top-[10px] left-7 z-50 h-10 flex items-center underline outline-none px-4 font-medium text-cobalt-dark dark:text-blue-400 bg-white dark:bg-grey-970 ring-2 ring-cobalt-dark dark:ring-blue-400 rounded-md;
   }
 
-  /* Markdown styles */
+  /* Theme trigger */
+  .theme-trigger {
+    @apply hidden invisible md:block md:visible px-2 py-1 md:pr-0 hover:transition-colors focus-visible:outline-none focus-visible:ring-2 dark:focus-visible:ring-grey-0 focus-visible:ring-grey-1000 rounded-md;
+  }
+
+  .theme-trigger[data-state='open'] svg {
+    @apply text-grey-1000 dark:text-grey-100;
+  }
+
+  /* Markdown */
   .prose {
     @apply w-full text-[17px] md:text-lg md:max-w-prose mx-auto text-grey-950 dark:text-grey-200;
   }

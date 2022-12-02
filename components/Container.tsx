@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { SkipNavLink, SkipNavContent } from '@reach/skip-nav';
 
 import Wordmark from 'components/Wordmark';
-import DarkModeToggle from 'components/DarkModeToggle';
+import ThemeSwitcher from 'components/ThemeSwitcher';
 import MobileMenu from 'components/MobileMenu';
 import Footer from 'components/Footer';
 import InternalLink from 'components/InternalLink';
@@ -66,7 +66,7 @@ export default function Container(props: Props) {
           </div>
           <div className="h-full flex flex-1 items-center justify-end">
             <div className="flex items-center justify-between gap-x-6">
-              <DarkModeToggle></DarkModeToggle>
+              <ThemeSwitcher></ThemeSwitcher>
               <MobileMenu />
             </div>
           </div>
