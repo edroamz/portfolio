@@ -31,7 +31,7 @@ export default function Container(props: Props) {
         )}
       </Head>
       <SkipNavLink>Skip to content</SkipNavLink>
-      <div className="h-header sticky flex flex-col justify-center top-0 w-full max-w-full shadow-border-bottom dark:shadow-border-bottom-dark bg-white dark:bg-grey-970 md:bg-header md:dark:bg-header-dark z-20">
+      <div className="h-header sticky flex flex-col justify-center top-0 w-full max-w-full shadow-border-bottom dark:shadow-border-bottom-dark bg-white/80 dark:bg-grey-970/80 z-20">
         <header className="static flex flex-row items-center gap-x-4 w-full max-w-5xl mx-auto px-7">
           <div className="h-full flex flex-1 items-center justify-start">
             <InternalLink href="/" variant="wordmark">

@@ -21,7 +21,7 @@ export default function BlogPost({ post, heading = 'h2' }: Props) {
         query: { slug }
       }}
       variant="rounded"
-      style={{ zIndex: 10 }}
+      style={{ zIndex: 'auto' }}
     >
       <div className="md:w-full flex flex-col md:flex-row items-baseline justify-between md:gap-x-12 lg:gap-x-14 py-6 md:py-7 hover:bg-grey-50 dark:hover:bg-grey-900 hover:transition-none rounded-md md:rounded-xl px-7">
         <div className="w-full flex flex-row md:hidden items-center gap-x-2 mb-1 md:mb-0">

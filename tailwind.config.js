@@ -120,9 +120,7 @@ module.exports = {
           950: '#12131d',
           970: '#0d0d18',
           1000: '#000000'
-        },
-        header: 'hsla(0,0%,100%,.8)',
-        'header-dark': 'hsla(240,29.7%,7.3%,.8)'
+        }
       },
       spacing: {
         wordmark: 'theme(spacing.6)',

@@ -57,7 +57,7 @@ export const linkVariants: { [key in LinkVariantType]: string } = {
   nav: 'font-medium overflow-hidden px-2 py-1 text-grey-500 hover:text-grey-1000 dark:text-grey-200 dark:hover:text-grey-50 focus-visible:hover:text-grey-1000 dark:focus-visible:hover:text-grey-50',
   'nav-active': 'text-grey-1000 dark:text-grey-50',
   mobileNav:
-    'block overflow-hidden py-4 font-medium text-grey-900 dark:text-grey-150',
+    'inline-block overflow-hidden font-semibold tracking-normal text-grey-800 hover:text-grey-1000 dark:text-grey-200 dark:hover:text-grey-80',
   footerNav:
     'block text-grey-700 dark:text-grey-300 hover:text-grey-1000 dark:hover:text-grey-120',
   underline:

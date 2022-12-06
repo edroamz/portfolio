@@ -52,11 +52,15 @@
 
   /* Theme trigger */
   .theme-trigger {
-    @apply hidden invisible md:block md:visible px-2 py-1 md:pr-0 hover:transition-colors focus-visible:outline-none focus-visible:ring-2 dark:focus-visible:ring-grey-0 focus-visible:ring-grey-1000 rounded-md;
+    @apply hidden invisible md:block md:visible px-2 py-[2px] md:pr-0 focus-visible:outline-none focus-visible:ring-2 dark:focus-visible:ring-grey-0 focus-visible:ring-grey-1000 rounded-md;
+  }
+
+  .theme-trigger svg {
+    @apply text-grey-400 dark:text-grey-300 hover:text-grey-600 dark:hover:text-grey-150 group-hover:transition-colors;
   }
 
   .theme-trigger[data-state='open'] svg {
-    @apply text-grey-1000 dark:text-grey-100;
+    @apply text-cobalt dark:text-blue-400;
   }
 
   /* Markdown */
@@ -275,7 +279,7 @@ pre {
 }
 
 .rehype-code-title {
-  @apply px-4 pb-3 font-medium text-sm text-grey-1000 dark:text-grey-150;
+  @apply px-4 pb-3 tracking-wider font-semibold text-sm text-grey-1000 dark:text-grey-150;
 }
 
 .rehype-code-title + pre {
