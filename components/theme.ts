@@ -72,8 +72,8 @@ export const linkVariants: { [key in LinkVariantType]: string } = {
 
 export const iconVariants: { [key in IconVariantType]: string } = {
   common: '',
-  social:
-    'text-grey-600 group-hover:text-grey-800 dark:text-grey-300 dark:group-hover:text-grey-200',
+  default:
+    'text-grey-600 group-hover:transition-colors hover:transition-colors group-hover:text-grey-1000 hover:text-grey-1000 dark:text-grey-300 dark:group-hover:text-grey-120 dark:hover:text-grey-120',
   react: 'text-black dark:text-[#61dafb]'
 };
 

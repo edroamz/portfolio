@@ -94,7 +94,7 @@ export default function Footer() {
                   variant="block"
                   aria-label="LinkedIn"
                 >
-                  <Icon name="linkedin" variant="social" size="sm"></Icon>
+                  <Icon name="linkedin" size="sm"></Icon>
                 </ExternalLink>
               </li>
               <Separator.Root
@@ -110,7 +110,7 @@ export default function Footer() {
                   variant="block"
                   aria-label="GitHub"
                 >
-                  <Icon name="github" variant="social" size="sm"></Icon>
+                  <Icon name="github" size="sm"></Icon>
                 </ExternalLink>
               </li>
             </ul>

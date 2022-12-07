@@ -30,6 +30,6 @@ export type LinkVariantType =
   | 'block'
   | 'rounded';
 
-export type IconVariantType = 'common' | 'social' | 'react';
+export type IconVariantType = 'common' | 'default' | 'react';
 
 export type IconSizeType = 'xs' | 'sm' | 'base' | 'lg' | 'xl';
