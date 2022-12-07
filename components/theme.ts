@@ -4,7 +4,9 @@ import {
   TextSizeType,
   ButtonSizeType,
   ButtonVariantType,
-  LinkVariantType
+  LinkVariantType,
+  IconVariantType,
+  IconSizeType
 } from 'lib/types';
 
 export const gradientVariants: {
@@ -66,4 +68,19 @@ export const linkVariants: { [key in LinkVariantType]: string } = {
     'inline-flex items-center justify-center py-2 focus-visible:ring-cobalt-dark',
   block: 'block w-full',
   rounded: 'block rounded-xl'
+};
+
+export const iconVariants: { [key in IconVariantType]: string } = {
+  common: '',
+  social:
+    'text-grey-600 group-hover:text-grey-800 dark:text-grey-300 dark:group-hover:text-grey-200',
+  react: 'text-black dark:text-[#61dafb]'
+};
+
+export const iconSizes: { [key in IconSizeType]: string } = {
+  xs: 'w-4 h-4',
+  sm: 'w-5 h-5',
+  base: 'w-6 h-6',
+  lg: 'w-7 h-7',
+  xl: 'w-8 h-8'
 };

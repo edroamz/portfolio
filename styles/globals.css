@@ -279,7 +279,7 @@ pre {
 }
 
 .rehype-code-title {
-  @apply px-4 pb-3 tracking-wider font-semibold text-sm text-grey-1000 dark:text-grey-150;
+  @apply px-4 pb-2 tracking-wider font-semibold text-sm text-grey-1000 dark:text-grey-150;
 }
 
 .rehype-code-title + pre {
@@ -287,7 +287,7 @@ pre {
 }
 
 .highlight-line {
-  @apply block -mx-5 pl-[20px] bg-grey-100/80 dark:bg-grey-900;
+  @apply block -mx-5 pl-[20px] bg-grey-100/80 dark:bg-grey-900 border-l border-cobalt-dark dark:border-blue-400;
 }
 
 .code-line.line-number:not(.highlight-line) {

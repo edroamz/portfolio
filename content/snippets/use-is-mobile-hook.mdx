@@ -1,12 +1,17 @@
+---
+title: 'useIsMobile'
+description: 'A simple React hook that detects when the browser window width has entered the mobile breakpoint.'
+category: 'react'
+---
+
+```jsx:hooks/use-is-mobile.jsx
 import { useEffect, useState } from 'react';
 
 const MOBILE_BREAKPOINT = 768;
 const getIsMobile = () => window.innerWidth < MOBILE_BREAKPOINT;
 
 export default function useIsMobile() {
-  const [isMobile, setIsMobile] = useState<boolean>(
-    typeof window !== 'undefined' ? getIsMobile() : false
-  );
+  const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? getIsMobile() : false);
 
   useEffect(() => {
     // only execute all the code below in client side
@@ -24,3 +29,22 @@ export default function useIsMobile() {
 
   return isMobile;
 }
+```
+
+## Usage
+
+```jsx {2,5}
+...
+import useIsMobile from 'hooks/use-is-mobile';
+
+export default function App() {
+  const isMobile = useIsMobile();
+
+  return (
+    <div className="App">
+      <h1>Screen size is: {isMobile ? 'mobile' : 'destop'}</h1>
+      ...
+    </div>
+  );
+}
+```

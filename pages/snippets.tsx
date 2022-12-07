@@ -32,7 +32,12 @@ const Snippets: NextPage<Props> = ({ allSnippets }) => {
 };
 
 export const getStaticProps = async () => {
-  const allSnippets = getAllFiles('snippets', ['title', 'slug', 'description']);
+  const allSnippets = getAllFiles('snippets', [
+    'title',
+    'slug',
+    'description',
+    'category'
+  ]);
 
   return {
     props: { allSnippets }

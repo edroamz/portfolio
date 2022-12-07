@@ -29,3 +29,7 @@ export type LinkVariantType =
   | 'wordmark'
   | 'block'
   | 'rounded';
+
+export type IconVariantType = 'common' | 'social' | 'react';
+
+export type IconSizeType = 'xs' | 'sm' | 'base' | 'lg' | 'xl';
