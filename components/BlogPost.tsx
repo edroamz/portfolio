@@ -1,4 +1,4 @@
-import * as Separator from '@radix-ui/react-separator';
+import { Separator } from '@radix-ui/react-separator';
 
 import InternalLink from 'components/InternalLink';
 import Heading from 'components/Heading';
@@ -25,13 +25,20 @@ export default function BlogPost({ post, heading = 'h2' }: Props) {
     >
       <div className="md:w-full flex flex-col md:flex-row items-baseline justify-between md:gap-x-12 lg:gap-x-14 py-6 md:py-7 hover:bg-grey-50 dark:hover:bg-grey-900 hover:transition-none rounded-md md:rounded-xl px-7">
         <div className="w-full flex flex-row md:hidden items-center gap-x-2 mb-1 md:mb-0">
-          <span className="block h-3 w-0.5 rounded-full bg-grey-200 dark:bg-grey-500"></span>
+          <Separator
+            decorative
+            orientation="vertical"
+            className="block h-3 w-0.5 rounded-full bg-grey-200 dark:bg-grey-500"
+          ></Separator>
           <span className="inline-flex items-center text-sm text-grey-600 dark:text-grey-300">
             <TimeFormatter dateString={datePublished}></TimeFormatter>
           </span>
-          <Separator.Root className="font-medium text-grey-300 dark:text-grey-600">
+          <Separator
+            className="font-medium text-grey-300 dark:text-grey-600"
+            decorative
+          >
             —
-          </Separator.Root>
+          </Separator>
           <span className="inline-block text-sm text-grey-600 dark:text-grey-300">
             {readingTime}
           </span>

@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import * as Separator from '@radix-ui/react-separator';
+import { Separator } from '@radix-ui/react-separator';
 
 import Wrapper from 'components/Wrapper';
 import Avatar from 'components/Avatar';
@@ -79,7 +79,7 @@ const Home: NextPage<HomeProps> = ({ allPosts }) => {
         </h3>
         <div className="w-full md:px-7 max-w-5xl mx-auto">
           <div className="relative grid max-w-5xl mx-auto gap-y-2">
-            <Separator.Root
+            <Separator
               decorative
               orientation="vertical"
               className="absolute left-0 top-[2%] w-0 h-[96%] border-l border-grey-100 dark:border-grey-900 hidden md:block"

@@ -7,7 +7,7 @@ import MDXComponents from 'components/MDXComponents';
 import { Snippet } from 'lib/interfaces';
 import { MDXRemote } from 'next-mdx-remote';
 import Button from 'components/Button';
-import * as Separator from '@radix-ui/react-separator';
+import { Separator } from '@radix-ui/react-separator';
 
 interface Props {
   snippet: Snippet;
@@ -39,11 +39,11 @@ export default function SnippetsLayout({ snippet }: Props) {
           </h1>
           <p>{snippet.description}</p>
         </div>
-        <Separator.Root
+        <Separator
           decorative
           orientation="horizontal"
           className="max-w-3xl mx-auto border-t border-grey-100 dark:border-grey-880 my-7"
-        ></Separator.Root>
+        ></Separator>
 
         <div className="prose">
           <MDXRemote

@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import * as Separator from '@radix-ui/react-separator';
+import { Separator } from '@radix-ui/react-separator';
 import InternalLink from 'components/InternalLink';
 import TimeFormatter from 'components/TimeFormatter';
 import { Post } from 'lib/interfaces';
@@ -31,13 +31,13 @@ export default function RecommendedPost({
         <span className="inline-block text-xs tracking-normal text-grey-600 dark:text-grey-300">
           <TimeFormatter dateString={datePublished}></TimeFormatter>
         </span>
-        <Separator.Root
+        <Separator
           decorative
           orientation="vertical"
           className="text-grey-150 dark:text-grey-700 text-[12px]"
         >
           |
-        </Separator.Root>
+        </Separator>
         <span className="inline-block text-xs tracking-normal text-grey-600 dark:text-grey-300">
           {readingTime}
         </span>

@@ -1,7 +1,14 @@
 import { useEffect, useState } from 'react';
-import * as Dialog from '@radix-ui/react-dialog';
+import {
+  Dialog,
+  DialogTrigger,
+  DialogPortal,
+  DialogOverlay,
+  DialogContent,
+  DialogClose
+} from '@radix-ui/react-dialog';
 import { AccessibleIcon } from '@radix-ui/react-accessible-icon';
-import * as Separator from '@radix-ui/react-separator';
+import { Separator } from '@radix-ui/react-separator';
 import InternalLink from 'components/InternalLink';
 import MobileThemeSwitcher from 'components/MobileThemeSwitcher';
 import useIsMobile from 'hooks/use-is-mobile';
@@ -29,21 +36,21 @@ export default function MobileMenuNew() {
   }
 
   return (
-    <Dialog.Root open={isDialogOpen} onOpenChange={toggleDialog} modal>
-      <Dialog.Trigger className="visible md:hidden px-2 py-[2px] pr-0  text-grey-600 dark:text-grey-300 hover:text-grey-1000 dark:hover:text-grey-80 hover:transition-colors focus-visible:outline-none focus-visible:ring-2 dark:focus-visible:ring-grey-0 focus-visible:ring-grey-1000 rounded-md group">
+    <Dialog open={isDialogOpen} onOpenChange={toggleDialog} modal>
+      <DialogTrigger className="visible md:hidden px-2 py-[2px] pr-0  text-grey-600 dark:text-grey-300 hover:text-grey-1000 dark:hover:text-grey-80 hover:transition-colors focus-visible:outline-none focus-visible:ring-2 dark:focus-visible:ring-grey-0 focus-visible:ring-grey-1000 rounded-md group">
         <AccessibleIcon label="Navigation">
           <Icon name="menu" decorative></Icon>
         </AccessibleIcon>
-      </Dialog.Trigger>
+      </DialogTrigger>
       {isMobile && isDialogOpen && (
-        <Dialog.Portal>
-          <Dialog.Overlay className="fixed inset-0 visible md:invisible bg-black/20 dark:bg-grey-970/80 w-screen h-full z-30 backdrop-blur-sm"></Dialog.Overlay>
-          <Dialog.Content className="fixed top-4 right-4 visible md:invisible flex flex-col gap-6 w-full max-w-xs bg-white dark:bg-grey-880 rounded-lg shadow-lg p-6 z-40">
-            <Dialog.Close className="absolute top-5 right-5 w-8 h-8 flex items-center justify-center ">
+        <DialogPortal>
+          <DialogOverlay className="fixed inset-0 visible md:invisible bg-black/20 dark:bg-grey-970/80 w-screen h-full z-30 backdrop-blur-sm"></DialogOverlay>
+          <DialogContent className="fixed top-4 right-4 visible md:invisible flex flex-col gap-6 w-full max-w-xs bg-white dark:bg-grey-880 rounded-lg shadow-lg p-6 z-40">
+            <DialogClose className="absolute top-5 right-5 w-8 h-8 flex items-center justify-center ">
               <AccessibleIcon label="Close navigation">
                 <Icon name="close" size="sm" decorative></Icon>
               </AccessibleIcon>
-            </Dialog.Close>
+            </DialogClose>
             <ul className="flex flex-col justify-center gap-3">
               <li>
                 <InternalLink
@@ -74,15 +81,15 @@ export default function MobileMenuNew() {
                 </InternalLink>
               </li>
             </ul>
-            <Separator.Root
+            <Separator
               decorative
               orientation="horizontal"
               className="border-t border-grey-120 dark:border-grey-700"
-            ></Separator.Root>
+            ></Separator>
             <MobileThemeSwitcher></MobileThemeSwitcher>
-          </Dialog.Content>
-        </Dialog.Portal>
+          </DialogContent>
+        </DialogPortal>
       )}
-    </Dialog.Root>
+    </Dialog>
   );
 }

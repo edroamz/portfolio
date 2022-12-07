@@ -1,4 +1,13 @@
-import * as Select from '@radix-ui/react-select';
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectPortal,
+  SelectContent,
+  SelectViewport,
+  SelectItem,
+  SelectItemText
+} from '@radix-ui/react-select';
 import { Label } from '@radix-ui/react-label';
 import { FunctionComponent, useState } from 'react';
 import { useTheme } from 'next-themes';
@@ -18,7 +27,7 @@ const MobileThemeSwitcher: FunctionComponent = () => {
 
   return (
     <>
-      <Select.Root
+      <Select
         open={isSelectOpen}
         onOpenChange={toggleSelect}
         value={theme}
@@ -33,11 +42,11 @@ const MobileThemeSwitcher: FunctionComponent = () => {
           >
             Switch theme
           </Label>
-          <Select.Trigger
+          <SelectTrigger
             id="theme"
             className="appearance-none capitalize leading-none text-lg font-semibold tracking-wide text-grey-800 dark:text-grey-120 py-2 px-[10px] rounded-lg border bg-white dark:bg-grey-600 border-grey-120 dark:border-grey-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-grey-1000 dark:focus-visible:ring-grey-0"
           >
-            <Select.Value asChild>
+            <SelectValue asChild>
               <div className="flex items-center justify-center align-middle gap-2">
                 <svg
                   viewBox="0 0 24 24"
@@ -88,28 +97,28 @@ const MobileThemeSwitcher: FunctionComponent = () => {
                   ></path>
                 </svg>
               </div>
-            </Select.Value>
-          </Select.Trigger>
-          <Select.Portal>
-            <Select.Content
+            </SelectValue>
+          </SelectTrigger>
+          <SelectPortal>
+            <SelectContent
               style={{ zIndex: 40, userSelect: 'none' }}
               className="shadow bg-grey-50 dark:bg-grey-900 border border-grey-300 dark:border-grey-600 rounded-md py-1"
             >
-              <Select.Viewport>
+              <SelectViewport>
                 {themes.map(({ id, value, label }) => (
-                  <Select.Item
+                  <SelectItem
                     key={id}
                     value={value}
                     className="w-full capitalize text-base font-semibold leading-none tracking-wide px-[10px] py-2 focus-visible:outline-none border border-transparent hover:bg-grey-100 dark:hover:bg-grey-600/80 focus-visible:bg-grey-100 dark:focus-visible:bg-grey-600/80 active:bg-grey-100 dark:active:bg-grey-600/80"
                   >
-                    <Select.ItemText>{label}</Select.ItemText>
-                  </Select.Item>
+                    <SelectItemText>{label}</SelectItemText>
+                  </SelectItem>
                 ))}
-              </Select.Viewport>
-            </Select.Content>
-          </Select.Portal>
+              </SelectViewport>
+            </SelectContent>
+          </SelectPortal>
         </div>
-      </Select.Root>
+      </Select>
     </>
   );
 };

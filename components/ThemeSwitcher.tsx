@@ -1,4 +1,10 @@
-import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuPortal,
+  DropdownMenuContent,
+  DropdownMenuItem
+} from '@radix-ui/react-dropdown-menu';
 import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
 import { Label } from '@radix-ui/react-label';
 import { useState, useEffect } from 'react';
@@ -20,7 +26,7 @@ export default function ThemeSwitcher() {
   }
 
   return (
-    <DropdownMenu.Root modal={false}>
+    <DropdownMenu modal={false}>
       <VisuallyHidden>
         <Label
           htmlFor="btn-theme"
@@ -29,7 +35,7 @@ export default function ThemeSwitcher() {
           Theme
         </Label>
       </VisuallyHidden>
-      <DropdownMenu.Trigger id="btn-theme" className="theme-trigger group">
+      <DropdownMenuTrigger id="btn-theme" className="theme-trigger group">
         <svg
           viewBox="0 0 24 24"
           fill="none"
@@ -63,17 +69,17 @@ export default function ThemeSwitcher() {
           <path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
           <path d="M12 4v1M17.66 6.344l-.828.828M20.005 12.004h-1M17.66 17.664l-.828-.828M12 20.01V19M6.34 17.664l.835-.836M3.995 12.004h1.01M6 6l.835.836"></path>
         </svg>
-      </DropdownMenu.Trigger>
+      </DropdownMenuTrigger>
 
-      <DropdownMenu.Portal>
-        <DropdownMenu.Content
+      <DropdownMenuPortal>
+        <DropdownMenuContent
           className="z-30 w-40 grid grid-cols-1 items-start justify-center bg-white dark:bg-grey-900 shadow dark:shadow-none border border-grey-120 dark:border-grey-880 py-1 rounded-lg"
           sideOffset={36}
           collisionPadding={{ right: 28 }}
           hideWhenDetached
         >
           {themes.map(({ id, value, label }) => (
-            <DropdownMenu.Item
+            <DropdownMenuItem
               key={id}
               onClick={() => setTheme(value)}
               className={cn(
@@ -112,11 +118,11 @@ export default function ThemeSwitcher() {
                 )}
                 <span>{label}</span>
               </div>
-            </DropdownMenu.Item>
+            </DropdownMenuItem>
           ))}
-        </DropdownMenu.Content>
-      </DropdownMenu.Portal>
-    </DropdownMenu.Root>
+        </DropdownMenuContent>
+      </DropdownMenuPortal>
+    </DropdownMenu>
   );
 }
 

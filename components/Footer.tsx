@@ -1,4 +1,4 @@
-import * as Separator from '@radix-ui/react-separator';
+import { Separator } from '@radix-ui/react-separator';
 
 import Wrapper from 'components/Wrapper';
 import Wordmark from 'components/Wordmark';
@@ -76,7 +76,7 @@ export default function Footer() {
           </div>
         </Wrapper>
         <div className="w-full max-w-5xl mx-auto md:px-7">
-          <Separator.Root
+          <Separator
             decorative
             orientation="horizontal"
             className="border-t border-grey-100 dark:border-grey-880 md:w-full md:max-w-5xl md:mx-auto"
@@ -97,13 +97,13 @@ export default function Footer() {
                   <Icon name="linkedin" size="sm"></Icon>
                 </ExternalLink>
               </li>
-              <Separator.Root
+              <Separator
                 decorative
                 orientation="vertical"
                 className="text-grey-150 dark:text-grey-700 text-xs"
               >
                 |
-              </Separator.Root>
+              </Separator>
               <li>
                 <ExternalLink
                   href="https://github.com/edroamz"

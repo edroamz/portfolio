@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { MDXRemote } from 'next-mdx-remote';
 import Image from 'next/image';
-import * as Separator from '@radix-ui/react-separator';
+import { Separator } from '@radix-ui/react-separator';
 
 import Container from 'components/Container';
 import Wrapper from 'components/Wrapper';
@@ -43,13 +43,13 @@ export default function BlogLayout({ post }: Props) {
               Published on{' '}
               <TimeFormatter dateString={post.datePublished}></TimeFormatter>
             </span>
-            <Separator.Root
+            <Separator
               decorative
               orientation="vertical"
               className="text-grey-200 dark:text-grey-600 text-[12px]"
             >
               |
-            </Separator.Root>
+            </Separator>
             <span className="text-sm md:text-base font-medium text-grey-600 dark:text-grey-300">
               {post.readingTime}
             </span>
@@ -61,11 +61,11 @@ export default function BlogLayout({ post }: Props) {
             {post.excerpt}
           </p>
         </div>
-        <Separator.Root
+        <Separator
           decorative
           orientation="horizontal"
           className="max-w-3xl mx-auto border-t border-grey-100 dark:border-grey-880 my-14"
-        ></Separator.Root>
+        ></Separator>
 
         <div className="prose">
           <MDXRemote {...post.content} components={MDXComponents}></MDXRemote>
@@ -113,11 +113,11 @@ export default function BlogLayout({ post }: Props) {
             </InternalLink>
           </section> */}
         </div>
-        <Separator.Root
+        <Separator
           decorative
           orientation="horizontal"
           className="max-w-5xl mx-auto border-t border-grey-100 dark:border-grey-900 mt-14"
-        ></Separator.Root>
+        ></Separator>
         <section className="grid grid-cols-1 md:grid-cols-2 items-stretch justify-between gap-x-20 gap-y-16 mt-24 md:mt-28">
           <RecommendedPost post={post}></RecommendedPost>
           <RecommendedPost post={post}></RecommendedPost>
