@@ -1,18 +1,18 @@
 import { ReactNode } from 'react';
 import Head from 'next/head';
-import { SkipNavLink, SkipNavContent } from '@reach/skip-nav';
 
+import { SkipNavLink, SkipNavContent } from '@reach/skip-nav';
 import Wordmark from 'components/Wordmark';
 import ThemeSwitcher from 'components/ThemeSwitcher';
 import MobileMenu from 'components/MobileMenu';
 import Footer from 'components/Footer';
 import InternalLink from 'components/links/InternalLink';
 
-interface Props {
+type ContainerProps = {
   [key: string]: ReactNode;
-}
+};
 
-export default function Container(props: Props) {
+export default function Container(props: ContainerProps) {
   const { children, ...customMeta } = props;
   const meta: { [key: string]: string } = {
     title: 'Eduardo R. Ambriz - Developer, writer.',

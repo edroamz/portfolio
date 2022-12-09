@@ -1,12 +1,14 @@
 import Link from 'next/link';
-import { Snippet } from 'lib/interfaces';
+
 import ReactIcon from 'components/icons/ReactIcon';
 import CSSIcon from 'components/icons/CSSIcon';
 import { IconProps } from 'components/icons/types';
 
-interface Props {
+import { Snippet } from 'lib/interfaces';
+
+type SnippetCardProps = {
   snippet: Snippet;
-}
+};
 
 const categoryIcons: {
   [key: string]: { icon: (props: IconProps) => JSX.Element; props: IconProps };
@@ -21,7 +23,7 @@ const categoryIcons: {
   }
 };
 
-export default function SnippetCard({ snippet }: Props) {
+export default function SnippetCard({ snippet }: SnippetCardProps) {
   const { slug, title, description, category } = snippet;
 
   const CategoryIcon = categoryIcons[category]['icon'];

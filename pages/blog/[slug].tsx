@@ -1,20 +1,23 @@
+import type { NextPage } from 'next';
+
 import BlogLayout from 'layouts/blog';
+
 import { getAllFiles, getFileBySlug, getSerializedMDXContent } from 'lib/mdx';
 import { Post } from 'lib/interfaces';
 
-interface Props {
+type PostPageProps = {
   post: Post;
-}
+};
 
-export default function PostPage({ post }: Props) {
+const PostPage: NextPage<PostPageProps> = ({ post }) => {
   return <BlogLayout post={post}></BlogLayout>;
-}
+};
 
-interface Params {
+type Params = {
   params: {
     slug: string;
   };
-}
+};
 
 export async function getStaticProps({ params }: Params) {
   const post = getFileBySlug('blog', params.slug, [
@@ -54,3 +57,5 @@ export async function getStaticPaths() {
     fallback: false
   };
 }
+
+export default PostPage;

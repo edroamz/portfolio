@@ -1,16 +1,17 @@
-import { NextPage } from 'next';
-import { getAllFiles } from 'lib/mdx';
-import { Post } from 'lib/interfaces';
+import type { NextPage } from 'next';
 
 import Container from 'components/Container';
 import Wrapper from 'components/Wrapper';
 import BlogPost from 'components/BlogPost';
 
-interface Props {
-  allPosts: Post[];
-}
+import { getAllFiles } from 'lib/mdx';
+import { Post } from 'lib/interfaces';
 
-const Blog: NextPage<Props> = ({ allPosts }) => {
+type BlogProps = {
+  allPosts: Post[];
+};
+
+const Blog: NextPage<BlogProps> = ({ allPosts }) => {
   return (
     <Container
       title="Blog – Eduardo R. Ambriz"

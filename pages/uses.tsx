@@ -1,17 +1,18 @@
-import { NextPage } from 'next';
-import { MDXRemote } from 'next-mdx-remote';
+import type { NextPage } from 'next';
 
 import Container from 'components/Container';
 import Wrapper from 'components/Wrapper';
 import mdxComponents from 'components/mdx';
+
+import { MDXRemote } from 'next-mdx-remote';
 import { getFileBySlug, getSerializedMDXContent } from 'lib/mdx';
 import { Uses } from 'lib/interfaces';
 
-type Props = {
+type UsesProps = {
   uses: Uses;
 };
 
-const Uses: NextPage<Props> = ({ uses }: Props): JSX.Element => {
+const Uses: NextPage<UsesProps> = ({ uses }): JSX.Element => {
   return (
     <Container
       title={`${uses.title} - Eduardo R. Ambriz`}

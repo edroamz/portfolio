@@ -1,25 +1,24 @@
 import { useRouter } from 'next/router';
 
+import { Separator } from '@radix-ui/react-separator';
 import Container from 'components/Container';
 import Wrapper from 'components/Wrapper';
 import mdxComponents from 'components/mdx';
-import { Snippet } from 'lib/interfaces';
-import { MDXRemote } from 'next-mdx-remote';
 import Button from 'components/Button';
-import { Separator } from '@radix-ui/react-separator';
 
-interface Props {
+import { MDXRemote } from 'next-mdx-remote';
+import { Snippet } from 'lib/interfaces';
+
+type SnippetsLayoutProps = {
   snippet: Snippet;
-}
+};
 
-export default function SnippetsLayout({ snippet }: Props) {
+export default function SnippetsLayout({ snippet }: SnippetsLayoutProps) {
   const router = useRouter();
+  const { title, description, content } = snippet;
 
   return (
-    <Container
-      title={`${snippet.title} - Eduardo R. Ambriz`}
-      description={snippet.description}
-    >
+    <Container title={`${title} - Eduardo R. Ambriz`} description={description}>
       <Wrapper as="section" className="pt-10 pb-16 md:pb-20">
         <Button
           variant="primaryLink"
@@ -34,9 +33,9 @@ export default function SnippetsLayout({ snippet }: Props) {
             Snippet
           </span>
           <h1 className="text-3xl md:text-4xl text-left font-extrabold my-1">
-            {snippet.title}
+            {title}
           </h1>
-          <p>{snippet.description}</p>
+          <p>{description}</p>
         </div>
         <Separator
           decorative
@@ -45,10 +44,7 @@ export default function SnippetsLayout({ snippet }: Props) {
         ></Separator>
 
         <div className="prose">
-          <MDXRemote
-            {...snippet.content}
-            components={mdxComponents}
-          ></MDXRemote>
+          <MDXRemote {...content} components={mdxComponents}></MDXRemote>
         </div>
       </Wrapper>
     </Container>

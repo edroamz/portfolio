@@ -1,19 +1,23 @@
+import type { NextPage } from 'next';
+
 import SnippetLayout from 'layouts/snippets';
+
 import { getAllFiles, getFileBySlug, getSerializedMDXContent } from 'lib/mdx';
 import { Snippet } from 'lib/interfaces';
 
-interface Props {
+type SnippetPageProps = {
   snippet: Snippet;
-}
-export default function SnippetPage({ snippet }: Props) {
-  return <SnippetLayout snippet={snippet}></SnippetLayout>;
-}
+};
 
-interface Params {
+const SnippetPage: NextPage<SnippetPageProps> = ({ snippet }) => {
+  return <SnippetLayout snippet={snippet}></SnippetLayout>;
+};
+
+type Params = {
   params: {
     slug: string;
   };
-}
+};
 export async function getStaticProps({ params }: Params) {
   const snippet = getFileBySlug('snippets', params.slug, [
     'title',
@@ -58,3 +62,5 @@ export async function getStaticPaths() {
     fallback: false
   };
 }
+
+export default SnippetPage;

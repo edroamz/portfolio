@@ -1,7 +1,9 @@
 import Image from 'next/image';
+
 import { Separator } from '@radix-ui/react-separator';
 import InternalLink from 'components/links/InternalLink';
 import TimeFormatter from 'components/TimeFormatter';
+
 import { Post } from 'lib/interfaces';
 import project2 from 'public/static/images/project2.jpg';
 

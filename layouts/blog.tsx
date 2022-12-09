@@ -1,8 +1,7 @@
-import { useRouter } from 'next/router';
-import { MDXRemote } from 'next-mdx-remote';
 import Image from 'next/image';
-import { Separator } from '@radix-ui/react-separator';
+import { useRouter } from 'next/router';
 
+import { Separator } from '@radix-ui/react-separator';
 import Container from 'components/Container';
 import Wrapper from 'components/Wrapper';
 import TimeFormatter from 'components/TimeFormatter';
@@ -12,20 +11,23 @@ import SharePost from 'components/SharePost';
 import RecommendedPost from 'components/RecommendedPost';
 import ExternalLink from 'components/links/ExternalLink';
 
+import { MDXRemote } from 'next-mdx-remote';
 import { Post } from 'lib/interfaces';
 
-interface Props {
+type BlogLayoutProps = {
   post: Post;
-}
+};
 
-export default function BlogLayout({ post }: Props) {
+export default function BlogLayout({ post }: BlogLayoutProps) {
   const router = useRouter();
+
+  const { title, excerpt, datePublished, readingTime, content, author } = post;
 
   return (
     <Container
-      title={`${post.title} - Eduardo R. Ambriz`}
-      description={post.excerpt}
-      date={post.datePublished}
+      title={`${title} - Eduardo R. Ambriz`}
+      description={excerpt}
+      date={datePublished}
       type="article"
     >
       <Wrapper as="article" className="pt-10 pb-16 md:pb-20">
@@ -41,7 +43,7 @@ export default function BlogLayout({ post }: Props) {
           <div className="inline-flex flex-row items-center justify-center gap-x-3 mb-4">
             <span className="text-sm md:text-base tracking-normal font-medium text-grey-600 dark:text-grey-300">
               Published on{' '}
-              <TimeFormatter dateString={post.datePublished}></TimeFormatter>
+              <TimeFormatter dateString={datePublished}></TimeFormatter>
             </span>
             <Separator
               decorative
@@ -51,14 +53,14 @@ export default function BlogLayout({ post }: Props) {
               |
             </Separator>
             <span className="text-sm md:text-base font-medium text-grey-600 dark:text-grey-300">
-              {post.readingTime}
+              {readingTime}
             </span>
           </div>
           <h1 className="text-3xl md:text-4xl text-center font-extrabold mb-4">
-            {post.title}
+            {title}
           </h1>
           <p className=" text-center mx-auto text-xl max-w-3xl md:tracking-tight">
-            {post.excerpt}
+            {excerpt}
           </p>
         </div>
         <Separator
@@ -68,22 +70,22 @@ export default function BlogLayout({ post }: Props) {
         ></Separator>
 
         <div className="prose">
-          <MDXRemote {...post.content} components={mdxComponents}></MDXRemote>
+          <MDXRemote {...content} components={mdxComponents}></MDXRemote>
         </div>
 
         <div className="flex flex-col sm:flex-row gap-y-5 items-start md:items-center justify-between max-w-2xl mx-auto mt-16">
           <div className="inline-flex flex-row items-center justify-start gap-x-3">
             <div className="relative h-10 w-10 rounded-full overflow-hidden">
               <Image
-                src={`${post.author.picture}`}
-                alt={`${post.author.name}`}
+                src={`${author.picture}`}
+                alt={`${author.name}`}
                 fill
                 className="object-cover"
               />
             </div>
             <div className="ml-1 flex flex-col items-baseline justify-center">
               <span className="font-medium text-[17px] tracking-normal text-grey-700 dark:text-grey-150">
-                {post.author.name}
+                {author.name}
               </span>
             </div>
           </div>
@@ -99,7 +101,7 @@ export default function BlogLayout({ post }: Props) {
         <div className="max-w-5xl mx-auto flex flex-col items-center justify-center mt-16">
           <SharePost
             postUrl="https://placeholder.com"
-            postTitle={post.title}
+            postTitle={title}
           ></SharePost>
           {/* <hr className="h-px w-full border-grey-100 dark:border-grey-880 mt-14" /> */}
           {/* <section className="flex flex-col items-center justify-center mt-16 md:mt-20">

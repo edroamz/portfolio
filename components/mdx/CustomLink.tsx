@@ -1,14 +1,12 @@
 import Link from 'next/link';
 import { AnchorHTMLAttributes, DetailedHTMLProps } from 'react';
 
-type AnchorType = Pick<
+type CustomLinkProps = Pick<
   DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>,
   'key' | keyof AnchorHTMLAttributes<HTMLAnchorElement>
 >;
 
-type Props = AnchorType;
-
-export const CustomLink = (props: Props): JSX.Element => {
+export const CustomLink = (props: CustomLinkProps): JSX.Element => {
   if (!props.href) {
     throw new Error(
       `Missing 'href' property in \`${CustomLink.name}\` component`

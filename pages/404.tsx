@@ -1,9 +1,11 @@
+import type { NextPage } from 'next';
+
 import Container from 'components/Container';
 import Wrapper from 'components/Wrapper';
 import InternalLink from 'components/links/InternalLink';
 import GradientText from 'components/GradientText';
 
-export default function NotFound() {
+const NotFound: NextPage = () => {
   return (
     <Container title="404 – Eduardo R. Ambriz">
       <Wrapper className="py-16 md:py-20">
@@ -23,4 +25,6 @@ export default function NotFound() {
       </Wrapper>
     </Container>
   );
-}
+};
+
+export default NotFound;

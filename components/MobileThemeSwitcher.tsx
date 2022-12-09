@@ -1,3 +1,7 @@
+import { FunctionComponent, useState } from 'react';
+import { useTheme } from 'next-themes';
+
+import { Label } from '@radix-ui/react-label';
 import {
   Select,
   SelectTrigger,
@@ -8,12 +12,10 @@ import {
   SelectItem,
   SelectItemText
 } from '@radix-ui/react-select';
-import { Label } from '@radix-ui/react-label';
-import { FunctionComponent, useState } from 'react';
-import { useTheme } from 'next-themes';
 import DarkIcon from 'components/icons/DarkIcon';
 import LightIcon from 'components/icons/LightIcon';
 import ChevronDownIcon from 'components/icons/ChevronDown';
+
 import { themes } from 'utils/themes';
 
 const MobileThemeSwitcher: FunctionComponent = () => {

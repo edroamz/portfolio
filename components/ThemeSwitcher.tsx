@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
+
+import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
+import { Label } from '@radix-ui/react-label';
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -7,11 +10,10 @@ import {
   DropdownMenuContent,
   DropdownMenuItem
 } from '@radix-ui/react-dropdown-menu';
-import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
-import { Label } from '@radix-ui/react-label';
 import LightIcon from 'components/icons/LightIcon';
 import DarkIcon from 'components/icons/DarkIcon';
 import SystemIcon from 'components/icons/SystemIcon';
+
 import classnames from 'classnames';
 import { themes } from 'utils/themes';
 

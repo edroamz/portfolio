@@ -1,14 +1,15 @@
 import { join } from 'path';
 import fs from 'fs';
-import { serialize } from 'next-mdx-remote/serialize';
+
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
+import { serialize } from 'next-mdx-remote/serialize';
 import matter from 'gray-matter';
+import readingTime from 'reading-time';
 import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
 import rehypeCodeTitles from 'rehype-code-titles';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypePrism from 'rehype-prism-plus';
-import readingTime from 'reading-time';
 
 type MDXType = 'blog' | 'snippets' | 'uses';
 
@@ -34,9 +35,9 @@ export function getFileBySlug(
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data: frontMatter } = matter(fileContents);
 
-  interface Items {
+  type Items = {
     [key: string]: string;
-  }
+  };
 
   const items: Items = {};
   // Ensure only the minimal needed data is exposed

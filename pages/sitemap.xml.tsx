@@ -1,5 +1,6 @@
-import { getFileSlugs } from 'lib/mdx';
 import { GetServerSideProps } from 'next';
+
+import { getFileSlugs } from 'lib/mdx';
 
 const BASE_URL = 'localhost:3000/';
 

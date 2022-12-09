@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
-import { Separator } from '@radix-ui/react-separator';
 
+import { Separator } from '@radix-ui/react-separator';
 import Wrapper from 'components/Wrapper';
 import Avatar from 'components/Avatar';
 import GradientText from 'components/GradientText';
@@ -8,12 +8,14 @@ import InternalLink from 'components/links/InternalLink';
 import Container from 'components/Container';
 import Product from 'components/Product';
 import BlogPost from 'components/BlogPost';
+import Heading from 'components/Heading';
+
 import { getAllFiles } from 'lib/mdx';
 import { Post } from 'lib/interfaces';
 
-interface HomeProps {
+type HomeProps = {
   allPosts: Post[];
-}
+};
 
 const Home: NextPage<HomeProps> = ({ allPosts }) => {
   return (
@@ -22,7 +24,7 @@ const Home: NextPage<HomeProps> = ({ allPosts }) => {
         <div className="mb-6">
           <Avatar></Avatar>
         </div>
-        <h1 className="mb-5">FrontEnd Engineer, JavaScript Developer</h1>
+        <Heading type="h1">FrontEnd Engineer, JavaScript Developer</Heading>
         <p className="text-xl md:leading-[2.6rem] max-w-prose">
           I’m Eduardo. I write scode, design & build web products. Lorem ipsum
           dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur

@@ -1,5 +1,7 @@
 import Image from 'next/image';
+
 import ExternalLink from 'components/links/ExternalLink';
+
 import project2 from '/public/static/images/project2.jpg';
 
 type Url = {

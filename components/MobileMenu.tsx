@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+
+import { Separator } from '@radix-ui/react-separator';
 import {
   Dialog,
   DialogTrigger,
@@ -7,12 +9,12 @@ import {
   DialogContent,
   DialogClose
 } from '@radix-ui/react-dialog';
-import { Separator } from '@radix-ui/react-separator';
-import useIsMobile from 'hooks/use-is-mobile';
-import InternalLink from 'components/links/InternalLink';
 import MobileThemeSwitcher from 'components/MobileThemeSwitcher';
+import InternalLink from 'components/links/InternalLink';
 import CloseIcon from 'components/icons/CloseIcon';
 import MenuIcon from 'components/icons/MenuIcon';
+
+import useIsMobile from 'hooks/use-is-mobile';
 
 export default function MobileMenuNew() {
   const [mounted, setMounted] = useState<boolean>(false);

@@ -1,16 +1,16 @@
 import { Separator } from '@radix-ui/react-separator';
-
 import InternalLink from 'components/links/InternalLink';
 import Heading, { HeadingType } from 'components/Heading';
 import TimeFormatter from 'components/TimeFormatter';
+
 import { Post } from 'lib/interfaces';
 
-interface Props {
+type BlogPostProps = {
   post: Post;
   heading?: HeadingType;
-}
+};
 
-export default function BlogPost({ post, heading = 'h2' }: Props) {
+export default function BlogPost({ post, heading = 'h2' }: BlogPostProps) {
   const { slug, datePublished, title, excerpt, readingTime } = post;
 
   return (
