@@ -2,9 +2,10 @@ import { twMerge } from 'tailwind-merge';
 import { ComponentPropsWithRef, ReactNode } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { LinkVariantType, TextSizeType } from 'lib/types';
 import { linkVariants, textSizes } from 'components/theme';
 import cn from 'classnames';
+import { LinkVariantType } from 'components/links/types';
+import { TextSizeType } from 'components/Text';
 
 type internalLinkType = typeof Link;
 

@@ -1,28 +1,31 @@
 import Link from 'next/link';
 import { Snippet } from 'lib/interfaces';
-import Icon from 'components/Icon';
-import { IconSizeType, IconVariantType } from 'lib/types';
+import ReactIcon from 'components/icons/ReactIcon';
+import CSSIcon from 'components/icons/CSSIcon';
+import { IconProps } from 'components/icons/types';
 
 interface Props {
   snippet: Snippet;
 }
 
-const iconProps: {
-  [key: string]: {
-    name: string;
-    size?: IconSizeType;
-    variant?: IconVariantType;
-    decorative?: boolean;
-  };
+const categoryIcons: {
+  [key: string]: { icon: (props: IconProps) => JSX.Element; props: IconProps };
 } = {
-  react: { name: 'react', size: 'lg', variant: 'react', decorative: true },
-  css: { name: 'css', size: 'lg', decorative: true }
+  react: {
+    icon: ReactIcon,
+    props: { size: 'lg', variant: 'reactLogo', decorative: true }
+  },
+  css: {
+    icon: CSSIcon,
+    props: { size: 'lg', decorative: true }
+  }
 };
 
 export default function SnippetCard({ snippet }: Props) {
   const { slug, title, description, category } = snippet;
 
-  const categoryProps = iconProps[category];
+  const CategoryIcon = categoryIcons[category]['icon'];
+  const iconProps = categoryIcons[category]['props'];
 
   return (
     <Link
@@ -36,7 +39,7 @@ export default function SnippetCard({ snippet }: Props) {
         <div className="h-full flex flex-col justify-between gap-y-7">
           <div>
             <div className="h-11 w-11 bg-transparent flex items-center justify-center rounded-full p-1 border border-grey-120 dark:border-grey-700 mb-2">
-              <Icon {...categoryProps} />
+              <CategoryIcon {...iconProps}></CategoryIcon>
             </div>
             <h2 className="text-xl mb-2">{title}</h2>
             <p>{description}</p>

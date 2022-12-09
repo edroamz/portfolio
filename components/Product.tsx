@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import ExternalLink from 'components/ExternalLink';
+import ExternalLink from 'components/links/ExternalLink';
 import project2 from '/public/static/images/project2.jpg';
 
 type Url = {
@@ -21,7 +21,7 @@ export default function Product({ product }: ProductProps): JSX.Element {
   const { title, excerpt, url } = product;
   return (
     <div>
-      <ExternalLink href={url.href} variant="rounded">
+      <ExternalLink href={url.href} variant="rounded" tabIndex={-1}>
         <Image
           src={project2}
           alt=""

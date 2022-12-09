@@ -7,12 +7,12 @@ import {
   DialogContent,
   DialogClose
 } from '@radix-ui/react-dialog';
-import { AccessibleIcon } from '@radix-ui/react-accessible-icon';
 import { Separator } from '@radix-ui/react-separator';
-import InternalLink from 'components/InternalLink';
-import MobileThemeSwitcher from 'components/MobileThemeSwitcher';
 import useIsMobile from 'hooks/use-is-mobile';
-import Icon from 'components/Icon';
+import InternalLink from 'components/links/InternalLink';
+import MobileThemeSwitcher from 'components/MobileThemeSwitcher';
+import CloseIcon from 'components/icons/CloseIcon';
+import MenuIcon from 'components/icons/MenuIcon';
 
 export default function MobileMenuNew() {
   const [mounted, setMounted] = useState<boolean>(false);
@@ -24,11 +24,7 @@ export default function MobileMenuNew() {
   }, []);
 
   function toggleDialog() {
-    if (isDialogOpen) {
-      setIsDialogOpen(false);
-    } else {
-      setIsDialogOpen(true);
-    }
+    setIsDialogOpen(!isDialogOpen);
   }
 
   if (!mounted) {
@@ -38,18 +34,18 @@ export default function MobileMenuNew() {
   return (
     <Dialog open={isDialogOpen} onOpenChange={toggleDialog} modal>
       <DialogTrigger className="visible md:hidden px-2 py-[2px] pr-0  text-grey-600 dark:text-grey-300 hover:text-grey-1000 dark:hover:text-grey-80 hover:transition-colors focus-visible:outline-none focus-visible:ring-2 dark:focus-visible:ring-grey-0 focus-visible:ring-grey-1000 rounded-md group">
-        <AccessibleIcon label="Navigation">
-          <Icon name="menu" decorative></Icon>
-        </AccessibleIcon>
+        <MenuIcon label="Navigation" decorative></MenuIcon>
       </DialogTrigger>
       {isMobile && isDialogOpen && (
         <DialogPortal>
           <DialogOverlay className="fixed inset-0 visible md:invisible bg-black/20 dark:bg-grey-970/80 w-screen h-full z-30 backdrop-blur-sm"></DialogOverlay>
           <DialogContent className="fixed top-4 right-4 visible md:invisible flex flex-col gap-6 w-full max-w-xs bg-white dark:bg-grey-880 rounded-lg shadow-lg p-6 z-40">
             <DialogClose className="absolute top-5 right-5 w-8 h-8 flex items-center justify-center ">
-              <AccessibleIcon label="Close navigation">
-                <Icon name="close" size="sm" decorative></Icon>
-              </AccessibleIcon>
+              <CloseIcon
+                label="Close navigation"
+                size="sm"
+                decorative
+              ></CloseIcon>
             </DialogClose>
             <ul className="flex flex-col justify-center gap-3">
               <li>

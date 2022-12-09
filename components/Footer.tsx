@@ -2,9 +2,10 @@ import { Separator } from '@radix-ui/react-separator';
 
 import Wrapper from 'components/Wrapper';
 import Wordmark from 'components/Wordmark';
-import ExternalLink from 'components/ExternalLink';
-import InternalLink from 'components/InternalLink';
-import Icon from 'components/Icon';
+import ExternalLink from 'components/links/ExternalLink';
+import InternalLink from 'components/links/InternalLink';
+import LinkedInIcon from 'components/icons/LinkedInIcon';
+import GitHubIcon from 'components/icons/GitHubIcon';
 
 export default function Footer() {
   return (
@@ -92,9 +93,12 @@ export default function Footer() {
                 <ExternalLink
                   href="https://www.linkedin.com/in/edroamz/"
                   variant="block"
-                  aria-label="LinkedIn"
                 >
-                  <Icon name="linkedin" size="sm"></Icon>
+                  <LinkedInIcon
+                    label="LinkedIn"
+                    size="sm"
+                    decorative
+                  ></LinkedInIcon>
                 </ExternalLink>
               </li>
               <Separator
@@ -110,7 +114,7 @@ export default function Footer() {
                   variant="block"
                   aria-label="GitHub"
                 >
-                  <Icon name="github" size="sm"></Icon>
+                  <GitHubIcon label="GitHub" size="sm" decorative></GitHubIcon>
                 </ExternalLink>
               </li>
             </ul>

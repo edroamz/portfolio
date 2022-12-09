@@ -1,7 +1,10 @@
 import { ReactNode, ComponentPropsWithoutRef } from 'react';
-import { ButtonVariantType, ButtonSizeType } from 'lib/types';
 import { buttonVariants, buttonSizes } from 'components/theme';
 import cn from 'classnames';
+
+export type ButtonSizeType = 'base';
+
+export type ButtonVariantType = 'primaryLink';
 
 type ButtonProps = ComponentPropsWithoutRef<'button'> & {
   variant: ButtonVariantType;

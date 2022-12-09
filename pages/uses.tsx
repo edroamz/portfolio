@@ -3,7 +3,7 @@ import { MDXRemote } from 'next-mdx-remote';
 
 import Container from 'components/Container';
 import Wrapper from 'components/Wrapper';
-import MDXComponents from 'components/MDXComponents';
+import mdxComponents from 'components/mdx';
 import { getFileBySlug, getSerializedMDXContent } from 'lib/mdx';
 import { Uses } from 'lib/interfaces';
 
@@ -24,7 +24,7 @@ const Uses: NextPage<Props> = ({ uses }: Props): JSX.Element => {
 
       <div className="px-7 pb-16 md:pb-20">
         <div className="prose">
-          <MDXRemote {...uses.content} components={MDXComponents}></MDXRemote>
+          <MDXRemote {...uses.content} components={mdxComponents}></MDXRemote>
         </div>
       </div>
     </Container>

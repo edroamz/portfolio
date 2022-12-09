@@ -1,13 +1,12 @@
 import { ReactNode, createElement, ComponentPropsWithoutRef } from 'react';
-import { HeadingType } from 'lib/types';
 
-const headings: { [key in HeadingType]: string } = {
+export type HeadingType = 'h1' | 'h2' | 'h3' | 'h4';
+
+const headings: { [key in HeadingType]: HeadingType } = {
   h1: 'h1',
   h2: 'h2',
   h3: 'h3',
-  h4: 'h4',
-  h5: 'h5',
-  h6: 'h6'
+  h4: 'h4'
 };
 
 type HeadingProps = ComponentPropsWithoutRef<HeadingType> & {

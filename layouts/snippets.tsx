@@ -2,8 +2,7 @@ import { useRouter } from 'next/router';
 
 import Container from 'components/Container';
 import Wrapper from 'components/Wrapper';
-import MDXComponents from 'components/MDXComponents';
-
+import mdxComponents from 'components/mdx';
 import { Snippet } from 'lib/interfaces';
 import { MDXRemote } from 'next-mdx-remote';
 import Button from 'components/Button';
@@ -48,7 +47,7 @@ export default function SnippetsLayout({ snippet }: Props) {
         <div className="prose">
           <MDXRemote
             {...snippet.content}
-            components={MDXComponents}
+            components={mdxComponents}
           ></MDXRemote>
         </div>
       </Wrapper>

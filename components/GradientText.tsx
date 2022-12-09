@@ -5,24 +5,33 @@ import {
   CSSProperties
 } from 'react';
 import {
-  GradientVariantType,
-  GradientDirectionType,
-  TextSizeType
-} from 'lib/types';
-import {
   gradientVariants,
   gradientDirections,
   textSizes
 } from 'components/theme';
 import cn from 'classnames';
+import { TextSizeType } from 'components/Text';
+import { HeadingType } from 'components/Heading';
 
-type TextType = 'p' | 'span' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+export type GradientVariantType = 'gotham' | 'winter' | 'summer';
 
-type GradientTextProps = ComponentPropsWithoutRef<TextType> & {
+export type GradientDirectionType =
+  | 'top'
+  | 'topRight'
+  | 'right'
+  | 'bottomRight'
+  | 'bottom'
+  | 'bottomLeft'
+  | 'left'
+  | 'topLeft';
+
+type GradientTextType = 'p' | 'span' | HeadingType;
+
+type GradientTextProps = ComponentPropsWithoutRef<GradientTextType> & {
   textSize?: TextSizeType;
   direction?: GradientDirectionType;
   variant: GradientVariantType;
-  as?: TextType;
+  as?: GradientTextType;
   children: ReactNode;
 };
 
@@ -42,7 +51,7 @@ const GradientText = ({
     gradientVariants[variant]
   );
   const styles: CSSProperties = { WebkitTextFillColor: 'transparent' };
-  const componentProps: ComponentPropsWithoutRef<TextType> = {
+  const componentProps: ComponentPropsWithoutRef<GradientTextType> = {
     className: classNames,
     style: styles,
     ...props

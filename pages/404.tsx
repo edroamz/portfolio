@@ -1,6 +1,6 @@
 import Container from 'components/Container';
 import Wrapper from 'components/Wrapper';
-import InternalLink from 'components/InternalLink';
+import InternalLink from 'components/links/InternalLink';
 import GradientText from 'components/GradientText';
 
 export default function NotFound() {

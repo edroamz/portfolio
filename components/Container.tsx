@@ -6,7 +6,7 @@ import Wordmark from 'components/Wordmark';
 import ThemeSwitcher from 'components/ThemeSwitcher';
 import MobileMenu from 'components/MobileMenu';
 import Footer from 'components/Footer';
-import InternalLink from 'components/InternalLink';
+import InternalLink from 'components/links/InternalLink';
 
 interface Props {
   [key: string]: ReactNode;

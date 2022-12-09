@@ -1,17 +1,16 @@
 import { ComponentPropsWithRef, ReactNode } from 'react';
 import cn from 'classnames';
-import { LinkVariantType, TextSizeType } from 'lib/types';
+import { LinkVariantType } from 'components/links/types';
 import { linkVariants, textSizes } from 'components/theme';
 import { twMerge } from 'tailwind-merge';
-
-type ExternalLinkType = 'a';
+import { TextSizeType } from 'components/Text';
 
 type LinkVariantWithoutNavType = Exclude<
   LinkVariantType,
   'nav' | 'nav-active' | 'footerNav' | 'mobileNav'
 >;
 
-type ExternalLinkProps = ComponentPropsWithRef<ExternalLinkType> & {
+type ExternalLinkProps = ComponentPropsWithRef<'a'> & {
   variant?: LinkVariantWithoutNavType;
   textSize?: TextSizeType;
   children?: ReactNode;
@@ -29,7 +28,7 @@ function ExternalLink({
     cn(commonClasses, textSizes[textSize], linkVariants[variant])
   );
 
-  const linkProps: ComponentPropsWithRef<ExternalLinkType> = {
+  const linkProps: ComponentPropsWithRef<'a'> = {
     ...props
   };
 

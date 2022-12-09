@@ -1,13 +1,11 @@
 import {
-  GradientVariantType,
   GradientDirectionType,
-  TextSizeType,
-  ButtonSizeType,
-  ButtonVariantType,
-  LinkVariantType,
-  IconVariantType,
-  IconSizeType
-} from 'lib/types';
+  GradientVariantType
+} from 'components/GradientText';
+import { TextSizeType } from 'components/Text';
+import { ButtonSizeType, ButtonVariantType } from 'components/Button';
+import { LinkVariantType } from 'components/links/types';
+import { IconSizeType, IconVariantType } from 'components/icons/types';
 
 export const gradientVariants: {
   [key in GradientVariantType]: string;
@@ -73,8 +71,12 @@ export const linkVariants: { [key in LinkVariantType]: string } = {
 export const iconVariants: { [key in IconVariantType]: string } = {
   common: '',
   default:
-    'text-grey-600 group-hover:transition-colors hover:transition-colors group-hover:text-grey-1000 hover:text-grey-1000 dark:text-grey-300 dark:group-hover:text-grey-120 dark:hover:text-grey-120',
-  react: 'text-black dark:text-[#61dafb]'
+    'text-grey-600 group-hover:transition-colors hover:transition-colors group-hover:text-grey-1000 hover:text-grey-1000 dark:text-grey-150 dark:group-hover:text-grey-50 dark:hover:text-grey-50',
+  active: 'text-cobalt dark:text-blue-400',
+  'non-interactive': 'text-grey-400 dark:text-grey-300',
+  hiddenInDark: 'dark:hidden',
+  hiddenInLight: 'hidden dark:block',
+  reactLogo: 'text-black dark:text-[#61dafb]'
 };
 
 export const iconSizes: { [key in IconSizeType]: string } = {

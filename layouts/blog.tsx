@@ -6,11 +6,11 @@ import { Separator } from '@radix-ui/react-separator';
 import Container from 'components/Container';
 import Wrapper from 'components/Wrapper';
 import TimeFormatter from 'components/TimeFormatter';
-import MDXComponents from 'components/MDXComponents';
+import mdxComponents from 'components/mdx';
 import Button from 'components/Button';
 import SharePost from 'components/SharePost';
 import RecommendedPost from 'components/RecommendedPost';
-import ExternalLink from 'components/ExternalLink';
+import ExternalLink from 'components/links/ExternalLink';
 
 import { Post } from 'lib/interfaces';
 
@@ -68,7 +68,7 @@ export default function BlogLayout({ post }: Props) {
         ></Separator>
 
         <div className="prose">
-          <MDXRemote {...post.content} components={MDXComponents}></MDXRemote>
+          <MDXRemote {...post.content} components={mdxComponents}></MDXRemote>
         </div>
 
         <div className="flex flex-col sm:flex-row gap-y-5 items-start md:items-center justify-between max-w-2xl mx-auto mt-16">

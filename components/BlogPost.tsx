@@ -1,10 +1,9 @@
 import { Separator } from '@radix-ui/react-separator';
 
-import InternalLink from 'components/InternalLink';
-import Heading from 'components/Heading';
+import InternalLink from 'components/links/InternalLink';
+import Heading, { HeadingType } from 'components/Heading';
 import TimeFormatter from 'components/TimeFormatter';
 import { Post } from 'lib/interfaces';
-import { HeadingType } from 'lib/types';
 
 interface Props {
   post: Post;

@@ -4,7 +4,7 @@ import { Separator } from '@radix-ui/react-separator';
 import Wrapper from 'components/Wrapper';
 import Avatar from 'components/Avatar';
 import GradientText from 'components/GradientText';
-import InternalLink from 'components/InternalLink';
+import InternalLink from 'components/links/InternalLink';
 import Container from 'components/Container';
 import Product from 'components/Product';
 import BlogPost from 'components/BlogPost';
