@@ -1,18 +1,17 @@
-import { iconVariants, iconSizes } from 'components/theme';
+import { IconVariants, IconSizes } from 'components/theme';
 import { twMerge } from 'tailwind-merge';
 import cn from 'classnames';
 import { IconProps } from 'components/icons/types';
 
 const CloseIcon = ({
-  variant = 'default',
+  variant = 'primary',
   size = 'base',
   decorative,
   label,
   ...props
 }: IconProps) => {
-  const commonClasses: string = iconVariants['common'];
   const classNames: string = twMerge(
-    cn(commonClasses, iconSizes[size], iconVariants[variant])
+    cn(IconSizes[size], IconVariants[variant])
   );
 
   const decorativeProps = decorative

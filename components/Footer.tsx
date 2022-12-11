@@ -1,11 +1,11 @@
 import { Separator } from '@radix-ui/react-separator';
 
 import Wrapper from 'components/Wrapper';
-import Wordmark from 'components/Wordmark';
 import ExternalLink from 'components/links/ExternalLink';
 import InternalLink from 'components/links/InternalLink';
 import LinkedInIcon from 'components/icons/LinkedInIcon';
 import GitHubIcon from 'components/icons/GitHubIcon';
+import WordmarkIcon from 'components/icons/WordmarkIcon';
 
 export default function Footer() {
   return (
@@ -13,8 +13,11 @@ export default function Footer() {
       <div className="flex flex-col">
         <Wrapper className="w-full flex flex-col md:flex-row gap-y-12 gap-x-7 items-baseline py-12 md:py-16">
           <div className="flex-1/3">
-            <InternalLink href="/" variant="wordmark">
-              <Wordmark className="h-wordmark text-grey-1000 dark:text-grey-50"></Wordmark>
+            <InternalLink href="/" aria-label="Eduardo Homepage">
+              <WordmarkIcon
+                size="wordmark"
+                variant="black-and-white"
+              ></WordmarkIcon>
             </InternalLink>
           </div>
           <div className="flex-1/3 w-full">
@@ -23,22 +26,22 @@ export default function Footer() {
             </span>
             <ul className="space-y-1">
               <li>
-                <InternalLink href="/projects" variant="footerNav">
+                <InternalLink href="/projects" variant="secondary">
                   Projects
                 </InternalLink>
               </li>
               <li>
-                <InternalLink href="/blog" variant="footerNav">
+                <InternalLink href="/blog" variant="secondary">
                   Blog
                 </InternalLink>
               </li>
               <li>
-                <InternalLink href="/uses" variant="footerNav">
+                <InternalLink href="/uses" variant="secondary">
                   Uses
                 </InternalLink>
               </li>
               <li>
-                <InternalLink href="/snippets" variant="footerNav">
+                <InternalLink href="/snippets" variant="secondary">
                   Snippets
                 </InternalLink>
               </li>

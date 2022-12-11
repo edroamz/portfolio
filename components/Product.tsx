@@ -33,7 +33,7 @@ export default function Product({ product }: ProductProps): JSX.Element {
       </ExternalLink>
       <h4 className="text-lg leading-relaxed mt-6">{title}</h4>
       <p className="text-[16px] mt-1 mb-2">{excerpt}</p>
-      <ExternalLink href={url.href} variant="primary">
+      <ExternalLink href={url.href} variant="primary" fontWeight={500}>
         <span className="text-[16px]">
           {url.pathname} <span className="pl-2 text-sm">→</span>
         </span>

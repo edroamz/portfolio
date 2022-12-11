@@ -18,7 +18,12 @@ const NotFound: NextPage = () => {
             Sorry, we couldn’t find the page you’re looking for. Please check
             the URL in the address bar and try again.
           </p>
-          <InternalLink href="/" textSize="lg" variant="primary">
+          <InternalLink
+            href="/"
+            textSize="lg"
+            variant="primary"
+            fontWeight={500}
+          >
             Go back home <span className="pl-2">→</span>
           </InternalLink>
         </div>

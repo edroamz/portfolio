@@ -49,31 +49,43 @@ export default function MobileMenuNew() {
                 decorative
               ></CloseIcon>
             </DialogClose>
-            <ul className="flex flex-col justify-center gap-3">
+            <ul className="flex flex-col justify-center gap-y-5">
               <li>
                 <InternalLink
                   href="/projects"
-                  variant="mobileNav"
+                  variant="black-and-white"
                   textSize="lg"
+                  fontWeight={600}
                 >
                   Projects
                 </InternalLink>
               </li>
               <li>
-                <InternalLink href="/blog" variant="mobileNav" textSize="lg">
+                <InternalLink
+                  href="/blog"
+                  variant="black-and-white"
+                  textSize="lg"
+                  fontWeight={600}
+                >
                   Blog
                 </InternalLink>
               </li>
               <li>
-                <InternalLink href="/uses" variant="mobileNav" textSize="lg">
+                <InternalLink
+                  href="/uses"
+                  variant="black-and-white"
+                  textSize="lg"
+                  fontWeight={600}
+                >
                   Uses
                 </InternalLink>
               </li>
               <li>
                 <InternalLink
                   href="/snippets"
-                  variant="mobileNav"
+                  variant="black-and-white"
                   textSize="lg"
+                  fontWeight={600}
                 >
                   Snippets
                 </InternalLink>

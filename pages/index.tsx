@@ -96,7 +96,12 @@ const Home: NextPage<HomeProps> = ({ allPosts }) => {
           <div className="w-full flex flex-col md:flex-row md:px-7 md:gap-x-12 lg:gap-x-14">
             <div className="h-full w-full md:basis-1/5"></div>
             <div className="h-full w-full md:basis-4/5">
-              <InternalLink href="/projects" textSize="lg" variant="primary">
+              <InternalLink
+                href="/projects"
+                textSize="lg"
+                variant="primary"
+                fontWeight={500}
+              >
                 Read all posts <span className="pl-2">→</span>
               </InternalLink>
             </div>

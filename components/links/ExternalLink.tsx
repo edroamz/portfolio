@@ -1,34 +1,30 @@
-import { ComponentPropsWithRef, ReactNode } from 'react';
+import { ComponentPropsWithRef } from 'react';
 import cn from 'classnames';
-import { LinkVariantType } from 'components/links/types';
-import { linkVariants, textSizes } from 'components/theme';
+import { SharedLinkProps } from 'components/links/types';
+import { FontWeights, LinkVariants, TextSizes } from 'components/theme';
 import { twMerge } from 'tailwind-merge';
-import { TextSizeType } from 'components/Text';
 
-type LinkVariantWithoutNavType = Exclude<
-  LinkVariantType,
-  'nav' | 'nav-active' | 'footerNav' | 'mobileNav'
->;
-
-type ExternalLinkProps = ComponentPropsWithRef<'a'> & {
-  variant?: LinkVariantWithoutNavType;
-  textSize?: TextSizeType;
-  children?: ReactNode;
-};
+type ExternalLinkProps = ComponentPropsWithRef<'a'> & SharedLinkProps;
 
 function ExternalLink({
-  variant = 'common',
+  variant = 'default',
   textSize = 'base',
+  fontWeight = 400,
   children,
   ...props
 }: ExternalLinkProps): JSX.Element {
-  const commonClasses: string = linkVariants['common'];
+  const defaultClasses: string = LinkVariants['default'];
 
   const classNames: string = twMerge(
-    cn(commonClasses, textSizes[textSize], linkVariants[variant])
+    cn(
+      defaultClasses,
+      FontWeights[fontWeight],
+      TextSizes[textSize],
+      LinkVariants[variant]
+    )
   );
 
-  const linkProps: ComponentPropsWithRef<'a'> = {
+  const anchorProps: ComponentPropsWithRef<'a'> = {
     ...props
   };
 
@@ -37,7 +33,7 @@ function ExternalLink({
       target="_blank"
       rel="noopener noreferrer"
       className={classNames}
-      {...linkProps}
+      {...anchorProps}
     >
       {children}
     </a>

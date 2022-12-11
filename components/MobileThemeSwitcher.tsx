@@ -49,14 +49,14 @@ const MobileThemeSwitcher: FunctionComponent = () => {
           >
             <SelectValue asChild>
               <div className="flex items-center justify-center align-middle gap-2 text-grey-400 dark:text-grey-300">
-                <DarkIcon decorative variant="hiddenInLight"></DarkIcon>
-                <LightIcon decorative variant="hiddenInDark"></LightIcon>
-                <span className="text-grey-800 dark:text-grey-120 capitalize leading-none text-lg font-semibold tracking-wide">
+                <DarkIcon decorative variant="hidden-in-light"></DarkIcon>
+                <LightIcon decorative variant="hidden-in-dark"></LightIcon>
+                <span className="text-grey-900 dark:text-grey-80 capitalize leading-none text-lg font-semibold tracking-wide">
                   {theme}
                 </span>
                 <ChevronDownIcon
                   decorative
-                  variant="non-interactive"
+                  variant="secondary"
                 ></ChevronDownIcon>
               </div>
             </SelectValue>

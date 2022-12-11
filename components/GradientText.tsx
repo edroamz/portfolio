@@ -5,9 +5,9 @@ import {
   CSSProperties
 } from 'react';
 import {
-  gradientVariants,
-  gradientDirections,
-  textSizes
+  GradientVariants,
+  GradientDirections,
+  TextSizes
 } from 'components/theme';
 import cn from 'classnames';
 import { TextSizeType } from 'components/Text';
@@ -17,11 +17,11 @@ export type GradientVariantType = 'gotham' | 'winter' | 'summer';
 
 export type GradientDirectionType =
   | 'top'
-  | 'topRight'
+  | 'top-right'
   | 'right'
-  | 'bottomRight'
+  | 'bottom-right'
   | 'bottom'
-  | 'bottomLeft'
+  | 'bottom-left'
   | 'left'
   | 'topLeft';
 
@@ -46,9 +46,9 @@ const GradientText = ({
   const type: string = as;
   const classNames: string = cn(
     'inline-block m-0 bg-clip-text font-bold [&_p]:text-[length:inherit] [&_p]:leading-[1.2]',
-    textSizes[textSize],
-    gradientDirections[direction],
-    gradientVariants[variant]
+    TextSizes[textSize],
+    GradientDirections[direction],
+    GradientVariants[variant]
   );
   const styles: CSSProperties = { WebkitTextFillColor: 'transparent' };
   const componentProps: ComponentPropsWithoutRef<GradientTextType> = {

@@ -28,7 +28,7 @@ export default function BlogLayout({ post }: BlogLayoutProps) {
       type="article"
     >
       <Wrapper as="article" className="pt-9 pb-16 md:pb-20">
-        <InternalLink href="/blog" variant="primary">
+        <InternalLink href="/blog" variant="primary" fontWeight={500}>
           <span className="pr-2">←</span>Back to Blog
         </InternalLink>
         <div className="flex flex-col items-center mt-8">

@@ -15,7 +15,7 @@ const categoryIcons: {
 } = {
   react: {
     icon: ReactIcon,
-    props: { size: 'lg', variant: 'reactLogo', decorative: true }
+    props: { size: 'lg', variant: 'react-logo', decorative: true }
   },
   css: {
     icon: CSSIcon,

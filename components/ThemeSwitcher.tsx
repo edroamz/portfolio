@@ -44,8 +44,8 @@ export default function ThemeSwitcher() {
         id="btn-theme"
         className="dropdown-theme-trigger group"
       >
-        <DarkIcon decorative variant="hiddenInLight" size="lg"></DarkIcon>
-        <LightIcon decorative variant="hiddenInDark" size="lg"></LightIcon>
+        <DarkIcon decorative variant="hidden-in-light" size="lg"></DarkIcon>
+        <LightIcon decorative variant="hidden-in-dark" size="lg"></LightIcon>
       </DropdownMenuTrigger>
 
       <DropdownMenuPortal>
@@ -67,23 +67,17 @@ export default function ThemeSwitcher() {
               {theme === 'light' ? (
                 <LightIcon
                   decorative
-                  variant={
-                    theme === currentTheme ? 'active' : 'non-interactive'
-                  }
+                  variant={theme === currentTheme ? 'highlighted' : 'secondary'}
                 ></LightIcon>
               ) : theme === 'dark' ? (
                 <DarkIcon
                   decorative
-                  variant={
-                    theme === currentTheme ? 'active' : 'non-interactive'
-                  }
+                  variant={theme === currentTheme ? 'highlighted' : 'secondary'}
                 ></DarkIcon>
               ) : (
                 <SystemIcon
                   decorative
-                  variant={
-                    theme === currentTheme ? 'active' : 'non-interactive'
-                  }
+                  variant={theme === currentTheme ? 'highlighted' : 'secondary'}
                 ></SystemIcon>
               )}
               <span className="capitalize">{theme}</span>

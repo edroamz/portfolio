@@ -17,7 +17,7 @@ export default function SnippetsLayout({ snippet }: SnippetsLayoutProps) {
   return (
     <Container title={`${title} - Eduardo R. Ambriz`} description={description}>
       <Wrapper as="section" className="pt-9 pb-16 md:pb-20">
-        <InternalLink href="/snippets" variant="primary">
+        <InternalLink href="/snippets" variant="primary" fontWeight={500}>
           <span className="pr-2">←</span>Back to Snippets
         </InternalLink>
         <div className="flex flex-col items-center justify-center text-center text-lg max-w-prose mx-auto mt-8">

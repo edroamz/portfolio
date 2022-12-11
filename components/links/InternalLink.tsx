@@ -1,42 +1,38 @@
 import { twMerge } from 'tailwind-merge';
-import { ComponentPropsWithRef, ReactNode } from 'react';
+import { ComponentPropsWithRef } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { linkVariants, textSizes } from 'components/theme';
+import { FontWeights, LinkVariants, TextSizes } from 'components/theme';
 import cn from 'classnames';
-import { LinkVariantType } from 'components/links/types';
-import { TextSizeType } from 'components/Text';
+import { SharedLinkProps } from 'components/links/types';
 
-type internalLinkType = typeof Link;
-
-type InternalLinkProps = ComponentPropsWithRef<internalLinkType> & {
-  variant?: LinkVariantType;
-  textSize?: TextSizeType;
-  children?: ReactNode;
-};
+type InternalLinkProps = ComponentPropsWithRef<typeof Link> &
+  SharedLinkProps & { highlightActive?: boolean | undefined };
 
 function InternalLink({
-  variant = 'common',
+  variant = 'default',
   textSize = 'base',
+  fontWeight = 400,
+  highlightActive = false,
   children,
   ...props
 }: InternalLinkProps): JSX.Element {
   const router = useRouter();
-  const isNav: boolean = variant === 'nav';
   const isActive: boolean = router.pathname === props.href;
 
-  const commonClasses: string = linkVariants['common'];
+  const defaultClasses: string = LinkVariants['default'];
 
   const classNames: string = twMerge(
     cn(
-      commonClasses,
-      textSizes[textSize],
-      linkVariants[variant],
-      isNav && isActive && linkVariants['nav-active']
+      defaultClasses,
+      FontWeights[fontWeight],
+      TextSizes[textSize],
+      LinkVariants[variant],
+      highlightActive && isActive && LinkVariants['highlighted']
     )
   );
 
-  const linkProps: ComponentPropsWithRef<internalLinkType> = {
+  const linkProps: ComponentPropsWithRef<typeof Link> = {
     ...props
   };
 
