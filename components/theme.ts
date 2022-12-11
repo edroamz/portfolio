@@ -3,7 +3,6 @@ import {
   GradientVariantType
 } from 'components/GradientText';
 import { TextSizeType } from 'components/Text';
-import { ButtonSizeType, ButtonVariantType } from 'components/Button';
 import { LinkVariantType } from 'components/links/types';
 import { IconSizeType, IconVariantType } from 'components/icons/types';
 
@@ -38,17 +37,6 @@ export const textSizes: { [key in TextSizeType]: string } = {
   '3xl': 'text-3xl md:text-4xl'
 };
 
-export const buttonSizes: { [key in ButtonSizeType]: string } = {
-  base: 'text-base leading-none tracking-normal'
-};
-
-export const buttonVariants: {
-  [key in ButtonVariantType]: string;
-} = {
-  primaryLink:
-    'font-medium inline-flex items-center text-cobalt-dark hover:text-grey-1000 dark:text-blue-400 dark:hover:text-grey-100'
-};
-
 export const linkVariants: { [key in LinkVariantType]: string } = {
   common:
     'hover:transition-colors hover:duration-200 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-grey-1000 dark:focus-visible:ring-grey-0 rounded-sm',
@@ -76,7 +64,7 @@ export const iconVariants: { [key in IconVariantType]: string } = {
   'non-interactive': 'text-grey-400 dark:text-grey-300',
   hiddenInDark: 'dark:hidden',
   hiddenInLight: 'hidden dark:block',
-  reactLogo: 'text-black dark:text-[#61dafb]'
+  reactLogo: 'text-[#087EA4] dark:text-[#149ECA]'
 };
 
 export const iconSizes: { [key in IconSizeType]: string } = {

@@ -1,15 +1,14 @@
 import Image from 'next/image';
-import { useRouter } from 'next/router';
 
 import { Separator } from '@radix-ui/react-separator';
 import Container from 'components/Container';
 import Wrapper from 'components/Wrapper';
 import TimeFormatter from 'components/TimeFormatter';
 import mdxComponents from 'components/mdx';
-import Button from 'components/Button';
 import SharePost from 'components/SharePost';
 import RecommendedPost from 'components/RecommendedPost';
 import ExternalLink from 'components/links/ExternalLink';
+import InternalLink from 'components/links/InternalLink';
 
 import { MDXRemote } from 'next-mdx-remote';
 import { Post } from 'lib/interfaces';
@@ -19,8 +18,6 @@ type BlogLayoutProps = {
 };
 
 export default function BlogLayout({ post }: BlogLayoutProps) {
-  const router = useRouter();
-
   const { title, excerpt, datePublished, readingTime, content, author } = post;
 
   return (
@@ -30,16 +27,11 @@ export default function BlogLayout({ post }: BlogLayoutProps) {
       date={datePublished}
       type="article"
     >
-      <Wrapper as="article" className="pt-10 pb-16 md:pb-20">
-        <Button
-          variant="primaryLink"
-          onClick={() => router.back()}
-          aria-label="Go back"
-        >
-          <span className="pr-2">←</span>
-          Back
-        </Button>
-        <div className="flex flex-col items-center mt-5">
+      <Wrapper as="article" className="pt-9 pb-16 md:pb-20">
+        <InternalLink href="/blog" variant="primary">
+          <span className="pr-2">←</span>Back to Blog
+        </InternalLink>
+        <div className="flex flex-col items-center mt-8">
           <div className="inline-flex flex-row items-center justify-center gap-x-3 mb-4">
             <span className="text-sm md:text-base tracking-normal font-medium text-grey-600 dark:text-grey-300">
               Published on{' '}
