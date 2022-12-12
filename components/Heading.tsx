@@ -7,11 +7,7 @@ type HeadingProps = ComponentPropsWithoutRef<HeadingType> & {
   children: ReactNode;
 };
 
-function Heading({
-  type = 'h1',
-  children,
-  ...props
-}: HeadingProps): JSX.Element {
+function Heading({ type, children, ...props }: HeadingProps): JSX.Element {
   return createElement(type, props, children);
 }
 

@@ -73,6 +73,16 @@ export const LinkVariants: { [key in LinkVariantType]: string } = {
     'underline decoration-dotted underline-offset-4 decoration-grey-500 text-grey-700 hover:text-grey-1000 dark:text-grey-300 dark:hover:text-grey-120 hover:decoration-grey-1000 dark:hover:decoration-grey-120',
   block: 'block w-full',
   rounded: 'block rounded-xl'
+  // default:
+  //   '',
+  // primary:
+  //   'underline decoration-dotted underline-offset-4 decoration-grey-500 text-grey-700 hover:text-grey-1000 dark:text-grey-300 dark:hover:text-grey-120 hover:decoration-grey-1000 dark:hover:decoration-grey-120',
+  // secondary:
+  //   'tracking-normal overflow-hidden md:p-1 text-grey-500 hover:text-grey-1000 dark:text-grey-200 dark:hover:text-grey-50 focus-visible:hover:text-grey-1000 dark:focus-visible:hover:text-grey-50',
+  // 'non-text': '',
+  // highlight: 'inline-flex items-center text-cobalt-dark hover:text-grey-1000 dark:text-blue-400 dark:hover:text-grey-100',
+  // blend: '',
+  // rounded: 'block rounded-xl'
 };
 
 export const IconVariants: { [key in IconVariantType]: string } = {

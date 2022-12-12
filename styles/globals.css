@@ -304,5 +304,5 @@ pre {
 }
 
 .permalink-to-header {
-  @apply after:content-link after:invisible hover:after:visible after:pl-3;
+  @apply relative before:absolute before:content-['#'] before:text-[0.9em] before:text-grey-400 before:flex before:items-center before:invisible hover:before:visible before:-left-6 lg:before:-left-8 before:inset-y-0;
 }

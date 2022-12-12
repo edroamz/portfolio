@@ -10,6 +10,9 @@ export type LinkVariantType =
   | 'black-and-white'
   | 'underline'
   | 'block'
+  // | 'non-text'
+  // | 'highlight'
+  // | 'blend'
   | 'rounded';
 
 export type SharedLinkProps = PropsWithChildren<{

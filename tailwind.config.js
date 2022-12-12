@@ -131,11 +131,6 @@ module.exports = {
         DEFAULT: '0px 2px 4px rgba(0,0,0,0.1)',
         'border-bottom': 'inset 0 -1px 0 0 rgba(0,0,0,0.1)',
         'border-bottom-dark': 'inset 0 -1px 0 0 rgba(255,255,255,0.1)'
-      },
-      content: {
-        link: `url(
-          "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' data-testid='geist-icon' fill='none' height='17px' shape-rendering='geometricPrecision' stroke='%2381859f' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' viewBox='0 0 24 24' width='17px' style='color: %2381859f;'%3E%3Cpath d='M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71'%3E%3C/path%3E%3Cpath d='M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71'%3E%3C/path%3E%3C/svg%3E"
-        )`
       }
     }
   }
