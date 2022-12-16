@@ -10,8 +10,8 @@ import {
   TextSizes
 } from 'components/theme';
 import cn from 'classnames';
-import { TextSizeType } from 'components/Text';
-import { HeadingType } from 'components/Heading';
+
+export type TextSizeType = 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl';
 
 export type GradientVariantType = 'gotham' | 'winter' | 'summer';
 
@@ -25,7 +25,7 @@ export type GradientDirectionType =
   | 'left'
   | 'topLeft';
 
-type GradientTextType = 'p' | 'span' | HeadingType;
+type GradientTextType = 'p' | 'span' | 'h1' | 'h2' | 'h3' | 'h4';
 
 type GradientTextProps = ComponentPropsWithoutRef<GradientTextType> & {
   textSize?: TextSizeType;

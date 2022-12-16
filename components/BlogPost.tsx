@@ -1,17 +1,18 @@
 import { Separator } from '@radix-ui/react-separator';
 import InternalLink from 'components/links/InternalLink';
-import Heading, { HeadingType } from 'components/Heading';
 import TimeFormatter from 'components/TimeFormatter';
 
 import { Post } from 'lib/interfaces';
 
 type BlogPostProps = {
   post: Post;
-  heading?: HeadingType;
+  heading?: 'h1' | 'h2' | 'h3' | 'h4';
 };
 
 export default function BlogPost({ post, heading = 'h2' }: BlogPostProps) {
   const { slug, datePublished, title, excerpt, readingTime } = post;
+
+  const Title = heading;
 
   return (
     <InternalLink
@@ -20,9 +21,9 @@ export default function BlogPost({ post, heading = 'h2' }: BlogPostProps) {
         query: { slug }
       }}
       variant="rounded"
-      style={{ zIndex: 'auto' }}
+      style={{ zIndex: '10' }}
     >
-      <div className="md:w-full flex flex-col md:flex-row items-baseline justify-between md:gap-x-12 lg:gap-x-14 py-6 md:py-7 hover:bg-grey-50 dark:hover:bg-grey-900 hover:transition-none rounded-md md:rounded-xl px-7">
+      <div className="md:w-full flex flex-col md:flex-row items-baseline justify-between md:gap-x-12 lg:gap-x-14 py-6 md:py-7 hover:bg-grey-50 dark:hover:bg-grey-900 hover:transition-none rounded-xl px-2 md:px-7 ">
         <div className="w-full flex flex-row md:hidden items-center gap-x-2 mb-1 md:mb-0">
           <Separator
             decorative
@@ -51,9 +52,7 @@ export default function BlogPost({ post, heading = 'h2' }: BlogPostProps) {
           <span className="hidden md:inline-block text-base text-grey-600 dark:text-grey-300 mb-2">
             {readingTime}
           </span>
-          <Heading type={heading} className="text-xl md:text-2xl mb-1">
-            {title}
-          </Heading>
+          <Title className="text-xl md:text-2xl mb-1">{title}</Title>
           <p className="text-lg">{excerpt}</p>
         </div>
       </div>

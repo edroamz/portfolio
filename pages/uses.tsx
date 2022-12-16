@@ -18,16 +18,15 @@ const Uses: NextPage<UsesProps> = ({ uses }): JSX.Element => {
       title={`${uses.title} - Eduardo R. Ambriz`}
       description={uses.description}
     >
-      <Wrapper className="pt-16 md:pt-20 mb-12">
-        <h1>{uses.title}</h1>
-        <p className="text-lg max-w-prose mb-8">{uses.description}</p>
+      <Wrapper>
+        <section>
+          <h1>{uses.title}</h1>
+          <p className="text-lg max-w-prose mb-8">{uses.description}</p>
+          <div className="prose">
+            <MDXRemote {...uses.content} components={mdxComponents}></MDXRemote>
+          </div>
+        </section>
       </Wrapper>
-
-      <div className="px-7 pb-16 md:pb-20">
-        <div className="prose">
-          <MDXRemote {...uses.content} components={mdxComponents}></MDXRemote>
-        </div>
-      </div>
     </Container>
   );
 };

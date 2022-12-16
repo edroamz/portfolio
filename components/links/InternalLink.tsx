@@ -28,7 +28,7 @@ function InternalLink({
       FontWeights[fontWeight],
       TextSizes[textSize],
       LinkVariants[variant],
-      highlightActive && isActive && LinkVariants['highlighted']
+      highlightActive && isActive && LinkVariants['highlight']
     )
   );
 

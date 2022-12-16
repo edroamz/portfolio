@@ -1,18 +1,15 @@
 import { PropsWithChildren } from 'react';
-import { TextSizeType } from 'components/Text';
+import { TextSizeType } from 'components/GradientText';
 import { FontWeightType } from 'components/theme';
 
 export type LinkVariantType =
   | 'default'
   | 'primary'
   | 'secondary'
-  | 'highlighted'
-  | 'black-and-white'
-  | 'underline'
-  | 'block'
-  // | 'non-text'
-  // | 'highlight'
-  // | 'blend'
+  | 'non-text'
+  | 'highlight'
+  | 'bw'
+  | 'blend'
   | 'rounded';
 
 export type SharedLinkProps = PropsWithChildren<{

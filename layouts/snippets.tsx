@@ -1,6 +1,5 @@
 import { Separator } from '@radix-ui/react-separator';
 import Container from 'components/Container';
-import Wrapper from 'components/Wrapper';
 import mdxComponents from 'components/mdx';
 import InternalLink from 'components/links/InternalLink';
 
@@ -16,15 +15,17 @@ export default function SnippetsLayout({ snippet }: SnippetsLayoutProps) {
 
   return (
     <Container title={`${title} - Eduardo R. Ambriz`} description={description}>
-      <Wrapper as="section" className="pt-9 pb-16 md:pb-20">
-        <InternalLink href="/snippets" variant="primary" fontWeight={500}>
+      <section className="max-w-5xl mx-auto px-7 pt-9 pb-16 md:pb-20">
+        <InternalLink href="/snippets" variant="highlight" fontWeight={500}>
           <span className="pr-2">←</span>Back to Snippets
         </InternalLink>
-        <div className="flex flex-col items-center justify-center text-center text-lg max-w-prose mx-auto mt-8">
+        <div className="flex flex-col items-center justify-center text-center text-lg max-w-prose mx-auto mt-10">
           <span className="uppercase tracking-widest font-mono font-extrabold text-coral-dark dark:text-coral-light">
             Snippet
           </span>
-          <h1 className="text-3xl md:text-4xl font-extrabold mb-1">{title}</h1>
+          <h1 className="text-3xl md:text-4xl text-center font-extrabold mb-1">
+            {title}
+          </h1>
           <p>{description}</p>
         </div>
         <Separator
@@ -36,7 +37,7 @@ export default function SnippetsLayout({ snippet }: SnippetsLayoutProps) {
         <div className="prose">
           <MDXRemote {...content} components={mdxComponents}></MDXRemote>
         </div>
-      </Wrapper>
+      </section>
     </Container>
   );
 }

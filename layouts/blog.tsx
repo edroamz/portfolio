@@ -2,7 +2,6 @@ import Image from 'next/image';
 
 import { Separator } from '@radix-ui/react-separator';
 import Container from 'components/Container';
-import Wrapper from 'components/Wrapper';
 import TimeFormatter from 'components/TimeFormatter';
 import mdxComponents from 'components/mdx';
 import SharePost from 'components/SharePost';
@@ -27,11 +26,11 @@ export default function BlogLayout({ post }: BlogLayoutProps) {
       date={datePublished}
       type="article"
     >
-      <Wrapper as="article" className="pt-9 pb-16 md:pb-20">
-        <InternalLink href="/blog" variant="primary" fontWeight={500}>
+      <article className="max-w-5xl mx-auto px-7 pt-9 pb-16 md:pb-20">
+        <InternalLink href="/blog" variant="highlight" fontWeight={500}>
           <span className="pr-2">←</span>Back to Blog
         </InternalLink>
-        <div className="flex flex-col items-center mt-8">
+        <div className="flex flex-col items-center mt-10">
           <div className="inline-flex flex-row items-center justify-center gap-x-3 mb-4">
             <span className="text-sm md:text-base tracking-normal font-medium text-grey-600 dark:text-grey-300">
               Published on{' '}
@@ -83,7 +82,7 @@ export default function BlogLayout({ post }: BlogLayoutProps) {
           </div>
           <ExternalLink
             href="https://github.com"
-            variant="underline"
+            variant="primary"
             textSize="xs"
           >
             Suggest Change on Github
@@ -116,7 +115,7 @@ export default function BlogLayout({ post }: BlogLayoutProps) {
           <RecommendedPost post={post}></RecommendedPost>
           <RecommendedPost post={post}></RecommendedPost>
         </section>
-      </Wrapper>
+      </article>
     </Container>
   );
 }

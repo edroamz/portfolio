@@ -2,7 +2,7 @@ import {
   GradientDirectionType,
   GradientVariantType
 } from 'components/GradientText';
-import { TextSizeType } from 'components/Text';
+import { TextSizeType } from 'components/GradientText';
 import { LinkVariantType } from 'components/links/types';
 import { IconSizeType, IconVariantType } from 'components/icons/types';
 
@@ -64,33 +64,23 @@ export const LinkVariants: { [key in LinkVariantType]: string } = {
   default:
     'hover:transition-colors hover:duration-200 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-grey-1000 dark:focus-visible:ring-grey-0 rounded-sm',
   primary:
-    'inline-flex items-center text-cobalt-dark hover:text-grey-1000 dark:text-blue-400 dark:hover:text-grey-100',
+    'underline decoration-dotted underline-offset-4 decoration-grey-500 text-grey-700 hover:text-grey-1000 dark:text-grey-300 dark:hover:text-grey-120 hover:decoration-grey-1000 dark:hover:decoration-grey-120',
   secondary:
     'tracking-normal overflow-hidden md:p-1 text-grey-500 hover:text-grey-1000 dark:text-grey-200 dark:hover:text-grey-50 focus-visible:hover:text-grey-1000 dark:focus-visible:hover:text-grey-50',
-  highlighted: 'text-grey-1000 dark:text-white',
-  'black-and-white': 'text-grey-1000 dark:text-grey-150',
-  underline:
-    'underline decoration-dotted underline-offset-4 decoration-grey-500 text-grey-700 hover:text-grey-1000 dark:text-grey-300 dark:hover:text-grey-120 hover:decoration-grey-1000 dark:hover:decoration-grey-120',
-  block: 'block w-full',
+  'non-text': 'block w-full',
+  highlight:
+    'inline-flex items-center text-cobalt-dark hover:text-grey-1000 dark:text-blue-400 dark:hover:text-grey-100',
+  bw: 'text-grey-1000 dark:text-grey-0',
+  blend: '',
   rounded: 'block rounded-xl'
-  // default:
-  //   '',
-  // primary:
-  //   'underline decoration-dotted underline-offset-4 decoration-grey-500 text-grey-700 hover:text-grey-1000 dark:text-grey-300 dark:hover:text-grey-120 hover:decoration-grey-1000 dark:hover:decoration-grey-120',
-  // secondary:
-  //   'tracking-normal overflow-hidden md:p-1 text-grey-500 hover:text-grey-1000 dark:text-grey-200 dark:hover:text-grey-50 focus-visible:hover:text-grey-1000 dark:focus-visible:hover:text-grey-50',
-  // 'non-text': '',
-  // highlight: 'inline-flex items-center text-cobalt-dark hover:text-grey-1000 dark:text-blue-400 dark:hover:text-grey-100',
-  // blend: '',
-  // rounded: 'block rounded-xl'
 };
 
 export const IconVariants: { [key in IconVariantType]: string } = {
   primary:
     'text-grey-600 group-hover:transition-colors hover:transition-colors group-hover:text-grey-1000 hover:text-grey-1000 dark:text-grey-150 dark:group-hover:text-grey-50 dark:hover:text-grey-50',
   secondary: 'text-grey-400 dark:text-grey-300',
-  highlighted: 'text-cobalt dark:text-blue-400',
-  'black-and-white': 'text-grey-1000 dark:text-grey-0',
+  highlight: 'text-cobalt dark:text-blue-400',
+  bw: 'text-grey-1000 dark:text-grey-0',
   'hidden-in-dark': 'dark:hidden',
   'hidden-in-light': 'hidden dark:block',
   'react-logo': 'text-[#087EA4] dark:text-[#149ECA]'

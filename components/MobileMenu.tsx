@@ -53,7 +53,7 @@ export default function MobileMenuNew() {
               <li>
                 <InternalLink
                   href="/projects"
-                  variant="black-and-white"
+                  variant="bw"
                   textSize="lg"
                   fontWeight={600}
                 >
@@ -63,7 +63,7 @@ export default function MobileMenuNew() {
               <li>
                 <InternalLink
                   href="/blog"
-                  variant="black-and-white"
+                  variant="bw"
                   textSize="lg"
                   fontWeight={600}
                 >
@@ -73,7 +73,7 @@ export default function MobileMenuNew() {
               <li>
                 <InternalLink
                   href="/uses"
-                  variant="black-and-white"
+                  variant="bw"
                   textSize="lg"
                   fontWeight={600}
                 >
@@ -83,7 +83,7 @@ export default function MobileMenuNew() {
               <li>
                 <InternalLink
                   href="/snippets"
-                  variant="black-and-white"
+                  variant="bw"
                   textSize="lg"
                   fontWeight={600}
                 >

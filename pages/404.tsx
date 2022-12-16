@@ -8,8 +8,8 @@ import GradientText from 'components/GradientText';
 const NotFound: NextPage = () => {
   return (
     <Container title="404 – Eduardo R. Ambriz">
-      <Wrapper className="py-16 md:py-20">
-        <div className="flex flex-col items-start sm:items-center justify-center gap-y-3">
+      <Wrapper>
+        <section className="flex flex-col items-start sm:items-center justify-center gap-y-3">
           <GradientText variant="summer" textSize="xl">
             <span className="font-extrabold tracking-wide">404</span>
           </GradientText>
@@ -21,12 +21,12 @@ const NotFound: NextPage = () => {
           <InternalLink
             href="/"
             textSize="lg"
-            variant="primary"
+            variant="highlight"
             fontWeight={500}
           >
             Go back home <span className="pl-2">→</span>
           </InternalLink>
-        </div>
+        </section>
       </Wrapper>
     </Container>
   );

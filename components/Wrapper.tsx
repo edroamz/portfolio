@@ -1,24 +1,13 @@
-import { createElement, PropsWithChildren } from 'react';
-
-import cn from 'classnames';
-
-type WrapperProps = {
-  as?: 'div' | 'section' | 'article';
-  className?: string;
-  [key: string]: any;
-};
+import { PropsWithChildren } from 'react';
 
 const Wrapper = ({
-  as = 'div',
-  className,
-  children,
-  ...props
-}: PropsWithChildren<WrapperProps>) => {
-  const type: string = as;
-  const classnames: string = cn('max-w-5xl mx-auto px-7', className);
-  const componentProps = { className: classnames, ...props };
-
-  return createElement(type, componentProps, children);
+  children
+}: PropsWithChildren<JSX.IntrinsicElements['div']>) => {
+  return (
+    <div className="flex flex-none flex-col justify-center gap-y-32 max-w-5xl mx-auto px-7 py-16 md:py-20">
+      {children}
+    </div>
+  );
 };
 
 export default Wrapper;

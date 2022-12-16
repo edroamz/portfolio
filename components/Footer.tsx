@@ -1,6 +1,4 @@
 import { Separator } from '@radix-ui/react-separator';
-
-import Wrapper from 'components/Wrapper';
 import ExternalLink from 'components/links/ExternalLink';
 import InternalLink from 'components/links/InternalLink';
 import LinkedInIcon from 'components/icons/LinkedInIcon';
@@ -10,14 +8,15 @@ import WordmarkIcon from 'components/icons/WordmarkIcon';
 export default function Footer() {
   return (
     <footer className="w-full bg-grey-0 dark:bg-grey-1000 ring-2 ring-grey-100 dark:ring-grey-900 rounded-tl-[2rem] rounded-tr-[2rem] lg:rounded-tl-[3rem] lg:rounded-tr-[3rem] mt-20">
-      <div className="flex flex-col">
-        <Wrapper className="w-full flex flex-col md:flex-row gap-y-12 gap-x-7 items-baseline py-12 md:py-16">
+      <div className="max-w-5xl mx-auto px-7">
+        <div className="flex flex-col md:flex-row gap-y-12 gap-x-7 items-baseline py-12 md:py-16">
           <div className="flex-1/3">
-            <InternalLink href="/" aria-label="Eduardo Homepage">
-              <WordmarkIcon
-                size="wordmark"
-                variant="black-and-white"
-              ></WordmarkIcon>
+            <InternalLink
+              href="/"
+              variant="non-text"
+              aria-label="Eduardo Homepage"
+            >
+              <WordmarkIcon size="wordmark" variant="bw"></WordmarkIcon>
             </InternalLink>
           </div>
           <div className="flex-1/3 w-full">
@@ -50,43 +49,40 @@ export default function Footer() {
           <div className="flex-1/3 w-full pt-12 md:p-0 border-t border-grey-100 dark:border-grey-880 md:border-none">
             <p className="text-grey-500 dark:text-grey-400">
               This Web site is built with{' '}
-              <ExternalLink href="https://nextjs.org/" variant="underline">
+              <ExternalLink href="https://nextjs.org/" variant="primary">
                 Next.js
               </ExternalLink>
               ,{' '}
               <ExternalLink
                 href="https://www.typescriptlang.org/"
-                variant="underline"
+                variant="primary"
               >
                 Typescript
               </ExternalLink>
               ,{' '}
-              <ExternalLink href="https://tailwindcss.com/" variant="underline">
+              <ExternalLink href="https://tailwindcss.com/" variant="primary">
                 Tailwind CSS
               </ExternalLink>
               ,{' '}
-              <ExternalLink
-                href="https://www.radix-ui.com/"
-                variant="underline"
-              >
+              <ExternalLink href="https://www.radix-ui.com/" variant="primary">
                 Radix UI
               </ExternalLink>
               , and hosted on{' '}
-              <ExternalLink href="https://vercel.com/" variant="underline">
+              <ExternalLink href="https://vercel.com/" variant="primary">
                 Vercel
               </ExternalLink>
               .
             </p>
           </div>
-        </Wrapper>
-        <div className="w-full max-w-5xl mx-auto md:px-7">
-          <Separator
-            decorative
-            orientation="horizontal"
-            className="border-t border-grey-100 dark:border-grey-880 md:w-full md:max-w-5xl md:mx-auto"
-          />
         </div>
-        <Wrapper className="w-full flex flex-col-reverse md:items-center md:flex-row md:justify-between pt-12 pb-24 gap-y-7">
+
+        <Separator
+          decorative
+          orientation="horizontal"
+          className="w-full border-t border-grey-100 dark:border-grey-880"
+        />
+
+        <div className="flex flex-col-reverse md:items-center md:flex-row md:justify-between pt-12 pb-24 gap-y-7">
           <span className="text-sm text-grey-500 dark:text-grey-400">
             © 2022 Eduardo R. Ambriz. All rights reserved.
           </span>
@@ -95,7 +91,7 @@ export default function Footer() {
               <li>
                 <ExternalLink
                   href="https://www.linkedin.com/in/edroamz/"
-                  variant="block"
+                  variant="non-text"
                 >
                   <LinkedInIcon
                     label="LinkedIn"
@@ -114,7 +110,7 @@ export default function Footer() {
               <li>
                 <ExternalLink
                   href="https://github.com/edroamz"
-                  variant="block"
+                  variant="non-text"
                   aria-label="GitHub"
                 >
                   <GitHubIcon label="GitHub" size="sm" decorative></GitHubIcon>
@@ -122,7 +118,7 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-        </Wrapper>
+        </div>
       </div>
     </footer>
   );

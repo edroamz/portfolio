@@ -42,7 +42,7 @@ export default function ThemeSwitcher() {
       </VisuallyHidden>
       <DropdownMenuTrigger
         id="btn-theme"
-        className="dropdown-theme-trigger group"
+        className="group invisible md:visible px-2 py-[2px] md:pr-0 ring-0 outline-none focus-visible:ring-2 dark:focus-visible:ring-grey-0 focus-visible:ring-grey-1000 text-grey-400 dark:text-grey-300 hover:text-grey-600 dark:hover:text-grey-150 group-hover:transition-colors data-opened:text-cobalt dark:data-opened:text-blue-400 rounded-md"
       >
         <DarkIcon decorative variant="hidden-in-light" size="lg"></DarkIcon>
         <LightIcon decorative variant="hidden-in-dark" size="lg"></LightIcon>
@@ -67,17 +67,17 @@ export default function ThemeSwitcher() {
               {theme === 'light' ? (
                 <LightIcon
                   decorative
-                  variant={theme === currentTheme ? 'highlighted' : 'secondary'}
+                  variant={theme === currentTheme ? 'highlight' : 'secondary'}
                 ></LightIcon>
               ) : theme === 'dark' ? (
                 <DarkIcon
                   decorative
-                  variant={theme === currentTheme ? 'highlighted' : 'secondary'}
+                  variant={theme === currentTheme ? 'highlight' : 'secondary'}
                 ></DarkIcon>
               ) : (
                 <SystemIcon
                   decorative
-                  variant={theme === currentTheme ? 'highlighted' : 'secondary'}
+                  variant={theme === currentTheme ? 'highlight' : 'secondary'}
                 ></SystemIcon>
               )}
               <span className="capitalize">{theme}</span>

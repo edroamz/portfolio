@@ -1,8 +1,8 @@
 export type IconVariantType =
   | 'primary'
   | 'secondary'
-  | 'highlighted'
-  | 'black-and-white'
+  | 'highlight'
+  | 'bw'
   | 'hidden-in-dark'
   | 'hidden-in-light'
   | 'react-logo';
