@@ -117,7 +117,7 @@ export const getStaticProps = async () => {
   const allPosts = getAllFiles('blog', [
     'title',
     'datePublished',
-    'lastEdited',
+    'dateModified',
     'slug',
     'author',
     'coverImage',

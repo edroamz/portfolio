@@ -21,13 +21,13 @@ export default function BlogLayout({ post }: BlogLayoutProps) {
     title,
     excerpt,
     datePublished,
-    lastEdited,
+    dateModified,
     readingTime,
     content,
     author
   } = post;
 
-  console.log(lastEdited);
+  console.log(dateModified);
 
   return (
     <Container
