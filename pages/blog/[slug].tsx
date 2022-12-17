@@ -23,6 +23,7 @@ export async function getStaticProps({ params }: Params) {
   const post = getFileBySlug('blog', params.slug, [
     'title',
     'datePublished',
+    'lastEdited',
     'slug',
     'author',
     'excerpt',

@@ -9,6 +9,7 @@ export interface Post {
   slug: string;
   title: string;
   datePublished: string;
+  lastEdited: string;
   author: Author;
   excerpt: string;
   coverImage: string;

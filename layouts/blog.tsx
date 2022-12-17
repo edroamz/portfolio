@@ -17,7 +17,17 @@ type BlogLayoutProps = {
 };
 
 export default function BlogLayout({ post }: BlogLayoutProps) {
-  const { title, excerpt, datePublished, readingTime, content, author } = post;
+  const {
+    title,
+    excerpt,
+    datePublished,
+    lastEdited,
+    readingTime,
+    content,
+    author
+  } = post;
+
+  console.log(lastEdited);
 
   return (
     <Container

@@ -14,7 +14,9 @@ type RecommendedPostProps = {
 export default function RecommendedPost({
   post
 }: RecommendedPostProps): JSX.Element {
-  const { title, excerpt, datePublished, readingTime } = post;
+  const { title, excerpt, datePublished, lastEdited, readingTime } = post;
+
+  console.log(lastEdited);
 
   return (
     <InternalLink href="/blog/preview" variant="rounded">
