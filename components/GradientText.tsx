@@ -4,11 +4,7 @@ import {
   ReactNode,
   CSSProperties
 } from 'react';
-import {
-  GradientVariants,
-  GradientDirections,
-  TextSizes
-} from 'components/theme';
+import { GradientVariants, GradientDirections, TextSizes } from 'lib/theme';
 import cn from 'classnames';
 
 export type TextSizeType = 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl';

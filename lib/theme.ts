@@ -6,6 +6,8 @@ import { TextSizeType } from 'components/GradientText';
 import { LinkVariantType } from 'components/links/types';
 import { IconSizeType, IconVariantType } from 'components/icons/types';
 
+export const themes = ['light', 'dark', 'system'];
+
 export type FontWeightType =
   | 100
   | 200

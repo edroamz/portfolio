@@ -1,6 +1,6 @@
 import { PropsWithChildren } from 'react';
 import { TextSizeType } from 'components/GradientText';
-import { FontWeightType } from 'components/theme';
+import { FontWeightType } from 'lib/theme';
 
 export type LinkVariantType =
   | 'default'

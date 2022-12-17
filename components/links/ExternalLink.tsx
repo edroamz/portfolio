@@ -1,8 +1,10 @@
 import { ComponentPropsWithRef } from 'react';
-import cn from 'classnames';
+
 import { SharedLinkProps } from 'components/links/types';
-import { FontWeights, LinkVariants, TextSizes } from 'components/theme';
+
 import { twMerge } from 'tailwind-merge';
+import { FontWeights, LinkVariants, TextSizes } from 'lib/theme';
+import cn from 'classnames';
 
 type ExternalLinkProps = ComponentPropsWithRef<'a'> & SharedLinkProps;
 

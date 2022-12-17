@@ -16,7 +16,7 @@ import DarkIcon from 'components/icons/DarkIcon';
 import LightIcon from 'components/icons/LightIcon';
 import ChevronDownIcon from 'components/icons/ChevronDown';
 
-import { themes } from 'utils/themes';
+import { themes } from 'lib/theme';
 
 const MobileThemeSwitcher: FunctionComponent = () => {
   const { theme, setTheme } = useTheme();

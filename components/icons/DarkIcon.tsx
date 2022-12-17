@@ -1,4 +1,4 @@
-import { IconVariants, IconSizes } from 'components/theme';
+import { IconVariants, IconSizes } from 'lib/theme';
 import { twMerge } from 'tailwind-merge';
 import cn from 'classnames';
 import { IconProps } from 'components/icons/types';

@@ -1,10 +1,12 @@
-import { twMerge } from 'tailwind-merge';
 import { ComponentPropsWithRef } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { FontWeights, LinkVariants, TextSizes } from 'components/theme';
-import cn from 'classnames';
+
 import { SharedLinkProps } from 'components/links/types';
+
+import { twMerge } from 'tailwind-merge';
+import { FontWeights, LinkVariants, TextSizes } from 'lib/theme';
+import cn from 'classnames';
 
 type InternalLinkProps = ComponentPropsWithRef<typeof Link> &
   SharedLinkProps & { highlightActive?: boolean | undefined };

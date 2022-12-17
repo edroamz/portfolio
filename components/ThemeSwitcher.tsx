@@ -14,8 +14,8 @@ import LightIcon from 'components/icons/LightIcon';
 import DarkIcon from 'components/icons/DarkIcon';
 import SystemIcon from 'components/icons/SystemIcon';
 
+import { themes } from 'lib/theme';
 import classnames from 'classnames';
-import { themes } from 'utils/themes';
 
 export default function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);

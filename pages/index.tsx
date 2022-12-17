@@ -95,7 +95,7 @@ const Home: NextPage<HomeProps> = ({ allPosts }) => {
           <div className="mt-7">
             <div className="w-full flex flex-col md:flex-row md:gap-x-12 lg:gap-x-14">
               <div className="h-full w-full md:basis-1/5"></div>
-              <div className="h-full w-full md:basis-4/5 pl-2 md:pl-5">
+              <div className="h-full w-full md:basis-4/5 pl-2 md:pl-4">
                 <InternalLink
                   href="/projects"
                   textSize="lg"
