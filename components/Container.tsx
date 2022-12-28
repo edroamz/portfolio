@@ -40,7 +40,7 @@ export default function Container(props: ContainerProps) {
               <WordmarkIcon size="wordmark" variant="bw"></WordmarkIcon>
             </InternalLink>
           </div>
-          <div className="h-full hidden md:flex flex-1 items-center justify-center m-0 w-full bg-transparent">
+          <div className="h-full flex flex-1 items-center justify-end gap-x-5">
             <nav className="hidden md:flex">
               <ul className="flex items-center gap-x-5">
                 <li>
@@ -85,8 +85,6 @@ export default function Container(props: ContainerProps) {
                 </li>
               </ul>
             </nav>
-          </div>
-          <div className="h-full flex flex-1 items-center justify-end">
             <div className="flex items-center justify-between gap-x-6">
               <ThemeSwitcher></ThemeSwitcher>
               <MobileMenu />
