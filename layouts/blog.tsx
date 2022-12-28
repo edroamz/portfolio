@@ -27,8 +27,6 @@ export default function BlogLayout({ post }: BlogLayoutProps) {
     author
   } = post;
 
-  console.log(dateModified);
-
   return (
     <Container
       title={`${title} - Eduardo R. Ambriz`}
@@ -41,7 +39,7 @@ export default function BlogLayout({ post }: BlogLayoutProps) {
           <span className="pr-2">←</span>Back to Blog
         </InternalLink>
         <div className="flex flex-col items-center mt-10">
-          <div className="inline-flex flex-row items-center justify-center gap-x-3 mb-4">
+          <div className="inline-flex flex-row items-center justify-center gap-x-3">
             <span className="text-sm md:text-base tracking-normal font-medium text-grey-600 dark:text-grey-300">
               Published on{' '}
               <TimeFormatter dateString={datePublished}></TimeFormatter>
@@ -57,7 +55,13 @@ export default function BlogLayout({ post }: BlogLayoutProps) {
               {readingTime}
             </span>
           </div>
-          <h1 className="text-3xl md:text-4xl text-center font-extrabold mb-4">
+          {dateModified && (
+            <span className="text-sm md:text-base tracking-normal font-medium text-grey-600 dark:text-grey-300">
+              ( Last modified on{' '}
+              <TimeFormatter dateString={dateModified}></TimeFormatter> )
+            </span>
+          )}
+          <h1 className="text-3xl md:text-4xl text-center font-extrabold my-4">
             {title}
           </h1>
           <p className=" text-center mx-auto text-xl max-w-3xl md:tracking-tight">

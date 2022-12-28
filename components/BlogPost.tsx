@@ -10,10 +10,7 @@ type BlogPostProps = {
 };
 
 export default function BlogPost({ post, heading = 'h2' }: BlogPostProps) {
-  const { slug, datePublished, dateModified, title, excerpt, readingTime } =
-    post;
-
-  console.log(dateModified);
+  const { slug, datePublished, title, excerpt, readingTime } = post;
 
   const Title = heading;
 

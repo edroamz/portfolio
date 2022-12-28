@@ -16,8 +16,6 @@ export default function RecommendedPost({
 }: RecommendedPostProps): JSX.Element {
   const { title, excerpt, datePublished, dateModified, readingTime } = post;
 
-  console.log(dateModified);
-
   return (
     <InternalLink href="/blog/preview" variant="rounded">
       <Image
@@ -33,7 +31,9 @@ export default function RecommendedPost({
       <p className="mt-2 leading-7">{excerpt}</p>
       <div className="inline-flex flex-row items-center gap-x-3 mt-6">
         <span className="inline-block text-xs tracking-normal text-grey-600 dark:text-grey-300">
-          <TimeFormatter dateString={datePublished}></TimeFormatter>
+          <TimeFormatter
+            dateString={dateModified ? dateModified : datePublished}
+          ></TimeFormatter>
         </span>
         <Separator
           decorative
