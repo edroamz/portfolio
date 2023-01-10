@@ -1,8 +1,8 @@
 import {
   GradientDirectionType,
-  GradientVariantType
-} from 'components/GradientText';
-import { TextSizeType } from 'components/GradientText';
+  GradientVariantType,
+  TextSizeType
+} from 'components/gradient-text';
 import { LinkVariantType } from 'components/links/types';
 import { IconSizeType, IconVariantType } from 'components/icons/types';
 

@@ -11,7 +11,7 @@ author:
 ogImage:
   url: /assets/blog/hello-world/cover.jpg
 published: true
-dateModified: '2022-12-28T19:03:29.202Z'
+dateModified: '2023-01-10T02:01:02.724Z'
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -115,7 +115,7 @@ function BlurImage({ image }: { image: Image }) {
           src={image.imageSrc}
           layout="fill"
           objectFit="cover"
-          className={cn(
+          className={classNames(
             'group-hover:opacity-75 duration-700 ease-in-out',
             isLoading
               ? 'grayscale blur-2xl scale-110'

@@ -1,16 +1,16 @@
 import type { NextPage } from 'next';
 
-import SnippetLayout from 'layouts/snippets';
+import { SnippetsLayout } from 'layouts/snippets';
 
 import { getAllFiles, getFileBySlug, getSerializedMDXContent } from 'lib/mdx';
-import { Snippet } from 'lib/interfaces';
+import { ISnippet } from 'lib/interfaces';
 
 type SnippetPageProps = {
-  snippet: Snippet;
+  snippet: ISnippet;
 };
 
 const SnippetPage: NextPage<SnippetPageProps> = ({ snippet }) => {
-  return <SnippetLayout snippet={snippet}></SnippetLayout>;
+  return <SnippetsLayout snippet={snippet}></SnippetsLayout>;
 };
 
 type Params = {

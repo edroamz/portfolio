@@ -1,7 +1,7 @@
-import GradientText from 'components/GradientText';
-import Callout from 'components/mdx/Callout';
-import RoundedImage from 'components/mdx/RoundedImage';
-import { CustomLink } from 'components/mdx/CustomLink';
+import { GradientText } from 'components/gradient-text';
+import { Callout } from 'components/mdx/callout';
+import { RoundedImage } from 'components/mdx/rounded-image';
+import { CustomLink } from 'components/mdx/custom-link';
 
 const mdxComponents = {
   Image: RoundedImage,
@@ -10,4 +10,4 @@ const mdxComponents = {
   GradientText
 };
 
-export default mdxComponents;
+export { mdxComponents };

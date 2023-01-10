@@ -1,15 +1,15 @@
 import type { NextPage } from 'next';
 
 import { Separator } from '@radix-ui/react-separator';
-import Container from 'components/Container';
-import Wrapper from 'components/Wrapper';
-import BlogPost from 'components/BlogPost';
+import { Container } from 'components/container';
+import { Wrapper } from 'components/wrapper';
+import { Post } from 'components/post';
 
 import { getAllFiles } from 'lib/mdx';
-import { Post } from 'lib/interfaces';
+import { IPost } from 'lib/interfaces';
 
 type BlogProps = {
-  allPosts: Post[];
+  allPosts: IPost[];
 };
 
 const Blog: NextPage<BlogProps> = ({ allPosts }) => {
@@ -33,8 +33,8 @@ const Blog: NextPage<BlogProps> = ({ allPosts }) => {
               className="absolute left-0 top-[2%] w-0 h-[96%] border-l border-grey-100 dark:border-grey-900 hidden md:block"
             />
             {allPosts &&
-              allPosts.map((post: Post) => (
-                <BlogPost key={post.slug} post={post}></BlogPost>
+              allPosts.map((post: IPost) => (
+                <Post key={post.slug} post={post}></Post>
               ))}
           </div>
         </section>

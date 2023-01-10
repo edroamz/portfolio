@@ -1,19 +1,19 @@
 import type { NextPage } from 'next';
 
 import { Separator } from '@radix-ui/react-separator';
-import Wrapper from 'components/Wrapper';
-import Avatar from 'components/Avatar';
-import GradientText from 'components/GradientText';
-import InternalLink from 'components/links/InternalLink';
-import Container from 'components/Container';
-import Product from 'components/Product';
-import BlogPost from 'components/BlogPost';
+import { Wrapper } from 'components/wrapper';
+import { Avatar } from 'components/avatar';
+import { GradientText } from 'components/gradient-text';
+import { InternalLink } from 'components/links/internal-link';
+import { Container } from 'components/container';
+import { Product } from 'components/product';
+import { Post } from 'components/post';
 
 import { getAllFiles } from 'lib/mdx';
-import { Post } from 'lib/interfaces';
+import { IPost } from 'lib/interfaces';
 
 type HomeProps = {
-  allPosts: Post[];
+  allPosts: IPost[];
 };
 
 const Home: NextPage<HomeProps> = ({ allPosts }) => {
@@ -46,12 +46,12 @@ const Home: NextPage<HomeProps> = ({ allPosts }) => {
           <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 items-stretch justify-between gap-x-16 gap-y-12 md:gap-y-16 mt-12">
             <Product
               product={{
-                title: 'Cool website',
+                title: 'Car-rental-react',
                 excerpt:
                   'Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem quisquam, eligendi quibusdam placeat a nisi.',
                 url: {
-                  href: 'https://coolwebsite.com',
-                  pathname: 'coolwebsite.com'
+                  href: 'https://edroamz.github.io/car-rental-react/',
+                  pathname: 'edroamz.github.io/car-rental-react'
                 }
               }}
             ></Product>
@@ -87,8 +87,8 @@ const Home: NextPage<HomeProps> = ({ allPosts }) => {
               className="absolute left-0 top-[2%] w-0 h-[96%] border-l border-grey-100 dark:border-grey-900 hidden md:block"
             />
             {allPosts &&
-              allPosts.map((post: Post) => (
-                <BlogPost key={post.slug} post={post} heading="h4"></BlogPost>
+              allPosts.map((post: IPost) => (
+                <Post key={post.slug} post={post} heading="h4"></Post>
               ))}
           </div>
 

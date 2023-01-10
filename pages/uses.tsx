@@ -1,15 +1,15 @@
 import type { NextPage } from 'next';
 
-import Container from 'components/Container';
-import Wrapper from 'components/Wrapper';
-import mdxComponents from 'components/mdx';
+import { Container } from 'components/container';
+import { Wrapper } from 'components/wrapper';
+import { mdxComponents } from 'components/mdx';
 
 import { MDXRemote } from 'next-mdx-remote';
 import { getFileBySlug, getSerializedMDXContent } from 'lib/mdx';
-import { Uses } from 'lib/interfaces';
+import { IUses } from 'lib/interfaces';
 
 type UsesProps = {
-  uses: Uses;
+  uses: IUses;
 };
 
 const Uses: NextPage<UsesProps> = ({ uses }): JSX.Element => {

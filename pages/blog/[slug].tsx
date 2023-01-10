@@ -1,12 +1,12 @@
 import type { NextPage } from 'next';
 
-import BlogLayout from 'layouts/blog';
+import { BlogLayout } from 'layouts/blog';
 
 import { getAllFiles, getFileBySlug, getSerializedMDXContent } from 'lib/mdx';
-import { Post } from 'lib/interfaces';
+import { IPost } from 'lib/interfaces';
 
 type PostPageProps = {
-  post: Post;
+  post: IPost;
 };
 
 const PostPage: NextPage<PostPageProps> = ({ post }) => {

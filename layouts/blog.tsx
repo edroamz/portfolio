@@ -1,22 +1,22 @@
 import Image from 'next/image';
 
 import { Separator } from '@radix-ui/react-separator';
-import Container from 'components/Container';
-import TimeFormatter from 'components/TimeFormatter';
-import mdxComponents from 'components/mdx';
-import SharePost from 'components/SharePost';
-import RecommendedPost from 'components/RecommendedPost';
-import ExternalLink from 'components/links/ExternalLink';
-import InternalLink from 'components/links/InternalLink';
+import { Container } from 'components/container';
+import { TimeFormatter } from 'components/time-formatter';
+import { mdxComponents } from 'components/mdx';
+import { PostShare } from 'components/post-share';
+import { PostRecommended } from 'components/post-recommended';
+import { ExternalLink } from 'components/links/external-link';
+import { InternalLink } from 'components/links/internal-link';
 
 import { MDXRemote } from 'next-mdx-remote';
-import { Post } from 'lib/interfaces';
+import { IPost } from 'lib/interfaces';
 
 type BlogLayoutProps = {
-  post: Post;
+  post: IPost;
 };
 
-export default function BlogLayout({ post }: BlogLayoutProps) {
+function BlogLayout({ post }: BlogLayoutProps) {
   const {
     title,
     excerpt,
@@ -104,10 +104,10 @@ export default function BlogLayout({ post }: BlogLayoutProps) {
         </div>
 
         <div className="max-w-5xl mx-auto flex flex-col items-center justify-center mt-16">
-          <SharePost
+          <PostShare
             postUrl="https://placeholder.com"
             postTitle={title}
-          ></SharePost>
+          ></PostShare>
           {/* <hr className="h-px w-full border-grey-100 dark:border-grey-880 mt-14" /> */}
           {/* <section className="flex flex-col items-center justify-center mt-16 md:mt-20">
             <InternalLink href="/blog/preview" variant="block">
@@ -126,10 +126,12 @@ export default function BlogLayout({ post }: BlogLayoutProps) {
           className="max-w-5xl mx-auto border-t border-grey-100 dark:border-grey-900 mt-14"
         ></Separator>
         <section className="grid grid-cols-1 md:grid-cols-2 items-stretch justify-between gap-x-20 gap-y-16 mt-24 md:mt-28">
-          <RecommendedPost post={post}></RecommendedPost>
-          <RecommendedPost post={post}></RecommendedPost>
+          <PostRecommended post={post} />
+          <PostRecommended post={post} />
         </section>
       </article>
     </Container>
   );
 }
+
+export { BlogLayout };

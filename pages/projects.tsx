@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
 
-import Container from 'components/Container';
-import Wrapper from 'components/Wrapper';
-import Product from 'components/Product';
+import { Container } from 'components/container';
+import { Wrapper } from 'components/wrapper';
+import { Product } from 'components/product';
 
 const projects = [
   {

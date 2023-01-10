@@ -1,9 +1,9 @@
 import type { NextPage } from 'next';
 
-import Container from 'components/Container';
-import Wrapper from 'components/Wrapper';
-import InternalLink from 'components/links/InternalLink';
-import GradientText from 'components/GradientText';
+import { Container } from 'components/container';
+import { Wrapper } from 'components/wrapper';
+import { InternalLink } from 'components/links/internal-link';
+import { GradientText } from 'components/gradient-text';
 
 const NotFound: NextPage = () => {
   return (

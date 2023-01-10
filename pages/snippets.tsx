@@ -1,14 +1,14 @@
 import type { NextPage } from 'next';
 
-import Wrapper from 'components/Wrapper';
-import Container from 'components/Container';
-import SnippetCard from 'components/SnippetCard';
+import { Wrapper } from 'components/wrapper';
+import { Container } from 'components/container';
+import { SnippetCard } from 'components/snippet-card';
 
-import { Snippet } from 'lib/interfaces';
+import { ISnippet } from 'lib/interfaces';
 import { getAllFiles } from 'lib/mdx';
 
 type SnippetsProps = {
-  allSnippets: Snippet[];
+  allSnippets: ISnippet[];
 };
 
 const Snippets: NextPage<SnippetsProps> = ({ allSnippets }) => {
@@ -23,7 +23,7 @@ const Snippets: NextPage<SnippetsProps> = ({ allSnippets }) => {
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 items-start justify-between mx-auto gap-7">
             {allSnippets &&
-              allSnippets.map((snippet: Snippet) => (
+              allSnippets.map((snippet: ISnippet) => (
                 <SnippetCard key={snippet.slug} snippet={snippet}></SnippetCard>
               ))}
           </div>

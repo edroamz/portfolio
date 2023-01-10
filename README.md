@@ -1,7 +1,5 @@
 # Portfolio
 
-This project is built on the following technologies:
-
 - [Next.js](https://nextjs.org) (React front-end framework)
 - [Tailwind CSS](https://taiwindcss.com) (Styling library)
 - [TypeScript](http://typescriptlang.org)
@@ -20,14 +18,12 @@ This project is built on the following technologies:
 │   ├── blog
 |   ├── snippets
 |   └── uses.mdx
-├── hooks
-│   └── use-is-mobile.tsx
 ├── layout
 |   ├── blog.tsx
 |   └── snippets.tsx
 ├── lib
 |   ├── interfaces.ts
-|   └── mdx.tsx
+|   └── mdx.ts
 │   └── theme.ts
 ├── pages
 │   ├── blog
@@ -49,7 +45,7 @@ This project is built on the following technologies:
 │   │   └── images
 │   └── robots.txt
 ├── scripts
-│   └── updateFrontmatter.js
+│   └── update-frontmatter.js
 ├── styles
 │   └── globals.css
 ├── next.config.js

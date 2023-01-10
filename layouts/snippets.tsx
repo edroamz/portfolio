@@ -1,16 +1,16 @@
 import { Separator } from '@radix-ui/react-separator';
-import Container from 'components/Container';
-import mdxComponents from 'components/mdx';
-import InternalLink from 'components/links/InternalLink';
+import { Container } from 'components/container';
+import { mdxComponents } from 'components/mdx';
+import { InternalLink } from 'components/links/internal-link';
 
 import { MDXRemote } from 'next-mdx-remote';
-import { Snippet } from 'lib/interfaces';
+import { ISnippet } from 'lib/interfaces';
 
 type SnippetsLayoutProps = {
-  snippet: Snippet;
+  snippet: ISnippet;
 };
 
-export default function SnippetsLayout({ snippet }: SnippetsLayoutProps) {
+function SnippetsLayout({ snippet }: SnippetsLayoutProps) {
   const { title, description, content } = snippet;
 
   return (
@@ -41,3 +41,5 @@ export default function SnippetsLayout({ snippet }: SnippetsLayoutProps) {
     </Container>
   );
 }
+
+export { SnippetsLayout };
