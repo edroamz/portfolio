@@ -4,9 +4,10 @@ import type { AppProps } from 'next/app';
 import { ThemeProvider } from 'next-themes';
 import { Inter, JetBrains_Mono } from '@next/font/google';
 
-const interVariable = Inter();
+const interVariable = Inter({ subsets: ['latin'] });
 const jetbrainsMono = JetBrains_Mono({
-  variable: '--font-jetbrains-mono'
+  variable: '--font-jetbrains-mono',
+  subsets: ['latin']
 });
 
 function MyApp({ Component, pageProps }: AppProps) {
